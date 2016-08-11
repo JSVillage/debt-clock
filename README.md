@@ -50,6 +50,7 @@ DISCLOSURE
 - All formulas are coded in Javascript and completely transparent.
 - We will add explainer pages later.
 - Corporate / Social Security / Exise taxes are accounted for but not reported, this is an individual debt clock calculator.
+- No information is stored, this is meant as a calculator, its completely anonymous if you want it to be.
 
 
 
