@@ -6,7 +6,9 @@ Debt is unpaid taxes, its money we've already spent that is owed by tax payers f
 
 We live in a republic, wether you voted for it or not you agreed to live by the decision. So yeah you owe it, the question is how much?
 
-The problem is very few of us are average, a tax payer fresh out of college cannot owe $160,000 in taxes if she has only earned $40,000 her first year on the job.  That doesn't make sense.
+- A tax payer fresh out of college cannot owe $160,000 in taxes if she has only earned $40,000 her first year on the job.  That doesn't make sense.
+- Remember taxes are collected on income, not people, so claiming you used more road than the next guy is a fallicy.  Your money used more road.
+- Dead people don't have to pay debt, so they kind of screwed the rest of us.  Its the only way to get out of paying your share.
 
 So the trick is to figure out how much each one of us really owes, turns out thats possible with data from the IRS.
 
