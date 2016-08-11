@@ -1,0 +1,612 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <meta charset="UTF-8"/> 
+  <title>Money Clock</title>
+  <meta name="description" content="Put in what you make per hour, we show you the money clock ticking by." />
+  <meta name="keywords" content="money, clock" />
+
+  <link href='http://fonts.googleapis.com/css?family=Wallpoet' rel='stylesheet' type='text/css'>
+
+  <style type="text/css">
+    body {
+      text-align: center;
+    }
+
+    a { text-decoration: none; }
+
+    div.person {
+      display: inline-block;
+      width: 33%;
+      margin-bottom: 30px;
+      text-align: center;
+      font-family: 'Share Tech Mono';
+    }
+    
+    div.person_image {
+      display: inline-block;
+      overflow: hidden;
+      width: 100%;
+      margin: 0px auto;
+      border-radius: 0.5em; -moz-border-radius: 0.5em; -webkit-border-radius: 0.5em;
+      background-position: center center;
+      background-size: cover;
+    }
+    
+    div.person h3 {
+      font-size: 1.4em;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 1.5em;
+    }
+    
+    div.person p {
+      font-size: 1.4em;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 1.5em;
+    }
+
+    #control {
+      display: table;
+      margin: 10px auto;
+      max-width: 800px;
+      width: 100%;
+      font-size: 2.0em;
+    }
+   
+    div.control_row {
+      display: table-row;
+    }
+
+    div.control_year {
+      display: table-cell;
+      padding: 10px;
+    }
+
+    div.control_slide {
+      display: table-cell;
+      padding: 10px;
+    }
+
+    div.control_income {
+      display: table-cell;
+      padding: 10px;
+    }
+
+    div.control_tax {
+      display: table-cell;
+      padding: 10px;
+    }
+
+    div.control_debt {
+      display: table-cell;
+      padding: 10px;
+    }
+  </style>
+
+  <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+
+  <link href='http://fonts.googleapis.com/css?family=Wallpoet' rel='stylesheet' type='text/css'/>
+  <link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'/>
+
+  <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+
+  <script type="text/javascript" src="debt_budgets.js"></script>
+  <script type="text/javascript" src="debt_taxes.js"></script>
+
+  <script type="text/javascript">
+    var minimum_wage = 14500;
+
+    /* add data to tax tables */
+    function prepare_taxes() {
+      for (var year in taxes) {
+        /* easier income lookup in reverse */
+        taxes[year] = taxes[year].reverse();
+
+        /* compute total and store it in each row for easy lookup */
+        var total = 0;
+        for (var i in taxes[year]) {
+          total += taxes[year][i]['paid'];
+        }  
+        for (var i in taxes[year]) {
+          taxes[year][i]['total'] = total;
+          taxes[year][i]['tax_percent'] /= 100; /* adjust percent to actual decimal value */
+        }
+      }
+    }
+
+    /* safely return a debt row for the given year or a null row */
+    function get_budget(year) {
+      if (year in budgets) { return budgets[year]; }
+      else { return budgets_null; }
+    }
+
+    /* safely return a tax row for the given year or a null row */
+    function get_tax(year, income) {
+      if (year in taxes) { 
+        for (var i in taxes[year]) {
+          if (income >= taxes[year][i]['bracket_min']) {
+            return taxes[year][i]
+          }
+        }
+        return taxes_null;
+      }
+      else { return taxes_null; }
+    }
+
+    /* estimate income by dereasing it linearly towards current minimum wage every year until age 18 */
+    function estimate_income(income, age) {
+      var year = new Date().getFullYear();
+      var incomes = [];
+      var step = Math.floor((income - minimum_wage) / (age - 19)); /* 19 is 1st year taxes are paid for most */
+
+      while (age > 18) {
+        incomes.push({year:year, income:income});
+        year -= 1;
+        age -= 1;
+        income -= step;
+      }
+
+      return incomes;
+    }
+
+    /* estimate debt by looking up share of income per year and applying it to the debt for that year */
+    function estimate_debt(incomes) {
+      var debts = [];
+      /* find share for year and income */
+      
+      for (var i in incomes) {
+
+        /* find deficit for year */
+        var deficit = get_budget(incomes[i]['year'])['deficit'];
+
+        /* find tax contribution for year and income */
+        var t = get_tax(incomes[i]['year'], incomes[i]['income']);
+
+        /* calculate share of deficit ( same as share of taces paid ) for the year */
+        var share = (incomes[i]['income'] * t['tax_percent']) / t['total']
+
+        /* calculate amounts owed per year */
+        debts.push({year:incomes[i]['year'], owed: Math.floor(deficit * share)});
+      }
+      return debts;
+    }
+
+    function number_with_commas(n) {
+        return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    $(document).ready(function() {
+      prepare_taxes();
+
+      /* assign a debt to each person listed */
+      $('div.person').each(function(index, person) {
+        var income = parseInt($(person).attr('income'));
+        var age = parseInt($(person).attr('age'));
+        var incomes = estimate_income(income, age);
+        var debts = estimate_debt(incomes)
+
+        var total = 0; 
+        for (i in debts) {
+          total += debts[i]['owed']; 
+        }
+        $(this).find('span.age').text(age);
+        $(this).find('span.owes').text(number_with_commas(total));
+      });
+
+      /* handle debt slider adjustment */
+      $("#control input").on('change', function () {
+
+        var total_income = 0;
+        var total_tax = 0;
+        var total_debt = 0;
+
+        $('#control input').each(function(index, slider) {
+
+          var year = $(slider).attr('year');
+          var t = taxes[year][18 - $(slider).val()];
+          var deficit = get_budget(year)['deficit'];
+          var share = (t['bracket_min'] * t['tax_percent']) / t['total']
+
+          $('div.year_' + year + ' div.control_income').text('$' + number_with_commas(t['bracket_min']) + '+');
+          $('div.year_' + year + ' div.control_tax').text('$' + number_with_commas(Math.floor(t['bracket_min'] * t['tax_percent'])));
+          $('div.year_' + year + ' div.control_debt').text('$' + number_with_commas(Math.floor(deficit * share)));
+
+          total_income += t['bracket_min'];
+          total_tax += Math.floor(t['bracket_min'] * t['tax_percent']);
+          total_debt += Math.floor(deficit * share);
+
+        });
+
+        $('div.year_total div.control_income').text('$' + number_with_commas(total_income) + '+');
+        $('div.year_total div.control_tax').text('$' + number_with_commas(total_tax));
+        $('div.year_total div.control_debt').text('$' + number_with_commas(total_debt));
+
+      });
+    });
+  </script>
+
+</head>
+<body>
+  
+  <div id="persons">
+    <div class="person" income="14500" age="21">
+      <a href="http://www.dol.gov/whd/minwage/chart.htm" target="_blank"><h3>Minimum Wage</h3></a>
+      <p><span class="age"></span> Years Old</p>
+      <p>Owes $<span class="owes">0</span></p>
+    </div>
+    <div class="person" income="18378" age="21">
+      <a href="http://www.goarmy.com/benefits/money/basic-pay-active-duty-soldiers.html" target="_blank"><h3>US Soldier</h3></a>
+      <p><span class="age"></span> Years Old</p>
+      <p>Owes $<span class="owes">0</span></p>
+    </div>
+    <div class="person" income="53449" age="30">
+      <a href="http://www1.salary.com/Public-School-Teacher-salary.html" target="_blank"><h3>School Teacher</h3></a>
+      <p><span class="age"></span> Years Old</p>
+      <p>Owes $<span class="owes">0</span></p>
+    </div>
+  
+    <div class="person" income="70176" age="33">
+      <a href="http://www1.salary.com/Nurse-salary.html" target="_blank"><h3>Nurse</h3></a>
+      <p><span class="age"></span> Years Old</p>
+      <p>Owes $<span class="owes">0</span></p>
+    </div>
+    <div class="person" income="187437" age="33">
+      <a href="http://www1.salary.com/Doctor-salary.html" target="_blank"><h3>Doctor</h3></a>
+      <p><span class="age"></span> Years Old</p>
+      <p>Owes $<span class="owes">0</span></p>
+    </div>
+    <div class="person" income="112597" age="40">
+      <a href="http://www1.salary.com/Lawyer-salary.html" target="_blank"><h3>Lawyer</h3></a>
+      <p><span class="age"></span> Years Old</p>
+      <p>Owes $<span class="owes">0</span></p>
+    </div>
+  
+    <div class="person" income="400000" age="50">
+      <a href="http://abcnews.go.com/blogs/politics/2013/04/obama-to-return-5-percent-of-salary/" target="_blank"><h3>Barack Obama</h3></a>
+      <p><span class="age"></span> Years Old</p>
+      <p>Owes $<span class="owes">0</span></p>
+    </div>
+    <div class="person" income="1500000" age="40">
+      <a href="http://archive.azcentral.com/salary/employees.php/?oid=ASU" target="_blank"><h3>ASU Football Coach</h3></a>
+      <p><span class="age"></span> Years Old</p>
+      <p>Owes $<span class="owes">0</span></p>
+    </div>
+    <div class="person" income="29000000" age="40">
+      <a href="http://www.paywizard.org/main/salary/vip-check/leonardo-dicaprio" target="_blank"><h3>Leonardo DiCaprio</h3></a>
+      <p><span class="age"></span> Years Old</p>
+      <p>Owes $<span class="owes">0</span></p>
+    </div>
+  
+    <div class="person" income="80000000" age="28">
+      <a href="http://www.paywizard.org/main/salary/vip-check/taylor-swift" target="_blank"><h3>Taylor Swift</h3></a>
+      <p><span class="age"></span> Years Old</p>
+      <p>Owes $<span class="owes">0</span></p>
+    </div>
+    <div class="person" income="100000000" age="60">
+      <a href="http://www.paywizard.org/main/salary/vip-check/steven-spielberg" target="_blank"><h3>Stephen Spielberg</h3></a>
+      <p><span class="age"></span> Years Old</p>
+      <p>Owes $<span class="owes">0</span></p>
+    </div>
+    <div class="person" income="11500000000" age="60">
+      <a href="http://mic.com/articles/45397/10-ridiculous-facts-about-how-rich-bill-gates-is" target="_blank"><h3>Bill Gates</h3></a>
+      <p><span class="age"></span> Years Old</p>
+      <p>Owes $<span class="owes">0</span></p>
+    </div>
+  </div>
+
+  <h2>Calculate Your Share Of The US Debt</h2>
+
+  <div id="control">
+    <div class="control_row">
+      <div class="control_year">year</div>
+      <div class="control_slide"></div>
+      <div class="control_income">income</div>
+      <div class="control_tax">paid</div>
+      <div class="control_debt">owed</div>
+    </div>
+    <div class="control_row year_2015">
+      <div class="control_year">2015</div>
+      <div class="control_slide"><input type="range" year="2015" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_2014">
+      <div class="control_year">2014</div>
+      <div class="control_slide"><input type="range" year="2014" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_2013">
+      <div class="control_year">2013</div>
+      <div class="control_slide"><input type="range" year="2013" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_2012">
+      <div class="control_year">2012</div>
+      <div class="control_slide"><input type="range" year="2012" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_2011">
+      <div class="control_year">2011</div>
+      <div class="control_slide"><input type="range" year="2011" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_2010">
+      <div class="control_year">2010</div>
+      <div class="control_slide"><input type="range" year="2010" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_2009">
+      <div class="control_year">2009</div>
+      <div class="control_slide"><input type="range" year="2009" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_2008">
+      <div class="control_year">2008</div>
+      <div class="control_slide"><input type="range" year="2008" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_2007">
+      <div class="control_year">2007</div>
+      <div class="control_slide"><input type="range" year="2007" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_2006">
+      <div class="control_year">2006</div>
+      <div class="control_slide"><input type="range" year="2006" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_2005">
+      <div class="control_year">2005</div>
+      <div class="control_slide"><input type="range" year="2005" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_2004">
+      <div class="control_year">2004</div>
+      <div class="control_slide"><input type="range" year="2004" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_2003">
+      <div class="control_year">2003</div>
+      <div class="control_slide"><input type="range" year="2003" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_2002">
+      <div class="control_year">2002</div>
+      <div class="control_slide"><input type="range" year="2002" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_2000">
+      <div class="control_year">2000</div>
+      <div class="control_slide"><input type="range" year="2000" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1999">
+      <div class="control_year">1999</div>
+      <div class="control_slide"><input type="range" year="1999" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1998">
+      <div class="control_year">1998</div>
+      <div class="control_slide"><input type="range" year="1998" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1997">
+      <div class="control_year">1997</div>
+      <div class="control_slide"><input type="range" year="1997" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1996">
+      <div class="control_year">1996</div>
+      <div class="control_slide"><input type="range" year="1996" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1995">
+      <div class="control_year">1995</div>
+      <div class="control_slide"><input type="range" year="1995" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1994">
+      <div class="control_year">1994</div>
+      <div class="control_slide"><input type="range" year="1994" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1993">
+      <div class="control_year">1993</div>
+      <div class="control_slide"><input type="range" year="1993" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1992">
+      <div class="control_year">1992</div>
+      <div class="control_slide"><input type="range" year="1992" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1991">
+      <div class="control_year">1991</div>
+      <div class="control_slide"><input type="range" year="1991" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1990">
+      <div class="control_year">1990</div>
+      <div class="control_slide"><input type="range" year="1990" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1989">
+      <div class="control_year">1989</div>
+      <div class="control_slide"><input type="range" year="1989" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1988">
+      <div class="control_year">1988</div>
+      <div class="control_slide"><input type="range" year="1988" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1987">
+      <div class="control_year">1987</div>
+      <div class="control_slide"><input type="range" year="1987" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1986">
+      <div class="control_year">1986</div>
+      <div class="control_slide"><input type="range" year="1986" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1985">
+      <div class="control_year">1985</div>
+      <div class="control_slide"><input type="range" year="1985" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1984">
+      <div class="control_year">1984</div>
+      <div class="control_slide"><input type="range" year="1984" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1983">
+      <div class="control_year">1983</div>
+      <div class="control_slide"><input type="range" year="1983" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1982">
+      <div class="control_year">1982</div>
+      <div class="control_slide"><input type="range" year="1982" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1981">
+      <div class="control_year">1981</div>
+      <div class="control_slide"><input type="range" year="1981" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1980">
+      <div class="control_year">1980</div>
+      <div class="control_slide"><input type="range" year="1980" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_1979">
+      <div class="control_year">1979</div>
+      <div class="control_slide"><input type="range" year="1979" min="0" value="0" max="18" step="1"/></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+    </div>
+    <div class="control_row year_total">
+      <div class="control_year">Total</div>
+      <div class="control_slide"></div>
+      <div class="control_income">$0+</div>
+      <div class="control_tax">$0</div>
+      <div class="control_debt">$0</div>
+  </div>
+
+  <div id="sources">
+    <a href="https://www.irs.gov/pub/irs-soi/13in11si.xls">2013</a>
+    <a href="https://www.irs.gov/pub/irs-soi/12in11si.xls">2012</a>
+    <a href="https://www.irs.gov/pub/irs-soi/11in12si.xls">2011</a>
+    <a href="https://www.irs.gov/PUP/taxstats/indtaxstats/10in11si.xls">2010</a>
+    <a href="https://www.irs.gov/pub/irs-soi/09in11si.xls">2009</a>
+    <a href="https://www.irs.gov/pub/irs-soi/08in11si.xls">2008</a>
+    <a href="https://www.irs.gov/pub/irs-soi/07in11si.xls">2007</a>
+    <a href="https://www.irs.gov/pub/irs-soi/06in11si.xls">2006</a>
+    <a href="https://www.irs.gov/pub/irs-soi/05in11si.xls">2005</a>
+    <a href="https://www.irs.gov/pub/irs-soi/04in11si.xls">2004</a>
+    <a href="https://www.irs.gov/pub/irs-soi/03in11si.xls">2003</a>
+    <a href="https://www.irs.gov/pub/irs-soi/02in11si.xls">2002</a>
+    <a href="https://www.irs.gov/pub/irs-soi/01in11si.xls">2001</a>
+    <a href="https://www.irs.gov/pub/irs-soi/00in11si.xls">2000</a>
+    <a href="https://www.irs.gov/pub/irs-soi/99in11si.xls">1999</a>
+    <a href="https://www.irs.gov/pub/irs-soi/98in11si.xls">1998</a>
+    <a href="https://www.irs.gov/pub/irs-soi/97in11.xls">1997</a>
+    <a href="https://www.irs.gov/pub/irs-soi/96in11si.xls">1996</a>
+    <a href="https://www.irs.gov/pub/irs-soi/95inrate.pdf">1995</a>
+    <a href="https://www.irs.gov/pub/irs-soi/94initrates.pdf">1994</a>
+    <a href="https://www.irs.gov/pub/irs-soi/93inintrts.pdf">1993</a>
+    <a href="https://www.irs.gov/pub/irs-soi/91-92inintrts.pdf">1992</a>
+    <a href="https://www.irs.gov/pub/irs-soi/91-92inintrts.pdf">1991</a>
+    <a href="https://www.irs.gov/pub/irs-soi/90inintrts.pdf">1990</a>
+    <a href="https://www.irs.gov/pub/irs-soi/88-89inintxrts.pdf">1989</a>
+    <a href="https://www.irs.gov/pub/irs-soi/88-89inintxrts.pdf">1988</a>
+    <a href="https://www.irs.gov/pub/irs-soi/87inintxr.pdf">1987</a>
+    <a href="https://www.irs.gov/pub/irs-soi/86inintr.pdf">1986</a>
+    <a href="https://www.irs.gov/pub/irs-soi/85inintxr.pdf">1985</a>
+    <a href="https://www.irs.gov/pub/irs-soi/84inintr.pdf">1984</a>
+    <a href="https://www.irs.gov/pub/irs-soi/83inintr.pdf">1983</a>
+    <a href="https://www.irs.gov/pub/irs-soi/82inintr.pdf">1982</a>
+    <a href="https://www.irs.gov/pub/irs-soi/81inintr.pdf">1981</a>
+    <a href="https://www.irs.gov/pub/irs-soi/80inintravmatr.pdf">1980</a>
+    <a href="https://www.cbo.gov/sites/default/files/110th-congress-2007-2008/reports/12-23-effectivetaxrates_letter.pdf">1979</a>
+
+
+  </div>
+
+
+
+  </body>
+</html>
