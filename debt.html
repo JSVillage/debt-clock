@@ -3,10 +3,11 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   <meta charset="UTF-8"/> 
   <title>Money Clock</title>
-  <meta name="description" content="Put in what you make per hour, we show you the money clock ticking by." />
+  <meta name="description" content="Put in what you make per year, we show you the debt you owe." />
   <meta name="keywords" content="money, clock" />
 
   <link href='http://fonts.googleapis.com/css?family=Wallpoet' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'/>
 
   <style type="text/css">
     body {
@@ -14,6 +15,19 @@
     }
 
     a { text-decoration: none; }
+
+    table {
+      width: 100%;
+      max-width: 1000px;
+      margin: 20px auto;
+    }
+
+    table td {
+      padding: 10px;
+    }
+
+    .right { text-align: right; }
+    .center { text-align: center; }
 
     div.person {
       display: inline-block;
@@ -87,16 +101,34 @@
 
   <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
 
-  <link href='http://fonts.googleapis.com/css?family=Wallpoet' rel='stylesheet' type='text/css'/>
-  <link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'/>
-
-  <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
-
   <script type="text/javascript" src="debt_budgets.js"></script>
+  <script type="text/javascript" src="debt_sources.js"></script>
   <script type="text/javascript" src="debt_taxes.js"></script>
 
   <script type="text/javascript">
     var minimum_wage = 14500;
+
+    /* add data to budget tables */
+    function prepare_budgets() {
+      for (var year in budgets) {
+        budgets[year]['deficit_individual'] = Math.floor(budgets[year]['deficit'] * get_source(year)['adjusted_individual']);
+        budgets[year]['deficit_corporate'] = Math.floor(budgets[year]['deficit'] * get_source(year)['adjusted_corporate']);
+        budgets_null['deficit_individual'] = 0;
+        budgets_null['deficit_corporate'] = 0;
+      }
+    }
+
+    /* add data to source tables */
+    function prepare_sources() {
+      for (var year in sources) {
+        /* reduce share to only corporate and individual ( others are not traceable ) */
+        var total = sources[year]['individual'] + sources[year]['corporate'];
+        sources[year]['adjusted_individual'] = sources[year]['individual'] / total;
+        sources[year]['adjusted_corporate'] = sources[year]['corporate'] / total;
+        sources_null['adjusted_individual'] = 0.5;
+        sources_null['adjusted_corporate'] = 0.5;
+      }
+    }
 
     /* add data to tax tables */
     function prepare_taxes() {
@@ -111,7 +143,8 @@
         }  
         for (var i in taxes[year]) {
           taxes[year][i]['total'] = total;
-          taxes[year][i]['tax_percent'] /= 100; /* adjust percent to actual decimal value */
+          taxes[year][i]['tax_share'] = taxes[year][i]['paid'] / total;
+          taxes[year][i]['tax_rate'] /= 100; /* adjust percent to actual decimal value */
         }
       }
     }
@@ -120,6 +153,12 @@
     function get_budget(year) {
       if (year in budgets) { return budgets[year]; }
       else { return budgets_null; }
+    }
+
+    /* safely return a source row for the given year or a null row */
+    function get_source(year) {
+      if (year in sources) { return sources[year]; }
+      else { return sources_null; }
     }
 
     /* safely return a tax row for the given year or a null row */
@@ -159,13 +198,13 @@
       for (var i in incomes) {
 
         /* find deficit for year */
-        var deficit = get_budget(incomes[i]['year'])['deficit'];
+        var deficit = get_budget(incomes[i]['year'])['deficit_individual'];
 
         /* find tax contribution for year and income */
         var t = get_tax(incomes[i]['year'], incomes[i]['income']);
 
-        /* calculate share of deficit ( same as share of taces paid ) for the year */
-        var share = (incomes[i]['income'] * t['tax_percent']) / t['total']
+        /* calculate share of deficit ( same as share of taxes paid ) for the year */
+        var share = (incomes[i]['income'] * t['tax_rate']) / t['total']
 
         /* calculate amounts owed per year */
         debts.push({year:incomes[i]['year'], owed: Math.floor(deficit * share)});
@@ -174,10 +213,52 @@
     }
 
     function number_with_commas(n) {
-        return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function debt_totals() {
+      var debt_total = 0;
+      var debt_individual = 0;
+      var debt_corporate = 0;
+      for (var year in budgets) {
+        debt_total += budgets[year]['deficit'];
+        debt_individual += budgets[year]['deficit_individual'];
+        debt_corporate += budgets[year]['deficit_corporate'];
+      }
+      $('#debt_total').text(number_with_commas(debt_total));
+      $('#debt_individual').text(number_with_commas(debt_individual));
+      $('#debt_corporate').text(number_with_commas(debt_corporate));
+    }
+
+
+    function debt_table() {
+      var prior = 0;
+      var total = 0;
+      $('td.share').each(function() {
+        var income = parseInt(this.id.replace('share_', ''));; 
+        var debt = 0;
+
+        for (var year in taxes) {
+          var deficit = get_budget(year)['deficit_individual'];
+          var share = 0;
+          for (var i in taxes[year]) {
+            if (taxes[year][i]['bracket_min'] >= income && (prior == 0 || taxes[year][i]['bracket_min'] < prior)) {
+              share += taxes[year][i]['tax_share'];
+              //console.log(year, income, prior, taxes[year][i]['bracket_min'], share);
+            }
+          }
+          debt += Math.round(share * deficit);
+          total += deficit;
+        }
+        prior = income;
+        $(this).text(number_with_commas(debt));
+      });
+      console.log(total);
     }
 
     $(document).ready(function() {
+      prepare_sources();
+      prepare_budgets();
       prepare_taxes();
 
       /* assign a debt to each person listed */
@@ -206,15 +287,15 @@
 
           var year = $(slider).attr('year');
           var t = taxes[year][18 - $(slider).val()];
-          var deficit = get_budget(year)['deficit'];
-          var share = (t['bracket_min'] * t['tax_percent']) / t['total']
+          var deficit = get_budget(year)['deficit_individual'];
+          var share = (t['bracket_min'] * t['tax_rate']) / t['total']
 
           $('div.year_' + year + ' div.control_income').text('$' + number_with_commas(t['bracket_min']) + '+');
-          $('div.year_' + year + ' div.control_tax').text('$' + number_with_commas(Math.floor(t['bracket_min'] * t['tax_percent'])));
+          $('div.year_' + year + ' div.control_tax').text('$' + number_with_commas(Math.floor(t['bracket_min'] * t['tax_rate'])));
           $('div.year_' + year + ' div.control_debt').text('$' + number_with_commas(Math.floor(deficit * share)));
 
           total_income += t['bracket_min'];
-          total_tax += Math.floor(t['bracket_min'] * t['tax_percent']);
+          total_tax += Math.floor(t['bracket_min'] * t['tax_rate']);
           total_debt += Math.floor(deficit * share);
 
         });
@@ -224,12 +305,71 @@
         $('div.year_total div.control_debt').text('$' + number_with_commas(total_debt));
 
       });
+      debt_totals();
+      debt_table();
     });
   </script>
 
 </head>
 <body>
   
+  <table>
+    <tr>
+      <td>Total Debt</td>
+      <td>Individual Debt</td>
+      <td>Corporate Debt</td>
+    </tr>
+    <tr>
+      <td id="debt_total"></td>
+      <td id="debt_individual"></td>
+      <td id="debt_corporate"></td>
+    </tr>
+   <table>
+
+  </table>
+
+  <table id="share">
+    <tr>
+      <td class="center">Class</td>
+      <td class="right">Bracket</td>
+      <td>Annual Income</td>
+      <td>Debt Owed</td>
+    </tr>
+    <tr>
+      <td rowspan="2" class="center">Wealthy</td>
+      <td class="right">Top 1%</td>
+      <td>$450,000</td>
+      <td class="share" id="share_450000"></td>
+    </tr>
+    <tr>
+      <td class="right">Top 9%</td>
+      <td>$155,000</td>
+      <td class="share" id="share_155000"></td>
+    </tr>
+    <tr>
+      <td rowspan="2" class="center">Middle</td>
+      <td class="right">Top 40%</td>
+      <td>$98,000</td>
+      <td class="share" id="share_98000"></td>
+    </tr>
+    <tr>
+      <td class="right">Bottom 40%</td>
+      <td>$55,000</td>
+      <td class="share" id="share_55000"></td>
+    </tr>
+    <tr>
+      <td rowspan="2" class="center">Poor</td>
+      <td class="right">Bottom 9%</td>
+      <td>$28,500</td>
+      <td class="share" id="share_28500"></td>
+    </tr>
+    <tr>
+      <td class="right">Bottom 1%</td>
+      <td>$14,000</td>
+      <td class="share" id="share_14000"></td>
+    </tr>
+  </table>
+
   <div id="persons">
     <div class="person" income="14500" age="21">
       <a href="http://www.dol.gov/whd/minwage/chart.htm" target="_blank"><h3>Minimum Wage</h3></a>
@@ -602,11 +742,7 @@
     <a href="https://www.irs.gov/pub/irs-soi/81inintr.pdf">1981</a>
     <a href="https://www.irs.gov/pub/irs-soi/80inintravmatr.pdf">1980</a>
     <a href="https://www.cbo.gov/sites/default/files/110th-congress-2007-2008/reports/12-23-effectivetaxrates_letter.pdf">1979</a>
-
-
   </div>
-
-
 
   </body>
 </html>

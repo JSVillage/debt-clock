@@ -1,0 +1,102 @@
+/*styles*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    
+}
+
+h1, h2, h3, h4, p, li, label, input {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size: 4em;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 1em;
+    font-weight: 100;
+}
+
+/*Debt Welcome Styles*/
+
+.welcome_wrapper {
+    position: relative;
+}
+
+.circle {
+    position: absolute;
+    background: grey;
+    height: 500px;
+    width: 500px;
+    border-radius: 100%;
+}
+
+
+/*Debt Info Styles*/
+.info_wrapper {
+    background: #004258; 
+    height: 100%;
+}
+
+.info_wrapper h3 {
+    color: #fff;
+}
+
+.info_wrapper h3:nth-child(odd){
+    text-align: right
+}
+
+/*Calculator Styles*/
+
+/*Graph Styles*/
+
+
+/*Your Share Styles*/
+
+.social {
+    display: flex;
+}
+
+.social li {
+    flex: 1 1 0;
+}
+/*Other Americans Styles*/
+
+
+/*Pay off Day Styles*/
+.buttons {
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #3498db;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.buttons:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
