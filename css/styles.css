@@ -8,7 +8,7 @@
 
 section {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     
 }
 
@@ -22,81 +22,342 @@ h1 {
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 3em;
     font-weight: 400;
 }
 
 h3 {
-    font-size: 1em;
-    font-weight: 100;
+    font-size: 2em;
+    font-weight: 300;
 }
 
 /*Debt Welcome Styles*/
 
 .welcome_wrapper {
     position: relative;
+    height:100vh;
+    background: url("img/skyline.jpg");
+    background-size: cover;
+    color: #252525;
+}
+
+.welcome_wrapper h1 {
+    padding: 10%;
 }
 
 .circle {
     position: absolute;
-    background: grey;
+    bottom: 0;
+    right: 0;
+    background: rgba(183,183,183,.7);
     height: 500px;
     width: 500px;
     border-radius: 100%;
 }
 
+.circle h1 {
+    padding: 20% 15%;
+}
+
+@media (min-width: 1000px) {
+    .welcome_wrapper h1 {
+        padding: 5%;
+    }
+
+    .circle {
+        height: 400px;
+        width: 400px;
+    }
+
+    .circle h1 {
+        padding: 20% 10%;
+        font-size: 3.7em;
+    }
+}
+
 
 /*Debt Info Styles*/
+
 .info_wrapper {
-    background: #004258; 
+    background: #004258; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #4B79A1 , #004258); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #4B79A1 , #004258); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     height: 100%;
 }
 
-.info_wrapper h3 {
+.info_wrapper h2 {
     color: #fff;
+    padding: 10% 5%;
 }
 
-.info_wrapper h3:nth-child(odd){
+.info_wrapper h2:nth-child(even){
     text-align: right
 }
 
+
+
 /*Calculator Styles*/
+
+.calculator .form_group {
+    display: flex;
+    flex-direction: column;
+    font-size: 4em;
+    color: #004258;
+    font-weight: 300;
+    align-items: center;
+    padding: 30% 5%;
+}
+
+.calculator label {
+    padding: 20% 5% 5% 5%;
+}
+
+.calculator input {
+    padding: 10px;
+    border: solid 5px #c9c9c9;
+    transition: border 0.3s;
+    width: 40%;
+    height:100px;
+    font-size: .5em;
+}
+
+.calculator input:focus {
+    border: solid 5px #969696;
+}
+
+.calculator input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    text-align: center;
+}
+.calculator input:::-moz-placeholder { /* Firefox 19+ */
+    text-align: center;
+}
+.calculator input::-ms-input-placeholder { /* IE 10+ */
+    text-align: center;
+}
+.calculator input::-moz-placeholder { /* Firefox 18- */
+    text-align: center;
+}
+
+@media (min-width: 1000px) {
+    .calculator .form_group {
+        padding: 15% 5%;
+    }
+
+    .calculator label {
+        padding: 10% 5% 5%;
+    }
+}
+
 
 /*Graph Styles*/
 
 
 /*Your Share Styles*/
 
-.social {
+.share_wrapper{
+    height: 100vh;
+    background:url("img/money.jpg") no-repeat ;
+    background-size: cover;
+    color: #ffffff;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.share_wrapper h2 {
+    padding: 20% 5% 5%;
+}
+
+.share_wrapper h1 {
+    font-size: 9em;
+}
+
+.social {
+    list-style: none;
+    display: flex;
+    align-items: center;
 }
 
 .social li {
     flex: 1 1 0;
+    margin: 20px;
 }
+
+.facebook, .google-plus, .twitter{
+    background: url(img/sprites.png) no-repeat;
+}
+
+.facebook{
+    background-position: -3px -5px ;
+    width: 62px;
+    height: 62px;
+}
+
+.google-plus{
+    background-position: -71px -1px ;
+    width: 63px;
+    height: 62px;
+}
+
+.twitter{
+    background-position: 0 -73px ;
+    width: 63px;
+    height: 63px;
+}
+
+@media (min-width: 1000px) {
+    .share_wrapper h2 {
+        padding: 5% 5%;
+    }
+}
+
+
 /*Other Americans Styles*/
+
+.other_americans h1 {
+    color: #004258;
+    text-align: center;
+    padding:5% 5%;
+}
+
+.american_icons {
+    margin: 5% 5%;
+}
+
+.american_icons li {
+    list-style: none;
+    margin: 5% 5%;
+}
+
+.american_icons li:nth-child(even){
+    text-align: right;
+}
+
+.face {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.prof_info {
+    color: #004258;
+    display: inline-block;
+}
+
+@media (min-width: 1000px) {
+    .other_americans {
+        padding: 0 15%;
+    }
+}
 
 
 /*Pay off Day Styles*/
+.debt_day {
+    text-align: center;
+    background: url("img/flag.jpg") 20% 50%;
+}
+
+.debt_day h1 {
+    color: #fd7400;
+    padding: 10% 5% 5%;
+}
+
+.debt_day h2 {
+    color: #ffffff;
+    padding: 10%;
+}
+
 .buttons {
-  -webkit-border-radius: 8;
-  -moz-border-radius: 8;
-  border-radius: 8px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  background: #3498db;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    /*-webkit-box-shadow: 0px 2px 1px #026988;*/
+    /*-moz-box-shadow: 0px 2px 1px #026988;*/
+    /*box-shadow: 0px 2px 1px #026988;*/
+    color: #ffffff;
+    font-size: 20px;
+    background: #004358;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    width: 300px;
+    height: 150px;
+    font-size: 4em;
+    margin: 5%;
+    border-color: #004358;
+
 }
 
 .buttons:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-  text-decoration: none;
+    background: #026988;
+    background-image: -webkit-linear-gradient(top, #026988, #004358);
+    background-image: -moz-linear-gradient(top, #026988, #004358);
+    background-image: -ms-linear-gradient(top, #026988, #004358);
+    background-image: -o-linear-gradient(top, #026988, #004358);
+    background-image: linear-gradient(to bottom, #026988, #004358);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*Footer Styles*/
+
+footer {
+    background: #004258;
+    width: 100%;
+    height: 200px;
+}
+
+.footer_wrapper {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: #ffffff;
+    justify-content: center;
+
+}
+
+.tagline {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: 40px 0 0;
+    width: 100%;
+}
+
+.tagline .line_divide {
+    height: 2px;
+    width: 70%;
+    background: #ffffff;
+}
+
+.tagline h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.sources-contact {
+    display: flex;
+    width: 70%;
+    align-content: space-between;
+}
+
+.sources, .contact {
+    flex: 1 1 0;
+}
+
+.contact {
+    text-align: right;
+}
+
+.footer_wrapper li a {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer_wrapper li {
+    list-style: none;
 }
 
