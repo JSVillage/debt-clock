@@ -6,9 +6,6 @@
   <meta name="description" content="Put in what you make per year, we show you the debt you owe." />
   <meta name="keywords" content="money, clock" />
 
-  <link href='http://fonts.googleapis.com/css?family=Wallpoet' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'/>
-
   <style type="text/css">
     body {
       text-align: center;
@@ -66,7 +63,7 @@
       margin: 10px auto;
       max-width: 800px;
       width: 100%;
-      font-size: 2.0em;
+      font-size: 1.0em;
     }
    
     div.control_row {
@@ -78,7 +75,7 @@
       padding: 10px;
     }
 
-    div.control_slide {
+    div.control_input {
       display: table-cell;
       padding: 10px;
     }
@@ -88,14 +85,33 @@
       padding: 10px;
     }
 
+    div.control_input span {
+      margin: 0px 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    div.control_input input {
+      width: 100px;
+    }
+
     div.control_tax {
-      display: table-cell;
-      padding: 10px;
+      display: inline-block;
+      height: 10px;
+      width: 0px;
+      background-color: #339;
+    }
+
+    div.control_graph {
+      text-align: left;
+      white-space: nowrap;
     }
 
     div.control_debt {
-      display: table-cell;
-      padding: 10px;
+      display: inline-block;
+      height: 10px;
+      width: 0px;
+      background-color: #933;
     }
   </style>
 
@@ -106,15 +122,33 @@
   <script type="text/javascript" src="debt_taxes.js"></script>
 
   <script type="text/javascript">
-    var minimum_wage = 14500;
+
+    /* CONSTANTS */
+    var MINIMUM_WAGE = 14500;
+
+    /* store state of person visiting the page */
+    var person_income = '';
+    var person_year = '';
+
+    /* store state of income adjust buttons */
+    var income_input = null;
+    var income_step = 0; /* step can be + or - to activate move */
+    var income_rate = 800; /* rate limits first click to be slow */
+    var income_timeout = null;
 
     /* add data to budget tables */
     function prepare_budgets() {
+      var prior = null;
       for (var year in budgets) {
+        if (prior) { budgets[year]['deficit'] = budgets[year]['debt'] - prior['debt']; }
+        else { budgets[year]['deficit'] = budgets[year]['debt']; } 
+        prior = budgets[year];
+
         budgets[year]['deficit_individual'] = Math.floor(budgets[year]['deficit'] * get_source(year)['adjusted_individual']);
         budgets[year]['deficit_corporate'] = Math.floor(budgets[year]['deficit'] * get_source(year)['adjusted_corporate']);
         budgets_null['deficit_individual'] = 0;
         budgets_null['deficit_corporate'] = 0;
+
       }
     }
 
@@ -176,12 +210,12 @@
 
     /* estimate income by dereasing it linearly towards current minimum wage every year until age 18 */
     function estimate_income(income, age) {
-      var year = new Date().getFullYear();
-      var incomes = [];
-      var step = Math.floor((income - minimum_wage) / (age - 19)); /* 19 is 1st year taxes are paid for most */
+      var year = 2015;
+      var incomes = {};
+      var step = Math.floor((income - MINIMUM_WAGE) / (age - 19)); /* 19 is 1st year taxes are paid for most */
 
       while (age > 18) {
-        incomes.push({year:year, income:income});
+        incomes[year] = {income:income};
         year -= 1;
         age -= 1;
         income -= step;
@@ -192,24 +226,22 @@
 
     /* estimate debt by looking up share of income per year and applying it to the debt for that year */
     function estimate_debt(incomes) {
-      var debts = [];
-      /* find share for year and income */
-      
-      for (var i in incomes) {
+      for (var year in incomes) {
 
         /* find deficit for year */
-        var deficit = get_budget(incomes[i]['year'])['deficit_individual'];
+        var deficit = get_budget(year)['deficit_individual'];
 
         /* find tax contribution for year and income */
-        var t = get_tax(incomes[i]['year'], incomes[i]['income']);
+        var t = get_tax(year, incomes[year]['income']);
 
         /* calculate share of deficit ( same as share of taxes paid ) for the year */
-        var share = (incomes[i]['income'] * t['tax_rate']) / t['total']
+        incomes[year]['paid'] = Math.floor((incomes[year]['income'] * t['tax_rate']));
+        var share = incomes[year]['paid'] / t['total'];
 
         /* calculate amounts owed per year */
-        debts.push({year:incomes[i]['year'], owed: Math.floor(deficit * share)});
+        incomes[year]['owed'] = Math.floor(deficit * share);
       }
-      return debts;
+      return incomes; /* modified to include debt owed */
     }
 
     function number_with_commas(n) {
@@ -230,6 +262,19 @@
       $('#debt_corporate').text(number_with_commas(debt_corporate));
     }
 
+    function debt_people() {
+      /* assign a debt to each person listed */
+      $('div.person').each(function(index, person) {
+        var income = parseInt($(person).attr('income'));
+        var age = parseInt($(person).attr('age'));
+        var incomes = estimate_income(income, age);
+        var debts = estimate_debt(incomes)
+        var total = 0;
+        for (year in debts) { total += debts[year]['owed']; }
+        $(this).find('span.age').text(age);
+        $(this).find('span.owes').text(number_with_commas(total));
+      });
+    }
 
     function debt_table() {
       var prior = 0;
@@ -253,7 +298,102 @@
         prior = income;
         $(this).text(number_with_commas(debt));
       });
-      console.log(total);
+    }
+
+    function person_graph() {
+      if (isNaN(person_income) || isNaN(person_year)) { return; }
+
+      var incomes = {};
+      var year = 1979;
+      var income = person_income;
+
+      while (year <= 2015) {
+        if (year >= person_year) {
+          incomes[year] = {income:income};
+          income = Math.floor(income * 1.03); /* grow salary at inflationary rate */
+          $('div.year_' + year + ' input').val(income); 
+        } 
+        else {
+          $('div.year_' + year + ' input').val(''); 
+        } 
+        year += 1;
+      }
+      debts = estimate_debt(incomes);
+      draw_graph(debts);
+    }
+
+    function control_graph() {
+      var incomes = {}
+
+      $('#control input').each(function(index, input) {
+        var year = $(input).attr('year');
+        var income = parseInt($(input).val().replace(',', ''));
+        if (!isNaN(income) && income > 0) { incomes[year] = { income:income }; }
+      });
+
+      debts = estimate_debt(incomes);
+      draw_graph(debts);
+    }
+
+    function draw_graph(debts) {
+      var total_income = 0;
+      var total_paid = 0;
+      var total_owed = 0;
+      var max_number = 0;
+
+      for (year in debts) {
+        max_number = Math.max(Math.abs(debts[year]['paid']) + Math.abs(debts[year]['owed']), max_number); /* largest paid for graph width */
+      }
+
+      for (var year=2015; year >= 1979; year--) { 
+        if (year in debts) {
+          sign = ' + '
+          if (debts[year]['owed'] > 0) { sign = ' - '; } /* some years there was a surplus so refelct the refund */
+
+          //$('div.year_' + year + ' div.control_income').text('$' + number_with_commas(debts[year]['income']));
+          $('div.year_' + year + ' div.control_value').text('$' + number_with_commas(debts[year]['paid']) + sign + '$' + number_with_commas(Math.abs(debts[year]['owed'])));
+
+          var width_total = Math.abs(debts[year]['paid']) + Math.abs(debts[year]['owed']);
+          var width_scale = width_total / max_number;
+
+          var width_tax = (Math.abs(debts[year]['paid']) / width_total) * width_scale;
+          var width_owed = (Math.abs(debts[year]['owed']) / width_total) * width_scale;
+
+          $('div.year_' + year + ' div.control_tax').css('width', Math.floor(width_tax * 100) + '%');
+          $('div.year_' + year + ' div.control_debt').css('width', Math.floor(width_owed * 100) + '%');
+
+          total_income += debts[year]['income'];
+          total_paid += debts[year]['paid'];
+          total_owed += debts[year]['owed'];
+
+          //$('div.year_' + year).show()
+        }
+        else {
+          //$('div.year_' + year).hide()
+        }
+      }
+
+      var width_tax = Math.abs(total_paid) / (Math.abs(total_paid) + Math.abs(total_owed));
+      var width_debt = Math.abs(total_owed) / (Math.abs(total_paid) + Math.abs(total_owed));
+
+      $('div.year_total div.control_input').text('$' + number_with_commas(total_income));
+      $('div.year_total div.control_value').text('$' + number_with_commas(total_paid) + ' + $' + number_with_commas(Math.abs(total_owed)));
+      $('div.year_total div.control_tax').css('width',  Math.floor(width_tax * 100) + '%');
+      $('div.year_total div.control_debt').css('width', Math.floor(width_debt * 100)  + '%');
+    }
+
+    function income_adjust() {
+      if (income_step != 0) {
+        var income = parseInt($(income_input).val().replace(',', ''));
+        if (isNaN(income)) { income = 0; }
+        income += income_step;
+        if (income >= 0) { 
+          $(income_input).val(income); 
+          //control_graph();
+        }
+        income_timeout = setTimeout(income_adjust, income_rate);
+        if (income_rate / 2 > 25) { income_rate /= 2; }
+      }
     }
 
     $(document).ready(function() {
@@ -261,52 +401,53 @@
       prepare_budgets();
       prepare_taxes();
 
-      /* assign a debt to each person listed */
-      $('div.person').each(function(index, person) {
-        var income = parseInt($(person).attr('income'));
-        var age = parseInt($(person).attr('age'));
-        var incomes = estimate_income(income, age);
-        var debts = estimate_debt(incomes)
-
-        var total = 0; 
-        for (i in debts) {
-          total += debts[i]['owed']; 
-        }
-        $(this).find('span.age').text(age);
-        $(this).find('span.owes').text(number_with_commas(total));
-      });
-
-      /* handle debt slider adjustment */
-      $("#control input").on('change', function () {
-
-        var total_income = 0;
-        var total_tax = 0;
-        var total_debt = 0;
-
-        $('#control input').each(function(index, slider) {
-
-          var year = $(slider).attr('year');
-          var t = taxes[year][18 - $(slider).val()];
-          var deficit = get_budget(year)['deficit_individual'];
-          var share = (t['bracket_min'] * t['tax_rate']) / t['total']
-
-          $('div.year_' + year + ' div.control_income').text('$' + number_with_commas(t['bracket_min']) + '+');
-          $('div.year_' + year + ' div.control_tax').text('$' + number_with_commas(Math.floor(t['bracket_min'] * t['tax_rate'])));
-          $('div.year_' + year + ' div.control_debt').text('$' + number_with_commas(Math.floor(deficit * share)));
-
-          total_income += t['bracket_min'];
-          total_tax += Math.floor(t['bracket_min'] * t['tax_rate']);
-          total_debt += Math.floor(deficit * share);
-
-        });
-
-        $('div.year_total div.control_income').text('$' + number_with_commas(total_income) + '+');
-        $('div.year_total div.control_tax').text('$' + number_with_commas(total_tax));
-        $('div.year_total div.control_debt').text('$' + number_with_commas(total_debt));
-
-      });
       debt_totals();
       debt_table();
+      debt_people();
+      
+      /* handle debt input adjustment */
+      $("#control input").on('change', function () {
+        control_graph();
+      });
+      $("#control span.control_less").on('mousedown mouseup touchstart touchend', function (event) {
+        income_input = $(this).next();
+        if (event.type == "mousedown" || event.type == "touchstart") { 
+          income_step = -1000; 
+          income_adjust();
+        }
+        else { 
+          income_step = 0; 
+          income_rate = 800;
+          clearTimeout(income_timeout);
+          control_graph();
+        }
+      });
+      $("#control span.control_more").on('mousedown mouseup touchstart touchend', function (event) {
+        income_input = $(this).prev();
+        if (event.type == "mousedown" || event.type == "touchstart") { 
+          income_step = 1000; 
+          income_adjust();
+        }
+        else { 
+          income_step = 0;
+          income_rate = 800;
+          clearTimeout(income_timeout);
+          control_graph();
+        }
+      });
+
+      /* handle year change for person */
+      $("#person_year").on('change', function () {
+        person_year = parseInt($(this).val());
+        person_graph();  
+      });
+
+      /* handle income change for person */
+      $("#person_income").on('change', function () {
+        person_income = parseInt($(this).val());
+        person_graph();  
+      });
+
     });
   </script>
 
@@ -438,272 +579,357 @@
 
   <h2>Calculate Your Share Of The US Debt</h2>
 
+  YEAR: <input type="text" id="person_year"/>
+  <br/>INCOME: <input type="text" id="person_income"/>
+
   <div id="control">
     <div class="control_row">
       <div class="control_year">year</div>
-      <div class="control_slide"></div>
-      <div class="control_income">income</div>
-      <div class="control_tax">paid</div>
-      <div class="control_debt">owed</div>
+      <div class="control_input"></div>
+      <div class="control_graph">debt paid + debt unpaid</div>
     </div>
     <div class="control_row year_2015">
       <div class="control_year">2015</div>
-      <div class="control_slide"><input type="range" year="2015" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="2015" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_2014">
       <div class="control_year">2014</div>
-      <div class="control_slide"><input type="range" year="2014" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="2014" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_2013">
       <div class="control_year">2013</div>
-      <div class="control_slide"><input type="range" year="2013" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="2013" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_2012">
       <div class="control_year">2012</div>
-      <div class="control_slide"><input type="range" year="2012" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="2012" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_2011">
       <div class="control_year">2011</div>
-      <div class="control_slide"><input type="range" year="2011" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="2011" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_2010">
       <div class="control_year">2010</div>
-      <div class="control_slide"><input type="range" year="2010" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="2010" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_2009">
       <div class="control_year">2009</div>
-      <div class="control_slide"><input type="range" year="2009" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="2009" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_2008">
       <div class="control_year">2008</div>
-      <div class="control_slide"><input type="range" year="2008" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="2008" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_2007">
       <div class="control_year">2007</div>
-      <div class="control_slide"><input type="range" year="2007" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="2007" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_2006">
       <div class="control_year">2006</div>
-      <div class="control_slide"><input type="range" year="2006" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="2006" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_2005">
       <div class="control_year">2005</div>
-      <div class="control_slide"><input type="range" year="2005" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="2005" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_2004">
       <div class="control_year">2004</div>
-      <div class="control_slide"><input type="range" year="2004" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="2004" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_2003">
       <div class="control_year">2003</div>
-      <div class="control_slide"><input type="range" year="2003" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="2003" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_2002">
       <div class="control_year">2002</div>
-      <div class="control_slide"><input type="range" year="2002" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="2002" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
+    </div>
+    <div class="control_row year_2001">
+      <div class="control_year">2001</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="2001" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_2000">
       <div class="control_year">2000</div>
-      <div class="control_slide"><input type="range" year="2000" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="2000" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1999">
       <div class="control_year">1999</div>
-      <div class="control_slide"><input type="range" year="1999" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1999" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1998">
       <div class="control_year">1998</div>
-      <div class="control_slide"><input type="range" year="1998" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1998" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1997">
       <div class="control_year">1997</div>
-      <div class="control_slide"><input type="range" year="1997" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1997" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1996">
       <div class="control_year">1996</div>
-      <div class="control_slide"><input type="range" year="1996" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1996" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1995">
       <div class="control_year">1995</div>
-      <div class="control_slide"><input type="range" year="1995" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1995" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1994">
       <div class="control_year">1994</div>
-      <div class="control_slide"><input type="range" year="1994" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1994" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1993">
       <div class="control_year">1993</div>
-      <div class="control_slide"><input type="range" year="1993" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1993" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1992">
       <div class="control_year">1992</div>
-      <div class="control_slide"><input type="range" year="1992" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1992" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1991">
       <div class="control_year">1991</div>
-      <div class="control_slide"><input type="range" year="1991" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1991" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1990">
       <div class="control_year">1990</div>
-      <div class="control_slide"><input type="range" year="1990" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1990" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1989">
       <div class="control_year">1989</div>
-      <div class="control_slide"><input type="range" year="1989" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1989" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1988">
       <div class="control_year">1988</div>
-      <div class="control_slide"><input type="range" year="1988" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1988" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1987">
       <div class="control_year">1987</div>
-      <div class="control_slide"><input type="range" year="1987" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1987" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1986">
       <div class="control_year">1986</div>
-      <div class="control_slide"><input type="range" year="1986" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1986" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1985">
       <div class="control_year">1985</div>
-      <div class="control_slide"><input type="range" year="1985" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1985" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1984">
       <div class="control_year">1984</div>
-      <div class="control_slide"><input type="range" year="1984" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1984" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1983">
       <div class="control_year">1983</div>
-      <div class="control_slide"><input type="range" year="1983" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1983" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1982">
       <div class="control_year">1982</div>
-      <div class="control_slide"><input type="range" year="1982" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1982" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1981">
       <div class="control_year">1981</div>
-      <div class="control_slide"><input type="range" year="1981" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1981" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1980">
       <div class="control_year">1980</div>
-      <div class="control_slide"><input type="range" year="1980" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1980" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_1979">
       <div class="control_year">1979</div>
-      <div class="control_slide"><input type="range" year="1979" min="0" value="0" max="18" step="1"/></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"><span class="control_less">&lt;</span><input type="text" year="1979" value=""/><span class="control_more">&gt;</span></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
     </div>
     <div class="control_row year_total">
       <div class="control_year">Total</div>
-      <div class="control_slide"></div>
-      <div class="control_income">$0+</div>
-      <div class="control_tax">$0</div>
-      <div class="control_debt">$0</div>
+      <div class="control_input"></div>
+      <div class="control_graph">
+        <div class="control_tax"></div>
+        <div class="control_debt"></div>
+        <div class="control_value"></div>
+      </div>
+    </div>
   </div>
 
   <div id="sources">
@@ -743,6 +969,9 @@
     <a href="https://www.irs.gov/pub/irs-soi/80inintravmatr.pdf">1980</a>
     <a href="https://www.cbo.gov/sites/default/files/110th-congress-2007-2008/reports/12-23-effectivetaxrates_letter.pdf">1979</a>
   </div>
+
+
+
 
   </body>
 </html>
