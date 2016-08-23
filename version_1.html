@@ -47,6 +47,7 @@
       padding: 10px;
       width: 180px;
       white-space: nowrap;
+
     }
 
     div.control_input span {
@@ -57,6 +58,9 @@
 
     div.control_input input {
       width: 100px;
+      font-size: .8em;
+      padding-left: 5px;
+      border: #004258 1px solid;
     }
 
     div.control_graph {
@@ -69,14 +73,14 @@
       width: 16px;
       height: 16px;
       border-radius: 16px;
-      background-color: #339;
+      background-color: #004258;
     }
 
     div.control_paid {
       display: inline-block;
       height: 10px;
       width: 0px;
-      background-color: #339;
+      background-color: #004258;
     }
 
     #control_owed {
@@ -84,14 +88,14 @@
       width: 16px;
       height: 16px;
       border-radius: 16px;
-      background-color: #933;
+      background-color: #fd7400;
     }
 
     div.control_owed {
       display: inline-block;
       height: 10px;
       width: 0px;
-      background-color: #933;
+      background-color: #fd7400;
     }
 
     @media (min-width: 1000px) {
@@ -550,8 +554,8 @@
 
   <div id="control_table">
     <div class="control_row">
-      <div class="control_year">year</div>
-      <div class="control_input">income</div>
+      <div class="control_year">Year</div>
+      <div class="control_input">Income</div>
       <div class="control_graph"><span id="control_paid"></span> paid + <span id="control_owed"></span> owed</div>
     </div>
     <div class="control_row year_2015">
@@ -920,9 +924,9 @@
     <div class="american_person" income="14500" age="21">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/sihEoLfh.jpg" alt="Minimum Wage"/>
       <div class="american_stats">
-        <div class="american_label">owes</div>
-        <div class="american_owes"></div>
+        <!--<div class="american_label">owes</div>-->
         <div class="american_about"><a href="http://www.dol.gov/whd/minwage/chart.htm" target="_blank">Minumum Wage</a> 21 Years Old</div>
+        <div class="american_owes"></div>
       </div>
     </div>
   </div>
@@ -931,9 +935,9 @@
     <div class="american_person" income="18378" age="21">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/lbG1RnLX.jpg" alt="US Soldier"/>
       <div class="american_stats">
-        <div class="american_label">owes</div>
-        <div class="american_owes"></div>
+        <!--<div class="american_label">owes</div>-->
         <div class="american_about"><a href="http://www.goarmy.com/benefits/money/basic-pay-active-duty-soldiers.html" target="_blank">US Soldier</a> 21 Years Old</div>
+        <div class="american_owes"></div>
       </div>
     </div>
   </div>
@@ -942,9 +946,10 @@
     <div class="american_person" income="53449" age="30">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/1rCNV1BI.jpg" alt="School Teacher"/>
       <div class="american_stats">
-        <div class="american_label">owes</div>
-        <div class="american_owes"></div>
         <div class="american_about"><a href="http://www1.salary.com/Public-School-Teacher-salary.html" target="_blank">School Teacher</a> 30 Years Old</div>
+        <!--<div class="american_label">owes</div>-->
+        <div class="american_owes"></div>
+
       </div>
     </div>
   </div>
@@ -953,9 +958,9 @@
     <div class="american_person" income="70176" age="33">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/22kYgj9Q.jpg" alt="Nurse"/>
       <div class="american_stats">
-        <div class="american_label">owes</div>
-        <div class="american_owes"></div>
+        <!--<div class="american_label">owes</div>-->
         <div class="american_about"><a href="http://www1.salary.com/Nurse-salary.html" target="_blank">Nurse</a> 33 Years Old</div>
+        <div class="american_owes"></div>
       </div>
     </div>
   </div>
@@ -964,10 +969,9 @@
     <div class="american_person" income="187437" age="33">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/MED1CSyB.jpg" alt="Doctor"/>
       <div class="american_stats">
-        <div class="american_label">owes</div>
-        <div class="american_owes"></div>
+        <!--<div class="american_label">owes</div>-->
         <div class="american_about"><a href="http://www1.salary.com/Doctor-salary.html" target="_blank">Doctor</a> 33 Years Old</div>
-        <p><span class="age"></span> Years Old</p>
+        <div class="american_owes"></div>
       </div>
     </div>
   </div>
@@ -976,9 +980,9 @@
     <div class="american_person" income="112597" age="40">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/KQdsj5Fk.jpg" alt="Lawyer"/>
       <div class="american_stats">
-        <div class="american_label">owes</div>
-        <div class="american_owes"></div>
+        <!--<div class="american_label">owes</div>-->
         <div class="american_about"><a href="http://www1.salary.com/Lawyer-salary.html" target="_blank">Lawyer</a> 40 Years Old</div>
+        <div class="american_owes"></div>
       </div>
     </div>
   </div>
@@ -987,9 +991,9 @@
     <div class="american_person" income="400000" age="50">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/u4SuMp88.jpg" alt="Barack Obama"/>
       <div class="american_stats">
-        <div class="american_label">owes</div>
-        <div class="american_owes"></div>
+        <!--<div class="american_label">owes</div>-->
         <div class="american_about"><a href="http://abcnews.go.com/blogs/politics/2013/04/obama-to-return-5-percent-of-salary/" target="_blank">Barack Obama</a> 50 Years Old</div>
+        <div class="american_owes"></div>
       </div>
     </div>
   </div>
@@ -998,9 +1002,9 @@
     <div class="american_person" income="1500000" age="40">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/zbdgfTeq.jpg" alt="ASU Football Coach"/>
       <div class="american_stats">
-        <div class="american_label">owes</div>
-        <div class="american_owes"></div>
+        <!--<div class="american_label">owes</div>-->
         <div class="american_about"><a href="http://archive.azcentral.com/salary/employees.php/?oid=ASU" target="_blank">ASU Football Coach</a> 40 Years Old</div>
+        <div class="american_owes"></div>
       </div>
     </div>
   </div>
@@ -1009,9 +1013,9 @@
     <div class="american_person" income="29000000" age="40">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/yHHzvmjX.jpg" alt="Leaonardo DiCaprio"/>
       <div class="american_stats">
-        <div class="american_label">owes</div>
-        <div class="american_owes"></div>
+        <!--<div class="american_label">owes</div>-->
         <div class="american_about"><a href="http://www.paywizard.org/main/salary/vip-check/leonardo-dicaprio" target="_blank">Leonardo DiCaprio</a> 40 Years Old</div>
+        <div class="american_owes"></div>
       </div>
     </div>
   </div>
@@ -1020,9 +1024,9 @@
     <div class="american_person" income="80000000" age="28">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/XZRo4lY3.jpg" alt="Taylor Swift"/>
       <div class="american_stats">
-        <div class="american_label">owes</div>
-        <div class="american_owes"></div>
+        <!--<div class="american_label">owes</div>-->
         <div class="american_about"><a href="http://www.paywizard.org/main/salary/vip-check/taylor-swift" target="_blank">Taylor Swift</a> 28 Years Old</div>
+        <div class="american_owes"></div>
       </div>
     </div>
   </div>
@@ -1031,9 +1035,9 @@
     <div class="american_person" income="100000000" age="60">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/syLiG5fC.jpg" alt="Stephen Spielberg"/>
       <div class="american_stats">
-        <div class="american_label">owes</div>
-        <div class="american_owes"></div>
+        <!--<div class="american_label">owes</div>-->
         <div class="american_about"><a href="http://www.paywizard.org/main/salary/vip-check/steven-spielberg" target="_blank">Stephen Spielberg</a> 60 Years Old</div>
+        <div class="american_owes"></div>
       </div>
     </div>
   </div>
@@ -1042,9 +1046,9 @@
     <div class="american_person" income="11500000000" age="60">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/eDfniap6.jpg" alt="Bill Gates"/>
       <div class="american_stats">
-        <div class="american_label">owes</div>
-        <div class="american_owes"></div>
+        <!--<div class="american_label">owes</div>-->
         <div class="american_about"><a href="http://mic.com/articles/45397/10-ridiculous-facts-about-how-rich-bill-gates-is" target="_blank">Bill Gates</a> 60 Years Old</div>
+        <div class="american_owes"></div>
       </div>
     </div>
   </div>
