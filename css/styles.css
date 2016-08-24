@@ -81,31 +81,6 @@ h3 {
     }
 }
 
-
-/*Debt Info Styles*/
-
-.info_wrapper {
-    background: #004258; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #4B79A1 , #004258); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #4B79A1 , #004258); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    height: 100%;
-}
-
-.info_wrapper h2 {
-    color: #fff;
-    padding: 5% 5%;
-}
-
-.info_wrapper h1 {
-    color: #ffffff;
-    text-align: center;
-    padding-top: 5%;
-}
-
-
-
-
 /*Calculator Styles*/
 
 .calculator {
@@ -199,6 +174,7 @@ h3 {
 }
 
 .facebook, .google-plus, .twitter{
+    display: inline-block;
     background: url(img/sprites.png) no-repeat;
 }
 
@@ -227,16 +203,9 @@ h3 {
 }
 
 
-/*Other Americans Styles*/
-
-/*
-.american_profile li:nth-child(even){
-    text-align: right;
-}
-*/
-
 /*Pay off Day Styles*/
 .debt_day {
+    display: none;
     text-align: center;
     background: url("img/flag.jpg") 20% 50%;
 }

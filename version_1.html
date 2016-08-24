@@ -5,17 +5,106 @@
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   
   <style type="text/css">
 
     /* general */
     a  { text-decoration: none; }
 
+    /* debt breakdown */
+
+    #debt_breakdown {
+      text-align: center;
+      background: #004258; /* fallback for old browsers */
+      background: -webkit-linear-gradient(to left, #4B79A1 , #004258); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to left, #4B79A1 , #004258); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    #debt_breakdown h2 {
+      color: #fff;
+      padding: 5% 5%;
+    }
+
+    #debt_breakdown h1 {
+      color: #ffffff;
+      padding-top: 5%;
+    }
+
+    #debt_breakdown i {
+      display: inline-block;
+      margin: 20px;
+      color: #fff;
+      font-size: 6em;
+    }
+
+    div.breakdown {
+      width: 96%;
+      max-width: 1000px;
+      margin: 30px auto;
+    }
+
+    span.breakdown_legend {
+      color: #fff;
+      margin: 20px;
+      font-size: 2.em;
+      text-transform: uppercase;
+    }
+
+   span.breakdown_legend span {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+      width: 32px;
+      height: 32px;
+      border-radius: 16px;
+   }
+
+    #breakdown_deficit {
+      background-color: #fd7400;
+    }
+
+    #breakdown_individual {
+      background-color: #004258; 
+    }
+
+    #breakdown_corporate {
+      background-color: #888; 
+    }
+
+    div.breakdown_graph {
+      margin: 5px; 
+      white-space: nowrap;
+      min-width: 1px;
+    }
+
+    div.breakdown_deficit {
+      width: 100%;
+      border-bottom: 3px solid #fd7400;
+      color: #fd7400;
+      text-align: right;
+    }
+
+    div.breakdown_individual {
+      display: inline-block;
+      min-width: 1px;
+      border-bottom: 9px solid #004258;
+      color: #004258;
+      text-align: right;
+    }
+
+    div.breakdown_corporate {
+      display: inline-block;
+      min-width: 1px;
+      border-bottom: 9px solid #888;
+      color: #888;
+      text-align: right;
+    }
+
     /* control */
 
     #control {
       text-align: center;
-      
     }
 
     #control h2 {
@@ -124,6 +213,9 @@
       margin: 50px auto;
     }
 
+    div.american_row:nth-child(even){
+      text-align: right;
+    }
 
     div.american_person {
       display: inline-block;
@@ -148,9 +240,13 @@
       font-weight: 300;
     }
 
+    div.american_label {
+      font-size: 24px;
+      text-transform: lowercase;
+    }
+
     div.american_owes {
       font-size: 4em;
-      margin-bottom: 10px;
     }
  
     div.american_about {
@@ -341,28 +437,23 @@
       });
     }
 
-    function debt_table() {
-      var prior = 0;
-      var total = 0;
-      $('td.share').each(function() {
-        var income = parseInt(this.id.replace('share_', ''));; 
-        var debt = 0;
+    function debt_breakdown() {
+      var max_deficit = 0;
+      for (year in budgets) { 
+        max_deficit = Math.max(max_deficit, Math.abs(budgets[year]['deficit']));
+      }
 
-        for (var year in taxes) {
-          var deficit = get_budget(year)['deficit_individual'];
-          var share = 0;
-          for (var i in taxes[year]) {
-            if (taxes[year][i]['bracket_min'] >= income && (prior == 0 || taxes[year][i]['bracket_min'] < prior)) {
-              share += taxes[year][i]['tax_share'];
-              //console.log(year, income, prior, taxes[year][i]['bracket_min'], share);
-            }
-          }
-          debt += Math.round(share * deficit);
-          total += deficit;
-        }
-        prior = income;
-        $(this).text(number_with_commas(debt));
-      });
+      for (var year=2015; year >= 1979; year--) { 
+        var deficit = Math.abs(get_budget(year)['deficit']);
+        var individual_owed = Math.abs(get_budget(year)['deficit_individual']);
+        var corporate_owed = Math.abs(get_budget(year)['deficit_corporate']);
+     
+        $('div.breakdown_' + year + ' div.breakdown_graph').css('width', Math.floor(deficit * 100 / max_deficit) + '%');
+        $('div.breakdown_' + year + ' div.breakdown_individual').css('width', Math.floor(100 * get_source(year)['adjusted_individual']) + '%');
+        $('div.breakdown_' + year + ' div.breakdown_corporate').css('width', Math.floor(100 * get_source(year)['adjusted_corporate']) + '%');
+
+        $('div.breakdown_' + year + ' div.breakdown_deficit').text(year);
+      } 
     }
 
     function person_graph() {
@@ -433,6 +524,10 @@
 //          $('div.year_' + year).show()
         }
         else {
+
+          $('div.year_' + year + ' div.control_value').text('');
+          $('div.year_' + year + ' div.control_paid').css('width', '0%');
+          $('div.year_' + year + ' div.control_owed').css('width', '0%');
 //          $('div.year_' + year).hide()
         }
       }
@@ -446,6 +541,9 @@
       $('div.year_total div.control_owed').css('width', Math.floor(width_debt * 100)  + '%');
 
       $('#person_owed').text('$' + number_with_commas(Math.abs(total_owed)));
+
+      /* customize the social messages */
+      $('#share_twitter').attr('href', 'https://twitter.com/share?text=I+actually+owe+$' + number_with_commas(Math.abs(total_owed)) + ',+ find+out+how+much+of+the+$18T+%23nationaldebt+you+really+owe:&url=http://jsvillage.org&hashtags=debtclock,tax,economy&via=jsvillage_org');
     }
 
     function income_adjust() {
@@ -453,10 +551,9 @@
         var income = parseInt($(income_input).val().replace(',', ''));
         if (isNaN(income)) { income = 0; }
         income += income_step;
-        if (income >= 0) { 
-          $(income_input).val(income); 
-          //control_graph();
-        }
+        if (income < 0) { income = 0; }
+        $(income_input).val(income); 
+        //control_graph();
         income_timeout = setTimeout(income_adjust, income_rate);
         if (income_rate / 2 > 25) { income_rate /= 2; }
       }
@@ -468,8 +565,8 @@
       prepare_taxes();
 
       debt_totals();
-      debt_table();
       debt_people();
+      debt_breakdown();
       
       /* handle debt input adjustment */
       $("#control_table input").on('change', function () {
@@ -530,14 +627,329 @@
 
 </section>
 
-<section class="debt_info">
-  <div class="info_wrapper">
-    <h1>How the Debt Grows</h1>
-    <h2>Each year we spend money. In 2015 we spent $3,324,564,245.15</h2>
-    <h2>Each year we collect taxes. In 2015 we collected $2,450,040,304.59</h2>
-    <h2>What we didn't collect in taxes is our national debt. In 2015 the national debt rose by $934,342,566,385.12</h2>
-    <h2>We can calucate what you owe proportional to what you made each year of your working life. Just give us the year you started working and your starting income. It's that simple.</h2>
+<section id="debt_breakdown">
+  <h1>Understanding National Debt</h1>
+
+  <h2>The national debt funds our infrastrcture, it's money we've already spent and can't get back.</h2>
+
+  <p>
+    <i class="material-icons">school</i>
+    <i class="material-icons">directions_bike</i>
+    <i class="material-icons">account_balance</i>
+    <i class="material-icons">directions_car</i>
+    <i class="material-icons">wifi</i>
+    <i class="material-icons">directions_railway</i>
+    <i class="material-icons">settings_phone</i>
+  </p> 
+
+  <h2>The national debt is taxes we did not pay but should have every year.</h2>
+
+  <p>
+    <span class="breakdown_legend"><span id="breakdown_deficit"></span> Spent</span>
+    <span class="breakdown_legend"><span id="breakdown_corporate"></span> Corporate Owed</span>
+    <span class="breakdown_legend"><span id="breakdown_individual"></span> Individual Owed</span>
+  <p>
+
+  <div class="breakdown">
+    <div class="breakdown_2015">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit">2015</div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_2014">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_2013">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_2012">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_2011">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_2010">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_2009">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_2008">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_2007">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_2006">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_2005">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_2004">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_2003">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_2002">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_2001">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_2000">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1999">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1998">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1997">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1996">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1995">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1994">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1993">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1992">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1991">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1990">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1989">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1988">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1987">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1986">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1985">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1984">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1983">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1982">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1981">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1980">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
+    <div class="breakdown_1979">
+      <div class="breakdown_graph">
+        <div class="breakdown_deficit"></div>
+        <div class="breakdown_corporate"></div>
+        <div class="breakdown_individual"></div>
+      </div>
+      <div class="breakdown_value"></div>
+    </div>
   </div>
+
+  <h2>So lets figure out how much of the unpaid individual tax is yours...</h2>
 
 </section>
 
@@ -909,9 +1321,14 @@
     <h1><span id="person_owed">$3,000</span></h1>
     <h2>Share your amount</h2>
     <ul class="social">
-      <li class="twitter"></li>
-      <li class="facebook"></li>
-      <li class="google-plus"></li>
+      <li>
+        <a id="share_twitter" href="https://twitter.com/share?text=Find+out+how+much+of+the+$18T+%23nationldebt+you+really+owe:&url=http://jsvillage.org&hashtags=debtclock,tax,economy&via=jsvillage_org" class="twitter twitter-share-button" data-show-count="false">&nbsp;</a>
+        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </li>
+      <li><a id="share_facebook" class="facebook" href="https://www.facebook.com/dialog/share?app_id=145634995501895&display=popup&quote=Find+out+how+much+of+the+$18T+nationl+debt+you+really+owe.&href=http://jsvillage.org&redirect_uri=http://jsvillage.org&hashtag=economy">&nbsp;</a>
+      </li>
+      <li><a id="share_google" class="google-plus" href="https://plus.google.com/share?url=http://jsvillage.org" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">&nbsp;</a>
+      </li>
     </ul>
   </div>
 </section>
@@ -924,8 +1341,9 @@
     <div class="american_person" income="14500" age="21">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/sihEoLfh.jpg" alt="Minimum Wage"/>
       <div class="american_stats">
-        <div class="american_owes"></div>
         <div class="american_about"><a href="http://www.dol.gov/whd/minwage/chart.htm" target="_blank">Minumum Wage</a> 21 Years Old</div>
+        <div class="american_owes"></div>
+        <div class="american_label">Owes Our Govt</div>
       </div>
     </div>
   </div>
@@ -934,8 +1352,9 @@
     <div class="american_person" income="18378" age="21">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/lbG1RnLX.jpg" alt="US Soldier"/>
       <div class="american_stats">
-        <div class="american_owes"></div>
         <div class="american_about"><a href="http://www.goarmy.com/benefits/money/basic-pay-active-duty-soldiers.html" target="_blank">US Soldier</a> 21 Years Old</div>
+        <div class="american_owes"></div>
+        <div class="american_label">Owes Our Govt</div>
       </div>
     </div>
   </div>
@@ -944,8 +1363,9 @@
     <div class="american_person" income="53449" age="30">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/1rCNV1BI.jpg" alt="School Teacher"/>
       <div class="american_stats">
-        <div class="american_owes"></div>
         <div class="american_about"><a href="http://www1.salary.com/Public-School-Teacher-salary.html" target="_blank">School Teacher</a> 30 Years Old</div>
+        <div class="american_owes"></div>
+        <div class="american_label">Owes Our Govt</div>
       </div>
     </div>
   </div>
@@ -954,8 +1374,9 @@
     <div class="american_person" income="70176" age="33">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/22kYgj9Q.jpg" alt="Nurse"/>
       <div class="american_stats">
-        <div class="american_owes"></div>
         <div class="american_about"><a href="http://www1.salary.com/Nurse-salary.html" target="_blank">Nurse</a> 33 Years Old</div>
+        <div class="american_owes"></div>
+        <div class="american_label">Owes Our Govt</div>
       </div>
     </div>
   </div>
@@ -964,8 +1385,9 @@
     <div class="american_person" income="187437" age="33">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/MED1CSyB.jpg" alt="Doctor"/>
       <div class="american_stats">
-        <div class="american_owes"></div>
         <div class="american_about"><a href="http://www1.salary.com/Doctor-salary.html" target="_blank">Doctor</a> 33 Years Old</div>
+        <div class="american_owes"></div>
+        <div class="american_label">Owes Our Govt</div>
       </div>
     </div>
   </div>
@@ -974,8 +1396,9 @@
     <div class="american_person" income="112597" age="40">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/KQdsj5Fk.jpg" alt="Lawyer"/>
       <div class="american_stats">
-        <div class="american_owes"></div>
         <div class="american_about"><a href="http://www1.salary.com/Lawyer-salary.html" target="_blank">Lawyer</a> 40 Years Old</div>
+        <div class="american_owes"></div>
+        <div class="american_label">Owes Our Govt</div>
       </div>
     </div>
   </div>
@@ -984,8 +1407,9 @@
     <div class="american_person" income="400000" age="50">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/u4SuMp88.jpg" alt="Barack Obama"/>
       <div class="american_stats">
-        <div class="american_owes"></div>
         <div class="american_about"><a href="http://abcnews.go.com/blogs/politics/2013/04/obama-to-return-5-percent-of-salary/" target="_blank">Barack Obama</a> 50 Years Old</div>
+        <div class="american_owes"></div>
+        <div class="american_label">Owes Our Govt</div>
       </div>
     </div>
   </div>
@@ -994,8 +1418,9 @@
     <div class="american_person" income="1500000" age="40">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/zbdgfTeq.jpg" alt="ASU Football Coach"/>
       <div class="american_stats">
-        <div class="american_owes"></div>
         <div class="american_about"><a href="http://archive.azcentral.com/salary/employees.php/?oid=ASU" target="_blank">ASU Football Coach</a> 40 Years Old</div>
+        <div class="american_owes"></div>
+        <div class="american_label">Owes Our Govt</div>
       </div>
     </div>
   </div>
@@ -1004,8 +1429,9 @@
     <div class="american_person" income="29000000" age="40">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/yHHzvmjX.jpg" alt="Leaonardo DiCaprio"/>
       <div class="american_stats">
-        <div class="american_owes"></div>
         <div class="american_about"><a href="http://www.paywizard.org/main/salary/vip-check/leonardo-dicaprio" target="_blank">Leonardo DiCaprio</a> 40 Years Old</div>
+        <div class="american_owes"></div>
+        <div class="american_label">Owes Our Govt</div>
       </div>
     </div>
   </div>
@@ -1014,8 +1440,9 @@
     <div class="american_person" income="80000000" age="28">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/XZRo4lY3.jpg" alt="Taylor Swift"/>
       <div class="american_stats">
-        <div class="american_owes"></div>
         <div class="american_about"><a href="http://www.paywizard.org/main/salary/vip-check/taylor-swift" target="_blank">Taylor Swift</a> 28 Years Old</div>
+        <div class="american_owes"></div>
+        <div class="american_label">Owes Our Govt</div>
       </div>
     </div>
   </div>
@@ -1024,8 +1451,9 @@
     <div class="american_person" income="100000000" age="60">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/syLiG5fC.jpg" alt="Stephen Spielberg"/>
       <div class="american_stats">
-        <div class="american_owes"></div>
         <div class="american_about"><a href="http://www.paywizard.org/main/salary/vip-check/steven-spielberg" target="_blank">Stephen Spielberg</a> 60 Years Old</div>
+        <div class="american_owes"></div>
+        <div class="american_label">Owes Our Govt</div>
       </div>
     </div>
   </div>
@@ -1034,8 +1462,9 @@
     <div class="american_person" income="11500000000" age="60">
       <img src="https://awarelabs-o6vxktss.s3.amazonaws.com/widget/eDfniap6.jpg" alt="Bill Gates"/>
       <div class="american_stats">
-        <div class="american_owes"></div>
         <div class="american_about"><a href="http://mic.com/articles/45397/10-ridiculous-facts-about-how-rich-bill-gates-is" target="_blank">Bill Gates</a> 60 Years Old</div>
+        <div class="american_owes"></div>
+        <div class="american_label">Owes Our Govt</div>
       </div>
     </div>
   </div>

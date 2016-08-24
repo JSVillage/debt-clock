@@ -1,367 +1,334 @@
-1979										
-	bracket_min	0	paid	120585000	average_paid	26821	average_income	-59985      	tax_rate	0.0
-	bracket_min	1	paid	9452000	average_paid	25	average_income	602      	tax_rate	15.8
-	bracket_min	1000	paid	72504000	average_paid	79	average_income	1486      	tax_rate	16.0
-	bracket_min	2000	paid	80125000	average_paid	117	average_income	2494      	tax_rate	17.5
-	bracket_min	3000	paid	111010000	average_paid	159	average_income	3497      	tax_rate	19.1
-	bracket_min	4000	paid	156835000	average_paid	135	average_income	4503      	tax_rate	16.1
-	bracket_min	5000	paid	187696000	average_paid	274	average_income	5484      	tax_rate	16.1
-	bracket_min	6000	paid	237869000	average_paid	276	average_income	6485      	tax_rate	15.4
-	bracket_min	7000	paid	366125000	average_paid	251	average_income	7507      	tax_rate	14.3
-	bracket_min	8000	paid	522520000	average_paid	329	average_income	8498      	tax_rate	14.7
-	bracket_min	9000	paid	756589000	average_paid	468	average_income	9502      	tax_rate	15.1
-	bracket_min	10000	paid	938320000	average_paid	602	average_income	10503      	tax_rate	15.1
-	bracket_min	11000	paid	1077786000	average_paid	701	average_income	11506      	tax_rate	15.0
-	bracket_min	12000	paid	1125390000	average_paid	774	average_income	12482      	tax_rate	15.0
-	bracket_min	13000	paid	1438488000	average_paid	844	average_income	13507      	tax_rate	15.1
-	bracket_min	14000	paid	1620256000	average_paid	921	average_income	14503      	tax_rate	15.0
-	bracket_min	15000	paid	1759325000	average_paid	1080	average_income	15516      	tax_rate	14.9
-	bracket_min	16000	paid	2043701000	average_paid	1211	average_income	16489      	tax_rate	15.0
-	bracket_min	17000	paid	2077114000	average_paid	1315	average_income	17509      	tax_rate	15.0
-	bracket_min	18000	paid	2469358000	average_paid	1403	average_income	18503      	tax_rate	14.3
-	bracket_min	19000	paid	2309044000	average_paid	1436	average_income	19488      	tax_rate	14.1
-	bracket_min	20000	paid	15063847000	average_paid	1770	average_income	22409      	tax_rate	14.2
-	bracket_min	25000	paid	18810892000	average_paid	2379	average_income	27424      	tax_rate	14.7
-	bracket_min	30000	paid	42380167000	average_paid	3400	average_income	34775      	tax_rate	15.5
-	bracket_min	40000	paid	46269147000	average_paid	4872	average_income	44740      	tax_rate	16.3
-	bracket_min	50000	paid	104909151000	average_paid	7338	average_income	60870      	tax_rate	17.2
-	bracket_min	75000	paid	73320894000	average_paid	12647	average_income	85903      	tax_rate	20.1
-	bracket_min	100000	paid	109837768000	average_paid	23827	average_income	130875      	tax_rate	23.5
-	bracket_min	200000	paid	87686891000	average_paid	73201	average_income	289824      	tax_rate	29.6
-	bracket_min	500000	paid	43529845000	average_paid	203733	average_income	677226      	tax_rate	33.8
-	bracket_min	1000000	paid	96956057000	average_paid	874968	average_income	2834698      	tax_rate	34.4
-										
-1980										
-	bracket_min	0	paid	120585000	average_paid	26821	average_income	-59985      	tax_rate	0.0
-	bracket_min	1	paid	9452000	average_paid	25	average_income	602      	tax_rate	15.8
-	bracket_min	1000	paid	72504000	average_paid	79	average_income	1486      	tax_rate	16.0
-	bracket_min	2000	paid	80125000	average_paid	117	average_income	2494      	tax_rate	17.5
-	bracket_min	3000	paid	111010000	average_paid	159	average_income	3497      	tax_rate	19.1
-	bracket_min	4000	paid	156835000	average_paid	135	average_income	4503      	tax_rate	16.1
-	bracket_min	5000	paid	187696000	average_paid	274	average_income	5484      	tax_rate	16.1
-	bracket_min	6000	paid	237869000	average_paid	276	average_income	6485      	tax_rate	15.4
-	bracket_min	7000	paid	366125000	average_paid	251	average_income	7507      	tax_rate	14.3
-	bracket_min	8000	paid	522520000	average_paid	329	average_income	8498      	tax_rate	14.7
-	bracket_min	9000	paid	756589000	average_paid	468	average_income	9502      	tax_rate	15.1
-	bracket_min	10000	paid	938320000	average_paid	602	average_income	10503      	tax_rate	15.1
-	bracket_min	11000	paid	1077786000	average_paid	701	average_income	11506      	tax_rate	15.0
-	bracket_min	12000	paid	1125390000	average_paid	774	average_income	12482      	tax_rate	15.0
-	bracket_min	13000	paid	1438488000	average_paid	844	average_income	13507      	tax_rate	15.1
-	bracket_min	14000	paid	1620256000	average_paid	921	average_income	14503      	tax_rate	15.0
-	bracket_min	15000	paid	1759325000	average_paid	1080	average_income	15516      	tax_rate	14.9
-	bracket_min	16000	paid	2043701000	average_paid	1211	average_income	16489      	tax_rate	15.0
-	bracket_min	17000	paid	2077114000	average_paid	1315	average_income	17509      	tax_rate	15.0
-	bracket_min	18000	paid	2469358000	average_paid	1403	average_income	18503      	tax_rate	14.3
-	bracket_min	19000	paid	2309044000	average_paid	1436	average_income	19488      	tax_rate	14.1
-	bracket_min	20000	paid	15063847000	average_paid	1770	average_income	22409      	tax_rate	14.2
-	bracket_min	25000	paid	18810892000	average_paid	2379	average_income	27424      	tax_rate	14.7
-	bracket_min	30000	paid	42380167000	average_paid	3400	average_income	34775      	tax_rate	15.5
-	bracket_min	40000	paid	46269147000	average_paid	4872	average_income	44740      	tax_rate	16.3
-	bracket_min	50000	paid	104909151000	average_paid	7338	average_income	60870      	tax_rate	17.2
-	bracket_min	75000	paid	73320894000	average_paid	12647	average_income	85903      	tax_rate	20.1
-	bracket_min	100000	paid	109837768000	average_paid	23827	average_income	130875      	tax_rate	23.5
-	bracket_min	200000	paid	87686891000	average_paid	73201	average_income	289824      	tax_rate	29.6
-	bracket_min	500000	paid	43529845000	average_paid	203733	average_income	677226      	tax_rate	33.8
-	bracket_min	1000000	paid	96956057000	average_paid	874968	average_income	2834698      	tax_rate	34.4
-										
-1981										
-	bracket_min	0	paid	120585000	average_paid	26821	average_income	-59985      	tax_rate	0.0
-	bracket_min	1	paid	9452000	average_paid	25	average_income	602      	tax_rate	15.8
-	bracket_min	1000	paid	72504000	average_paid	79	average_income	1486      	tax_rate	16.0
-	bracket_min	2000	paid	80125000	average_paid	117	average_income	2494      	tax_rate	17.5
-	bracket_min	3000	paid	111010000	average_paid	159	average_income	3497      	tax_rate	19.1
-	bracket_min	4000	paid	156835000	average_paid	135	average_income	4503      	tax_rate	16.1
-	bracket_min	5000	paid	187696000	average_paid	274	average_income	5484      	tax_rate	16.1
-	bracket_min	6000	paid	237869000	average_paid	276	average_income	6485      	tax_rate	15.4
-	bracket_min	7000	paid	366125000	average_paid	251	average_income	7507      	tax_rate	14.3
-	bracket_min	8000	paid	522520000	average_paid	329	average_income	8498      	tax_rate	14.7
-	bracket_min	9000	paid	756589000	average_paid	468	average_income	9502      	tax_rate	15.1
-	bracket_min	10000	paid	938320000	average_paid	602	average_income	10503      	tax_rate	15.1
-	bracket_min	11000	paid	1077786000	average_paid	701	average_income	11506      	tax_rate	15.0
-	bracket_min	12000	paid	1125390000	average_paid	774	average_income	12482      	tax_rate	15.0
-	bracket_min	13000	paid	1438488000	average_paid	844	average_income	13507      	tax_rate	15.1
-	bracket_min	14000	paid	1620256000	average_paid	921	average_income	14503      	tax_rate	15.0
-	bracket_min	15000	paid	1759325000	average_paid	1080	average_income	15516      	tax_rate	14.9
-	bracket_min	16000	paid	2043701000	average_paid	1211	average_income	16489      	tax_rate	15.0
-	bracket_min	17000	paid	2077114000	average_paid	1315	average_income	17509      	tax_rate	15.0
-	bracket_min	18000	paid	2469358000	average_paid	1403	average_income	18503      	tax_rate	14.3
-	bracket_min	19000	paid	2309044000	average_paid	1436	average_income	19488      	tax_rate	14.1
-	bracket_min	20000	paid	15063847000	average_paid	1770	average_income	22409      	tax_rate	14.2
-	bracket_min	25000	paid	18810892000	average_paid	2379	average_income	27424      	tax_rate	14.7
-	bracket_min	30000	paid	42380167000	average_paid	3400	average_income	34775      	tax_rate	15.5
-	bracket_min	40000	paid	46269147000	average_paid	4872	average_income	44740      	tax_rate	16.3
-	bracket_min	50000	paid	104909151000	average_paid	7338	average_income	60870      	tax_rate	17.2
-	bracket_min	75000	paid	73320894000	average_paid	12647	average_income	85903      	tax_rate	20.1
-	bracket_min	100000	paid	109837768000	average_paid	23827	average_income	130875      	tax_rate	23.5
-	bracket_min	200000	paid	87686891000	average_paid	73201	average_income	289824      	tax_rate	29.6
-	bracket_min	500000	paid	43529845000	average_paid	203733	average_income	677226      	tax_rate	33.8
-	bracket_min	1000000	paid	96956057000	average_paid	874968	average_income	2834698      	tax_rate	34.4
-										
-1982										
-	bracket_min	0	paid	120585000	average_paid	26821	average_income	-59985      	tax_rate	0.0
-	bracket_min	1	paid	9452000	average_paid	25	average_income	602      	tax_rate	15.8
-	bracket_min	1000	paid	72504000	average_paid	79	average_income	1486      	tax_rate	16.0
-	bracket_min	2000	paid	80125000	average_paid	117	average_income	2494      	tax_rate	17.5
-	bracket_min	3000	paid	111010000	average_paid	159	average_income	3497      	tax_rate	19.1
-	bracket_min	4000	paid	156835000	average_paid	135	average_income	4503      	tax_rate	16.1
-	bracket_min	5000	paid	187696000	average_paid	274	average_income	5484      	tax_rate	16.1
-	bracket_min	6000	paid	237869000	average_paid	276	average_income	6485      	tax_rate	15.4
-	bracket_min	7000	paid	366125000	average_paid	251	average_income	7507      	tax_rate	14.3
-	bracket_min	8000	paid	522520000	average_paid	329	average_income	8498      	tax_rate	14.7
-	bracket_min	9000	paid	756589000	average_paid	468	average_income	9502      	tax_rate	15.1
-	bracket_min	10000	paid	938320000	average_paid	602	average_income	10503      	tax_rate	15.1
-	bracket_min	11000	paid	1077786000	average_paid	701	average_income	11506      	tax_rate	15.0
-	bracket_min	12000	paid	1125390000	average_paid	774	average_income	12482      	tax_rate	15.0
-	bracket_min	13000	paid	1438488000	average_paid	844	average_income	13507      	tax_rate	15.1
-	bracket_min	14000	paid	1620256000	average_paid	921	average_income	14503      	tax_rate	15.0
-	bracket_min	15000	paid	1759325000	average_paid	1080	average_income	15516      	tax_rate	14.9
-	bracket_min	16000	paid	2043701000	average_paid	1211	average_income	16489      	tax_rate	15.0
-	bracket_min	17000	paid	2077114000	average_paid	1315	average_income	17509      	tax_rate	15.0
-	bracket_min	18000	paid	2469358000	average_paid	1403	average_income	18503      	tax_rate	14.3
-	bracket_min	19000	paid	2309044000	average_paid	1436	average_income	19488      	tax_rate	14.1
-	bracket_min	20000	paid	15063847000	average_paid	1770	average_income	22409      	tax_rate	14.2
-	bracket_min	25000	paid	18810892000	average_paid	2379	average_income	27424      	tax_rate	14.7
-	bracket_min	30000	paid	42380167000	average_paid	3400	average_income	34775      	tax_rate	15.5
-	bracket_min	40000	paid	46269147000	average_paid	4872	average_income	44740      	tax_rate	16.3
-	bracket_min	50000	paid	104909151000	average_paid	7338	average_income	60870      	tax_rate	17.2
-	bracket_min	75000	paid	73320894000	average_paid	12647	average_income	85903      	tax_rate	20.1
-	bracket_min	100000	paid	109837768000	average_paid	23827	average_income	130875      	tax_rate	23.5
-	bracket_min	200000	paid	87686891000	average_paid	73201	average_income	289824      	tax_rate	29.6
-	bracket_min	500000	paid	43529845000	average_paid	203733	average_income	677226      	tax_rate	33.8
-	bracket_min	1000000	paid	96956057000	average_paid	874968	average_income	2834698      	tax_rate	34.4
-										
-1983										
-	bracket_min	0	paid	120585000	average_paid	26821	average_income	-59985      	tax_rate	0.0
-	bracket_min	1	paid	9452000	average_paid	25	average_income	602      	tax_rate	15.8
-	bracket_min	1000	paid	72504000	average_paid	79	average_income	1486      	tax_rate	16.0
-	bracket_min	2000	paid	80125000	average_paid	117	average_income	2494      	tax_rate	17.5
-	bracket_min	3000	paid	111010000	average_paid	159	average_income	3497      	tax_rate	19.1
-	bracket_min	4000	paid	156835000	average_paid	135	average_income	4503      	tax_rate	16.1
-	bracket_min	5000	paid	187696000	average_paid	274	average_income	5484      	tax_rate	16.1
-	bracket_min	6000	paid	237869000	average_paid	276	average_income	6485      	tax_rate	15.4
-	bracket_min	7000	paid	366125000	average_paid	251	average_income	7507      	tax_rate	14.3
-	bracket_min	8000	paid	522520000	average_paid	329	average_income	8498      	tax_rate	14.7
-	bracket_min	9000	paid	756589000	average_paid	468	average_income	9502      	tax_rate	15.1
-	bracket_min	10000	paid	938320000	average_paid	602	average_income	10503      	tax_rate	15.1
-	bracket_min	11000	paid	1077786000	average_paid	701	average_income	11506      	tax_rate	15.0
-	bracket_min	12000	paid	1125390000	average_paid	774	average_income	12482      	tax_rate	15.0
-	bracket_min	13000	paid	1438488000	average_paid	844	average_income	13507      	tax_rate	15.1
-	bracket_min	14000	paid	1620256000	average_paid	921	average_income	14503      	tax_rate	15.0
-	bracket_min	15000	paid	1759325000	average_paid	1080	average_income	15516      	tax_rate	14.9
-	bracket_min	16000	paid	2043701000	average_paid	1211	average_income	16489      	tax_rate	15.0
-	bracket_min	17000	paid	2077114000	average_paid	1315	average_income	17509      	tax_rate	15.0
-	bracket_min	18000	paid	2469358000	average_paid	1403	average_income	18503      	tax_rate	14.3
-	bracket_min	19000	paid	2309044000	average_paid	1436	average_income	19488      	tax_rate	14.1
-	bracket_min	20000	paid	15063847000	average_paid	1770	average_income	22409      	tax_rate	14.2
-	bracket_min	25000	paid	18810892000	average_paid	2379	average_income	27424      	tax_rate	14.7
-	bracket_min	30000	paid	42380167000	average_paid	3400	average_income	34775      	tax_rate	15.5
-	bracket_min	40000	paid	46269147000	average_paid	4872	average_income	44740      	tax_rate	16.3
-	bracket_min	50000	paid	104909151000	average_paid	7338	average_income	60870      	tax_rate	17.2
-	bracket_min	75000	paid	73320894000	average_paid	12647	average_income	85903      	tax_rate	20.1
-	bracket_min	100000	paid	109837768000	average_paid	23827	average_income	130875      	tax_rate	23.5
-	bracket_min	200000	paid	87686891000	average_paid	73201	average_income	289824      	tax_rate	29.6
-	bracket_min	500000	paid	43529845000	average_paid	203733	average_income	677226      	tax_rate	33.8
-	bracket_min	1000000	paid	96956057000	average_paid	874968	average_income	2834698      	tax_rate	34.4
-										
-1984										
-	bracket_min	0	paid	120585000	average_paid	26821	average_income	-59985      	tax_rate	0.0
-	bracket_min	1	paid	9452000	average_paid	25	average_income	602      	tax_rate	15.8
-	bracket_min	1000	paid	72504000	average_paid	79	average_income	1486      	tax_rate	16.0
-	bracket_min	2000	paid	80125000	average_paid	117	average_income	2494      	tax_rate	17.5
-	bracket_min	3000	paid	111010000	average_paid	159	average_income	3497      	tax_rate	19.1
-	bracket_min	4000	paid	156835000	average_paid	135	average_income	4503      	tax_rate	16.1
-	bracket_min	5000	paid	187696000	average_paid	274	average_income	5484      	tax_rate	16.1
-	bracket_min	6000	paid	237869000	average_paid	276	average_income	6485      	tax_rate	15.4
-	bracket_min	7000	paid	366125000	average_paid	251	average_income	7507      	tax_rate	14.3
-	bracket_min	8000	paid	522520000	average_paid	329	average_income	8498      	tax_rate	14.7
-	bracket_min	9000	paid	756589000	average_paid	468	average_income	9502      	tax_rate	15.1
-	bracket_min	10000	paid	938320000	average_paid	602	average_income	10503      	tax_rate	15.1
-	bracket_min	11000	paid	1077786000	average_paid	701	average_income	11506      	tax_rate	15.0
-	bracket_min	12000	paid	1125390000	average_paid	774	average_income	12482      	tax_rate	15.0
-	bracket_min	13000	paid	1438488000	average_paid	844	average_income	13507      	tax_rate	15.1
-	bracket_min	14000	paid	1620256000	average_paid	921	average_income	14503      	tax_rate	15.0
-	bracket_min	15000	paid	1759325000	average_paid	1080	average_income	15516      	tax_rate	14.9
-	bracket_min	16000	paid	2043701000	average_paid	1211	average_income	16489      	tax_rate	15.0
-	bracket_min	17000	paid	2077114000	average_paid	1315	average_income	17509      	tax_rate	15.0
-	bracket_min	18000	paid	2469358000	average_paid	1403	average_income	18503      	tax_rate	14.3
-	bracket_min	19000	paid	2309044000	average_paid	1436	average_income	19488      	tax_rate	14.1
-	bracket_min	20000	paid	15063847000	average_paid	1770	average_income	22409      	tax_rate	14.2
-	bracket_min	25000	paid	18810892000	average_paid	2379	average_income	27424      	tax_rate	14.7
-	bracket_min	30000	paid	42380167000	average_paid	3400	average_income	34775      	tax_rate	15.5
-	bracket_min	40000	paid	46269147000	average_paid	4872	average_income	44740      	tax_rate	16.3
-	bracket_min	50000	paid	104909151000	average_paid	7338	average_income	60870      	tax_rate	17.2
-	bracket_min	75000	paid	73320894000	average_paid	12647	average_income	85903      	tax_rate	20.1
-	bracket_min	100000	paid	109837768000	average_paid	23827	average_income	130875      	tax_rate	23.5
-	bracket_min	200000	paid	87686891000	average_paid	73201	average_income	289824      	tax_rate	29.6
-	bracket_min	500000	paid	43529845000	average_paid	203733	average_income	677226      	tax_rate	33.8
-	bracket_min	1000000	paid	96956057000	average_paid	874968	average_income	2834698      	tax_rate	34.4
-										
-1985										
-	bracket_min	0	paid	120585000	average_paid	26821	average_income	-59985      	tax_rate	0.0
-	bracket_min	1	paid	9452000	average_paid	25	average_income	602      	tax_rate	15.8
-	bracket_min	1000	paid	72504000	average_paid	79	average_income	1486      	tax_rate	16.0
-	bracket_min	2000	paid	80125000	average_paid	117	average_income	2494      	tax_rate	17.5
-	bracket_min	3000	paid	111010000	average_paid	159	average_income	3497      	tax_rate	19.1
-	bracket_min	4000	paid	156835000	average_paid	135	average_income	4503      	tax_rate	16.1
-	bracket_min	5000	paid	187696000	average_paid	274	average_income	5484      	tax_rate	16.1
-	bracket_min	6000	paid	237869000	average_paid	276	average_income	6485      	tax_rate	15.4
-	bracket_min	7000	paid	366125000	average_paid	251	average_income	7507      	tax_rate	14.3
-	bracket_min	8000	paid	522520000	average_paid	329	average_income	8498      	tax_rate	14.7
-	bracket_min	9000	paid	756589000	average_paid	468	average_income	9502      	tax_rate	15.1
-	bracket_min	10000	paid	938320000	average_paid	602	average_income	10503      	tax_rate	15.1
-	bracket_min	11000	paid	1077786000	average_paid	701	average_income	11506      	tax_rate	15.0
-	bracket_min	12000	paid	1125390000	average_paid	774	average_income	12482      	tax_rate	15.0
-	bracket_min	13000	paid	1438488000	average_paid	844	average_income	13507      	tax_rate	15.1
-	bracket_min	14000	paid	1620256000	average_paid	921	average_income	14503      	tax_rate	15.0
-	bracket_min	15000	paid	1759325000	average_paid	1080	average_income	15516      	tax_rate	14.9
-	bracket_min	16000	paid	2043701000	average_paid	1211	average_income	16489      	tax_rate	15.0
-	bracket_min	17000	paid	2077114000	average_paid	1315	average_income	17509      	tax_rate	15.0
-	bracket_min	18000	paid	2469358000	average_paid	1403	average_income	18503      	tax_rate	14.3
-	bracket_min	19000	paid	2309044000	average_paid	1436	average_income	19488      	tax_rate	14.1
-	bracket_min	20000	paid	15063847000	average_paid	1770	average_income	22409      	tax_rate	14.2
-	bracket_min	25000	paid	18810892000	average_paid	2379	average_income	27424      	tax_rate	14.7
-	bracket_min	30000	paid	42380167000	average_paid	3400	average_income	34775      	tax_rate	15.5
-	bracket_min	40000	paid	46269147000	average_paid	4872	average_income	44740      	tax_rate	16.3
-	bracket_min	50000	paid	104909151000	average_paid	7338	average_income	60870      	tax_rate	17.2
-	bracket_min	75000	paid	73320894000	average_paid	12647	average_income	85903      	tax_rate	20.1
-	bracket_min	100000	paid	109837768000	average_paid	23827	average_income	130875      	tax_rate	23.5
-	bracket_min	200000	paid	87686891000	average_paid	73201	average_income	289824      	tax_rate	29.6
-	bracket_min	500000	paid	43529845000	average_paid	203733	average_income	677226      	tax_rate	33.8
-	bracket_min	1000000	paid	96956057000	average_paid	874968	average_income	2834698      	tax_rate	34.4
-										
-1986										
-	bracket_min	0	paid	120585000	average_paid	26821	average_income	-59985      	tax_rate	0.0
-	bracket_min	1	paid	9452000	average_paid	25	average_income	602      	tax_rate	15.8
-	bracket_min	1000	paid	72504000	average_paid	79	average_income	1486      	tax_rate	16.0
-	bracket_min	2000	paid	80125000	average_paid	117	average_income	2494      	tax_rate	17.5
-	bracket_min	3000	paid	111010000	average_paid	159	average_income	3497      	tax_rate	19.1
-	bracket_min	4000	paid	156835000	average_paid	135	average_income	4503      	tax_rate	16.1
-	bracket_min	5000	paid	187696000	average_paid	274	average_income	5484      	tax_rate	16.1
-	bracket_min	6000	paid	237869000	average_paid	276	average_income	6485      	tax_rate	15.4
-	bracket_min	7000	paid	366125000	average_paid	251	average_income	7507      	tax_rate	14.3
-	bracket_min	8000	paid	522520000	average_paid	329	average_income	8498      	tax_rate	14.7
-	bracket_min	9000	paid	756589000	average_paid	468	average_income	9502      	tax_rate	15.1
-	bracket_min	10000	paid	938320000	average_paid	602	average_income	10503      	tax_rate	15.1
-	bracket_min	11000	paid	1077786000	average_paid	701	average_income	11506      	tax_rate	15.0
-	bracket_min	12000	paid	1125390000	average_paid	774	average_income	12482      	tax_rate	15.0
-	bracket_min	13000	paid	1438488000	average_paid	844	average_income	13507      	tax_rate	15.1
-	bracket_min	14000	paid	1620256000	average_paid	921	average_income	14503      	tax_rate	15.0
-	bracket_min	15000	paid	1759325000	average_paid	1080	average_income	15516      	tax_rate	14.9
-	bracket_min	16000	paid	2043701000	average_paid	1211	average_income	16489      	tax_rate	15.0
-	bracket_min	17000	paid	2077114000	average_paid	1315	average_income	17509      	tax_rate	15.0
-	bracket_min	18000	paid	2469358000	average_paid	1403	average_income	18503      	tax_rate	14.3
-	bracket_min	19000	paid	2309044000	average_paid	1436	average_income	19488      	tax_rate	14.1
-	bracket_min	20000	paid	15063847000	average_paid	1770	average_income	22409      	tax_rate	14.2
-	bracket_min	25000	paid	18810892000	average_paid	2379	average_income	27424      	tax_rate	14.7
-	bracket_min	30000	paid	42380167000	average_paid	3400	average_income	34775      	tax_rate	15.5
-	bracket_min	40000	paid	46269147000	average_paid	4872	average_income	44740      	tax_rate	16.3
-	bracket_min	50000	paid	104909151000	average_paid	7338	average_income	60870      	tax_rate	17.2
-	bracket_min	75000	paid	73320894000	average_paid	12647	average_income	85903      	tax_rate	20.1
-	bracket_min	100000	paid	109837768000	average_paid	23827	average_income	130875      	tax_rate	23.5
-	bracket_min	200000	paid	87686891000	average_paid	73201	average_income	289824      	tax_rate	29.6
-	bracket_min	500000	paid	43529845000	average_paid	203733	average_income	677226      	tax_rate	33.8
-	bracket_min	1000000	paid	96956057000	average_paid	874968	average_income	2834698      	tax_rate	34.4
-										
-1987										
-	bracket_min	0	paid	120585000	average_paid	26821	average_income	-59985      	tax_rate	0.0
-	bracket_min	1	paid	9452000	average_paid	25	average_income	602      	tax_rate	15.8
-	bracket_min	1000	paid	72504000	average_paid	79	average_income	1486      	tax_rate	16.0
-	bracket_min	2000	paid	80125000	average_paid	117	average_income	2494      	tax_rate	17.5
-	bracket_min	3000	paid	111010000	average_paid	159	average_income	3497      	tax_rate	19.1
-	bracket_min	4000	paid	156835000	average_paid	135	average_income	4503      	tax_rate	16.1
-	bracket_min	5000	paid	187696000	average_paid	274	average_income	5484      	tax_rate	16.1
-	bracket_min	6000	paid	237869000	average_paid	276	average_income	6485      	tax_rate	15.4
-	bracket_min	7000	paid	366125000	average_paid	251	average_income	7507      	tax_rate	14.3
-	bracket_min	8000	paid	522520000	average_paid	329	average_income	8498      	tax_rate	14.7
-	bracket_min	9000	paid	756589000	average_paid	468	average_income	9502      	tax_rate	15.1
-	bracket_min	10000	paid	938320000	average_paid	602	average_income	10503      	tax_rate	15.1
-	bracket_min	11000	paid	1077786000	average_paid	701	average_income	11506      	tax_rate	15.0
-	bracket_min	12000	paid	1125390000	average_paid	774	average_income	12482      	tax_rate	15.0
-	bracket_min	13000	paid	1438488000	average_paid	844	average_income	13507      	tax_rate	15.1
-	bracket_min	14000	paid	1620256000	average_paid	921	average_income	14503      	tax_rate	15.0
-	bracket_min	15000	paid	1759325000	average_paid	1080	average_income	15516      	tax_rate	14.9
-	bracket_min	16000	paid	2043701000	average_paid	1211	average_income	16489      	tax_rate	15.0
-	bracket_min	17000	paid	2077114000	average_paid	1315	average_income	17509      	tax_rate	15.0
-	bracket_min	18000	paid	2469358000	average_paid	1403	average_income	18503      	tax_rate	14.3
-	bracket_min	19000	paid	2309044000	average_paid	1436	average_income	19488      	tax_rate	14.1
-	bracket_min	20000	paid	15063847000	average_paid	1770	average_income	22409      	tax_rate	14.2
-	bracket_min	25000	paid	18810892000	average_paid	2379	average_income	27424      	tax_rate	14.7
-	bracket_min	30000	paid	42380167000	average_paid	3400	average_income	34775      	tax_rate	15.5
-	bracket_min	40000	paid	46269147000	average_paid	4872	average_income	44740      	tax_rate	16.3
-	bracket_min	50000	paid	104909151000	average_paid	7338	average_income	60870      	tax_rate	17.2
-	bracket_min	75000	paid	73320894000	average_paid	12647	average_income	85903      	tax_rate	20.1
-	bracket_min	100000	paid	109837768000	average_paid	23827	average_income	130875      	tax_rate	23.5
-	bracket_min	200000	paid	87686891000	average_paid	73201	average_income	289824      	tax_rate	29.6
-	bracket_min	500000	paid	43529845000	average_paid	203733	average_income	677226      	tax_rate	33.8
-	bracket_min	1000000	paid	96956057000	average_paid	874968	average_income	2834698      	tax_rate	34.4
-										
-1988										
-	bracket_min	0	paid	120585000	average_paid	26821	average_income	-59985      	tax_rate	0.0
-	bracket_min	1	paid	9452000	average_paid	25	average_income	602      	tax_rate	15.8
-	bracket_min	1000	paid	72504000	average_paid	79	average_income	1486      	tax_rate	16.0
-	bracket_min	2000	paid	80125000	average_paid	117	average_income	2494      	tax_rate	17.5
-	bracket_min	3000	paid	111010000	average_paid	159	average_income	3497      	tax_rate	19.1
-	bracket_min	4000	paid	156835000	average_paid	135	average_income	4503      	tax_rate	16.1
-	bracket_min	5000	paid	187696000	average_paid	274	average_income	5484      	tax_rate	16.1
-	bracket_min	6000	paid	237869000	average_paid	276	average_income	6485      	tax_rate	15.4
-	bracket_min	7000	paid	366125000	average_paid	251	average_income	7507      	tax_rate	14.3
-	bracket_min	8000	paid	522520000	average_paid	329	average_income	8498      	tax_rate	14.7
-	bracket_min	9000	paid	756589000	average_paid	468	average_income	9502      	tax_rate	15.1
-	bracket_min	10000	paid	938320000	average_paid	602	average_income	10503      	tax_rate	15.1
-	bracket_min	11000	paid	1077786000	average_paid	701	average_income	11506      	tax_rate	15.0
-	bracket_min	12000	paid	1125390000	average_paid	774	average_income	12482      	tax_rate	15.0
-	bracket_min	13000	paid	1438488000	average_paid	844	average_income	13507      	tax_rate	15.1
-	bracket_min	14000	paid	1620256000	average_paid	921	average_income	14503      	tax_rate	15.0
-	bracket_min	15000	paid	1759325000	average_paid	1080	average_income	15516      	tax_rate	14.9
-	bracket_min	16000	paid	2043701000	average_paid	1211	average_income	16489      	tax_rate	15.0
-	bracket_min	17000	paid	2077114000	average_paid	1315	average_income	17509      	tax_rate	15.0
-	bracket_min	18000	paid	2469358000	average_paid	1403	average_income	18503      	tax_rate	14.3
-	bracket_min	19000	paid	2309044000	average_paid	1436	average_income	19488      	tax_rate	14.1
-	bracket_min	20000	paid	15063847000	average_paid	1770	average_income	22409      	tax_rate	14.2
-	bracket_min	25000	paid	18810892000	average_paid	2379	average_income	27424      	tax_rate	14.7
-	bracket_min	30000	paid	42380167000	average_paid	3400	average_income	34775      	tax_rate	15.5
-	bracket_min	40000	paid	46269147000	average_paid	4872	average_income	44740      	tax_rate	16.3
-	bracket_min	50000	paid	104909151000	average_paid	7338	average_income	60870      	tax_rate	17.2
-	bracket_min	75000	paid	73320894000	average_paid	12647	average_income	85903      	tax_rate	20.1
-	bracket_min	100000	paid	109837768000	average_paid	23827	average_income	130875      	tax_rate	23.5
-	bracket_min	200000	paid	87686891000	average_paid	73201	average_income	289824      	tax_rate	29.6
-	bracket_min	500000	paid	43529845000	average_paid	203733	average_income	677226      	tax_rate	33.8
-	bracket_min	1000000	paid	96956057000	average_paid	874968	average_income	2834698      	tax_rate	34.4
-										
-1989										
-	bracket_min	0	paid	120585000	average_paid	26821	average_income	-59985      	tax_rate	0.0
-	bracket_min	1	paid	9452000	average_paid	25	average_income	602      	tax_rate	15.8
-	bracket_min	1000	paid	72504000	average_paid	79	average_income	1486      	tax_rate	16.0
-	bracket_min	2000	paid	80125000	average_paid	117	average_income	2494      	tax_rate	17.5
-	bracket_min	3000	paid	111010000	average_paid	159	average_income	3497      	tax_rate	19.1
-	bracket_min	4000	paid	156835000	average_paid	135	average_income	4503      	tax_rate	16.1
-	bracket_min	5000	paid	187696000	average_paid	274	average_income	5484      	tax_rate	16.1
-	bracket_min	6000	paid	237869000	average_paid	276	average_income	6485      	tax_rate	15.4
-	bracket_min	7000	paid	366125000	average_paid	251	average_income	7507      	tax_rate	14.3
-	bracket_min	8000	paid	522520000	average_paid	329	average_income	8498      	tax_rate	14.7
-	bracket_min	9000	paid	756589000	average_paid	468	average_income	9502      	tax_rate	15.1
-	bracket_min	10000	paid	938320000	average_paid	602	average_income	10503      	tax_rate	15.1
-	bracket_min	11000	paid	1077786000	average_paid	701	average_income	11506      	tax_rate	15.0
-	bracket_min	12000	paid	1125390000	average_paid	774	average_income	12482      	tax_rate	15.0
-	bracket_min	13000	paid	1438488000	average_paid	844	average_income	13507      	tax_rate	15.1
-	bracket_min	14000	paid	1620256000	average_paid	921	average_income	14503      	tax_rate	15.0
-	bracket_min	15000	paid	1759325000	average_paid	1080	average_income	15516      	tax_rate	14.9
-	bracket_min	16000	paid	2043701000	average_paid	1211	average_income	16489      	tax_rate	15.0
-	bracket_min	17000	paid	2077114000	average_paid	1315	average_income	17509      	tax_rate	15.0
-	bracket_min	18000	paid	2469358000	average_paid	1403	average_income	18503      	tax_rate	14.3
-	bracket_min	19000	paid	2309044000	average_paid	1436	average_income	19488      	tax_rate	14.1
-	bracket_min	20000	paid	15063847000	average_paid	1770	average_income	22409      	tax_rate	14.2
-	bracket_min	25000	paid	18810892000	average_paid	2379	average_income	27424      	tax_rate	14.7
-	bracket_min	30000	paid	42380167000	average_paid	3400	average_income	34775      	tax_rate	15.5
-	bracket_min	40000	paid	46269147000	average_paid	4872	average_income	44740      	tax_rate	16.3
-	bracket_min	50000	paid	104909151000	average_paid	7338	average_income	60870      	tax_rate	17.2
-	bracket_min	75000	paid	73320894000	average_paid	12647	average_income	85903      	tax_rate	20.1
-	bracket_min	100000	paid	109837768000	average_paid	23827	average_income	130875      	tax_rate	23.5
-	bracket_min	200000	paid	87686891000	average_paid	73201	average_income	289824      	tax_rate	29.6
-	bracket_min	500000	paid	43529845000	average_paid	203733	average_income	677226      	tax_rate	33.8
-	bracket_min	1000000	paid	96956057000	average_paid	874968	average_income	2834698      	tax_rate	34.4
-										
-1990										
+1979	
+	bracket_min	0	paid	120585000	tax_rate	0.0
+	bracket_min	1	paid	9452000	tax_rate	15.8
+	bracket_min	1000	paid	72504000	tax_rate	16.0
+	bracket_min	2000	paid	80125000	tax_rate	17.5
+	bracket_min	3000	paid	111010000	tax_rate	19.1
+	bracket_min	4000	paid	156835000	tax_rate	16.1
+	bracket_min	5000	paid	187696000	tax_rate	16.1
+	bracket_min	6000	paid	237869000	tax_rate	15.4
+	bracket_min	7000	paid	366125000	tax_rate	14.3
+	bracket_min	8000	paid	522520000	tax_rate	14.7
+	bracket_min	9000	paid	756589000	tax_rate	15.1
+	bracket_min	10000	paid	938320000	tax_rate	15.1
+	bracket_min	11000	paid	1077786000	tax_rate	15.0
+	bracket_min	12000	paid	1125390000	tax_rate	15.0
+	bracket_min	13000	paid	1438488000	tax_rate	15.1
+	bracket_min	14000	paid	1620256000	tax_rate	15.0
+	bracket_min	15000	paid	1759325000	tax_rate	14.9
+	bracket_min	16000	paid	2043701000	tax_rate	15.0
+	bracket_min	17000	paid	2077114000	tax_rate	15.0
+	bracket_min	18000	paid	2469358000	tax_rate	14.3
+	bracket_min	19000	paid	2309044000	tax_rate	14.1
+	bracket_min	20000	paid	15063847000	tax_rate	14.2
+	bracket_min	25000	paid	18810892000	tax_rate	14.7
+	bracket_min	30000	paid	42380167000	tax_rate	15.5
+	bracket_min	40000	paid	46269147000	tax_rate	16.3
+	bracket_min	50000	paid	104909151000	tax_rate	17.2
+	bracket_min	75000	paid	73320894000	tax_rate	20.1
+	bracket_min	100000	paid	109837768000	tax_rate	23.5
+	bracket_min	200000	paid	87686891000	tax_rate	29.6
+	bracket_min	500000	paid	43529845000	tax_rate	33.8
+	bracket_min	1000000	paid	96956057000	tax_rate	34.4
+	
+1980	
+	bracket_min	0	paid	120585000	tax_rate	0.0
+	bracket_min	1	paid	9452000	tax_rate	15.8
+	bracket_min	1000	paid	72504000	tax_rate	16.0
+	bracket_min	2000	paid	80125000	tax_rate	17.5
+	bracket_min	3000	paid	111010000	tax_rate	19.1
+	bracket_min	4000	paid	156835000	tax_rate	16.1
+	bracket_min	5000	paid	187696000	tax_rate	16.1
+	bracket_min	6000	paid	237869000	tax_rate	15.4
+	bracket_min	7000	paid	366125000	tax_rate	14.3
+	bracket_min	8000	paid	522520000	tax_rate	14.7
+	bracket_min	9000	paid	756589000	tax_rate	15.1
+	bracket_min	10000	paid	938320000	tax_rate	15.1
+	bracket_min	11000	paid	1077786000	tax_rate	15.0
+	bracket_min	12000	paid	1125390000	tax_rate	15.0
+	bracket_min	13000	paid	1438488000	tax_rate	15.1
+	bracket_min	14000	paid	1620256000	tax_rate	15.0
+	bracket_min	15000	paid	1759325000	tax_rate	14.9
+	bracket_min	16000	paid	2043701000	tax_rate	15.0
+	bracket_min	17000	paid	2077114000	tax_rate	15.0
+	bracket_min	18000	paid	2469358000	tax_rate	14.3
+	bracket_min	19000	paid	2309044000	tax_rate	14.1
+	bracket_min	20000	paid	15063847000	tax_rate	14.2
+	bracket_min	25000	paid	18810892000	tax_rate	14.7
+	bracket_min	30000	paid	42380167000	tax_rate	15.5
+	bracket_min	40000	paid	46269147000	tax_rate	16.3
+	bracket_min	50000	paid	104909151000	tax_rate	17.2
+	bracket_min	75000	paid	73320894000	tax_rate	20.1
+	bracket_min	100000	paid	109837768000	tax_rate	23.5
+	bracket_min	200000	paid	87686891000	tax_rate	29.6
+	bracket_min	500000	paid	43529845000	tax_rate	33.8
+	bracket_min	1000000	paid	96956057000	tax_rate	34.4
+	
+1981	
+	bracket_min	0	paid	120585000	tax_rate	0.0
+	bracket_min	1	paid	9452000	tax_rate	15.8
+	bracket_min	1000	paid	72504000	tax_rate	16.0
+	bracket_min	2000	paid	80125000	tax_rate	17.5
+	bracket_min	3000	paid	111010000	tax_rate	19.1
+	bracket_min	4000	paid	156835000	tax_rate	16.1
+	bracket_min	5000	paid	187696000	tax_rate	16.1
+	bracket_min	6000	paid	237869000	tax_rate	15.4
+	bracket_min	7000	paid	366125000	tax_rate	14.3
+	bracket_min	8000	paid	522520000	tax_rate	14.7
+	bracket_min	9000	paid	756589000	tax_rate	15.1
+	bracket_min	10000	paid	938320000	tax_rate	15.1
+	bracket_min	11000	paid	1077786000	tax_rate	15.0
+	bracket_min	12000	paid	1125390000	tax_rate	15.0
+	bracket_min	13000	paid	1438488000	tax_rate	15.1
+	bracket_min	14000	paid	1620256000	tax_rate	15.0
+	bracket_min	15000	paid	1759325000	tax_rate	14.9
+	bracket_min	16000	paid	2043701000	tax_rate	15.0
+	bracket_min	17000	paid	2077114000	tax_rate	15.0
+	bracket_min	18000	paid	2469358000	tax_rate	14.3
+	bracket_min	19000	paid	2309044000	tax_rate	14.1
+	bracket_min	20000	paid	15063847000	tax_rate	14.2
+	bracket_min	25000	paid	18810892000	tax_rate	14.7
+	bracket_min	30000	paid	42380167000	tax_rate	15.5
+	bracket_min	40000	paid	46269147000	tax_rate	16.3
+	bracket_min	50000	paid	104909151000	tax_rate	17.2
+	bracket_min	75000	paid	73320894000	tax_rate	20.1
+	bracket_min	100000	paid	109837768000	tax_rate	23.5
+	bracket_min	200000	paid	87686891000	tax_rate	29.6
+	bracket_min	500000	paid	43529845000	tax_rate	33.8
+	bracket_min	1000000	paid	96956057000	tax_rate	34.4
+	
+1982	
+	bracket_min	0	paid	120585000	tax_rate	0.0
+	bracket_min	1	paid	9452000	tax_rate	15.8
+	bracket_min	1000	paid	72504000	tax_rate	16.0
+	bracket_min	2000	paid	80125000	tax_rate	17.5
+	bracket_min	3000	paid	111010000	tax_rate	19.1
+	bracket_min	4000	paid	156835000	tax_rate	16.1
+	bracket_min	5000	paid	187696000	tax_rate	16.1
+	bracket_min	6000	paid	237869000	tax_rate	15.4
+	bracket_min	7000	paid	366125000	tax_rate	14.3
+	bracket_min	8000	paid	522520000	tax_rate	14.7
+	bracket_min	9000	paid	756589000	tax_rate	15.1
+	bracket_min	10000	paid	938320000	tax_rate	15.1
+	bracket_min	11000	paid	1077786000	tax_rate	15.0
+	bracket_min	12000	paid	1125390000	tax_rate	15.0
+	bracket_min	13000	paid	1438488000	tax_rate	15.1
+	bracket_min	14000	paid	1620256000	tax_rate	15.0
+	bracket_min	15000	paid	1759325000	tax_rate	14.9
+	bracket_min	16000	paid	2043701000	tax_rate	15.0
+	bracket_min	17000	paid	2077114000	tax_rate	15.0
+	bracket_min	18000	paid	2469358000	tax_rate	14.3
+	bracket_min	19000	paid	2309044000	tax_rate	14.1
+	bracket_min	20000	paid	15063847000	tax_rate	14.2
+	bracket_min	25000	paid	18810892000	tax_rate	14.7
+	bracket_min	30000	paid	42380167000	tax_rate	15.5
+	bracket_min	40000	paid	46269147000	tax_rate	16.3
+	bracket_min	50000	paid	104909151000	tax_rate	17.2
+	bracket_min	75000	paid	73320894000	tax_rate	20.1
+	bracket_min	100000	paid	109837768000	tax_rate	23.5
+	bracket_min	200000	paid	87686891000	tax_rate	29.6
+	bracket_min	500000	paid	43529845000	tax_rate	33.8
+	bracket_min	1000000	paid	96956057000	tax_rate	34.4
+	
+1983	
+	bracket_min	0	paid	120585000	tax_rate	0.0
+	bracket_min	1	paid	9452000	tax_rate	15.8
+	bracket_min	1000	paid	72504000	tax_rate	16.0
+	bracket_min	2000	paid	80125000	tax_rate	17.5
+	bracket_min	3000	paid	111010000	tax_rate	19.1
+	bracket_min	4000	paid	156835000	tax_rate	16.1
+	bracket_min	5000	paid	187696000	tax_rate	16.1
+	bracket_min	6000	paid	237869000	tax_rate	15.4
+	bracket_min	7000	paid	366125000	tax_rate	14.3
+	bracket_min	8000	paid	522520000	tax_rate	14.7
+	bracket_min	9000	paid	756589000	tax_rate	15.1
+	bracket_min	10000	paid	938320000	tax_rate	15.1
+	bracket_min	11000	paid	1077786000	tax_rate	15.0
+	bracket_min	12000	paid	1125390000	tax_rate	15.0
+	bracket_min	13000	paid	1438488000	tax_rate	15.1
+	bracket_min	14000	paid	1620256000	tax_rate	15.0
+	bracket_min	15000	paid	1759325000	tax_rate	14.9
+	bracket_min	16000	paid	2043701000	tax_rate	15.0
+	bracket_min	17000	paid	2077114000	tax_rate	15.0
+	bracket_min	18000	paid	2469358000	tax_rate	14.3
+	bracket_min	19000	paid	2309044000	tax_rate	14.1
+	bracket_min	20000	paid	15063847000	tax_rate	14.2
+	bracket_min	25000	paid	18810892000	tax_rate	14.7
+	bracket_min	30000	paid	42380167000	tax_rate	15.5
+	bracket_min	40000	paid	46269147000	tax_rate	16.3
+	bracket_min	50000	paid	104909151000	tax_rate	17.2
+	bracket_min	75000	paid	73320894000	tax_rate	20.1
+	bracket_min	100000	paid	109837768000	tax_rate	23.5
+	bracket_min	200000	paid	87686891000	tax_rate	29.6
+	bracket_min	500000	paid	43529845000	tax_rate	33.8
+	bracket_min	1000000	paid	96956057000	tax_rate	34.4
+	
+1984	
+	bracket_min	0	paid	120585000	tax_rate	0.0
+	bracket_min	1	paid	9452000	tax_rate	15.8
+	bracket_min	1000	paid	72504000	tax_rate	16.0
+	bracket_min	2000	paid	80125000	tax_rate	17.5
+	bracket_min	3000	paid	111010000	tax_rate	19.1
+	bracket_min	4000	paid	156835000	tax_rate	16.1
+	bracket_min	5000	paid	187696000	tax_rate	16.1
+	bracket_min	6000	paid	237869000	tax_rate	15.4
+	bracket_min	7000	paid	366125000	tax_rate	14.3
+	bracket_min	8000	paid	522520000	tax_rate	14.7
+	bracket_min	9000	paid	756589000	tax_rate	15.1
+	bracket_min	10000	paid	938320000	tax_rate	15.1
+	bracket_min	11000	paid	1077786000	tax_rate	15.0
+	bracket_min	12000	paid	1125390000	tax_rate	15.0
+	bracket_min	13000	paid	1438488000	tax_rate	15.1
+	bracket_min	14000	paid	1620256000	tax_rate	15.0
+	bracket_min	15000	paid	1759325000	tax_rate	14.9
+	bracket_min	16000	paid	2043701000	tax_rate	15.0
+	bracket_min	17000	paid	2077114000	tax_rate	15.0
+	bracket_min	18000	paid	2469358000	tax_rate	14.3
+	bracket_min	19000	paid	2309044000	tax_rate	14.1
+	bracket_min	20000	paid	15063847000	tax_rate	14.2
+	bracket_min	25000	paid	18810892000	tax_rate	14.7
+	bracket_min	30000	paid	42380167000	tax_rate	15.5
+	bracket_min	40000	paid	46269147000	tax_rate	16.3
+	bracket_min	50000	paid	104909151000	tax_rate	17.2
+	bracket_min	75000	paid	73320894000	tax_rate	20.1
+	bracket_min	100000	paid	109837768000	tax_rate	23.5
+	bracket_min	200000	paid	87686891000	tax_rate	29.6
+	bracket_min	500000	paid	43529845000	tax_rate	33.8
+	bracket_min	1000000	paid	96956057000	tax_rate	34.4
+	
+1985	
+	bracket_min	0	paid	120585000	tax_rate	0.0
+	bracket_min	1	paid	9452000	tax_rate	15.8
+	bracket_min	1000	paid	72504000	tax_rate	16.0
+	bracket_min	2000	paid	80125000	tax_rate	17.5
+	bracket_min	3000	paid	111010000	tax_rate	19.1
+	bracket_min	4000	paid	156835000	tax_rate	16.1
+	bracket_min	5000	paid	187696000	tax_rate	16.1
+	bracket_min	6000	paid	237869000	tax_rate	15.4
+	bracket_min	7000	paid	366125000	tax_rate	14.3
+	bracket_min	8000	paid	522520000	tax_rate	14.7
+	bracket_min	9000	paid	756589000	tax_rate	15.1
+	bracket_min	10000	paid	938320000	tax_rate	15.1
+	bracket_min	11000	paid	1077786000	tax_rate	15.0
+	bracket_min	12000	paid	1125390000	tax_rate	15.0
+	bracket_min	13000	paid	1438488000	tax_rate	15.1
+	bracket_min	14000	paid	1620256000	tax_rate	15.0
+	bracket_min	15000	paid	1759325000	tax_rate	14.9
+	bracket_min	16000	paid	2043701000	tax_rate	15.0
+	bracket_min	17000	paid	2077114000	tax_rate	15.0
+	bracket_min	18000	paid	2469358000	tax_rate	14.3
+	bracket_min	19000	paid	2309044000	tax_rate	14.1
+	bracket_min	20000	paid	15063847000	tax_rate	14.2
+	bracket_min	25000	paid	18810892000	tax_rate	14.7
+	bracket_min	30000	paid	42380167000	tax_rate	15.5
+	bracket_min	40000	paid	46269147000	tax_rate	16.3
+	bracket_min	50000	paid	104909151000	tax_rate	17.2
+	bracket_min	75000	paid	73320894000	tax_rate	20.1
+	bracket_min	100000	paid	109837768000	tax_rate	23.5
+	bracket_min	200000	paid	87686891000	tax_rate	29.6
+	bracket_min	500000	paid	43529845000	tax_rate	33.8
+	bracket_min	1000000	paid	96956057000	tax_rate	34.4
+	
+1986	
+	bracket_min	0	paid	120585000	tax_rate	0.0
+	bracket_min	1	paid	9452000	tax_rate	15.8
+	bracket_min	1000	paid	72504000	tax_rate	16.0
+	bracket_min	2000	paid	80125000	tax_rate	17.5
+	bracket_min	3000	paid	111010000	tax_rate	19.1
+	bracket_min	4000	paid	156835000	tax_rate	16.1
+	bracket_min	5000	paid	187696000	tax_rate	16.1
+	bracket_min	6000	paid	237869000	tax_rate	15.4
+	bracket_min	7000	paid	366125000	tax_rate	14.3
+	bracket_min	8000	paid	522520000	tax_rate	14.7
+	bracket_min	9000	paid	756589000	tax_rate	15.1
+	bracket_min	10000	paid	938320000	tax_rate	15.1
+	bracket_min	11000	paid	1077786000	tax_rate	15.0
+	bracket_min	12000	paid	1125390000	tax_rate	15.0
+	bracket_min	13000	paid	1438488000	tax_rate	15.1
+	bracket_min	14000	paid	1620256000	tax_rate	15.0
+	bracket_min	15000	paid	1759325000	tax_rate	14.9
+	bracket_min	16000	paid	2043701000	tax_rate	15.0
+	bracket_min	17000	paid	2077114000	tax_rate	15.0
+	bracket_min	18000	paid	2469358000	tax_rate	14.3
+	bracket_min	19000	paid	2309044000	tax_rate	14.1
+	bracket_min	20000	paid	15063847000	tax_rate	14.2
+	bracket_min	25000	paid	18810892000	tax_rate	14.7
+	bracket_min	30000	paid	42380167000	tax_rate	15.5
+	bracket_min	40000	paid	46269147000	tax_rate	16.3
+	bracket_min	50000	paid	104909151000	tax_rate	17.2
+	bracket_min	75000	paid	73320894000	tax_rate	20.1
+	bracket_min	100000	paid	109837768000	tax_rate	23.5
+	bracket_min	200000	paid	87686891000	tax_rate	29.6
+	bracket_min	500000	paid	43529845000	tax_rate	33.8
+	bracket_min	1000000	paid	96956057000	tax_rate	34.4
+	
+1987
+	bracket_min	0	paid	88001000	tax_rate	13.7
+	bracket_min	2000	paid	283000000	tax_rate	12.6
+	bracket_min	4000	paid	689854000	tax_rate	12.2
+	bracket_min	6000	paid	1390673000	tax_rate	12.1
+	bracket_min	8000	paid	2382445000	tax_rate	12.9
+	bracket_min	10000	paid	3428810000	tax_rate	13.3
+	bracket_min	12000	paid	4602634000	tax_rate	13.6
+	bracket_min	14000	paid	5454048000	tax_rate	13.8
+	bracket_min	16000	paid	6130513000	tax_rate	13.9
+	bracket_min	18000	paid	6786040000	tax_rate	14.4
+	bracket_min	20000	paid	18467794000	tax_rate	14.7
+	bracket_min	25000	paid	20755482000	tax_rate	15.5
+	bracket_min	30000	paid	43480588000	tax_rate	16.0
+	bracket_min	40000	paid	41824079000	tax_rate	17.2
+	bracket_min	50000	paid	70281139000	tax_rate	20.2
+	bracket_min	75000	paid	31404121000	tax_rate	24.2
+	bracket_min	100000	paid	43524894000	tax_rate	28.3
+	bracket_min	200000	paid	32853303000	tax_rate	32.6
+	bracket_min	500000	paid	14698589000	tax_rate	34.3
+	bracket_min	1000000	paid	24576469000	tax_rate	34.1
+
+1988
+	bracket_min	0	paid	106413000	tax_rate	16.2
+	bracket_min	2000	paid	226075000	tax_rate	16.2
+	bracket_min	4000	paid	531678000	tax_rate	15.3
+	bracket_min	6000	paid	1259760000	tax_rate	15.1
+	bracket_min	8000	paid	2057196000	tax_rate	15.1
+	bracket_min	10000	paid	3246164000	tax_rate	15.0
+	bracket_min	12000	paid	4507842000	tax_rate	15.0
+	bracket_min	14000	paid	5319472000	tax_rate	15.0
+	bracket_min	16000	paid	6274210000	tax_rate	15.0
+	bracket_min	18000	paid	6980469000	tax_rate	15.0
+	bracket_min	20000	paid	18436508000	tax_rate	15.1
+	bracket_min	25000	paid	20914418000	tax_rate	15.9
+	bracket_min	30000	paid	45652790000	tax_rate	16.4
+	bracket_min	40000	paid	44319430000	tax_rate	16.8
+	bracket_min	50000	paid	81575413000	tax_rate	19.2
+	bracket_min	75000	paid	42800332000	tax_rate	22.2
+	bracket_min	100000	paid	54629213000	tax_rate	25.7
+	bracket_min	200000	paid	41780219000	tax_rate	28.1
+	bracket_min	500000	paid	18918235000	tax_rate	28.0
+	bracket_min	1000000	paid	36895335000	tax_rate	28.0
+	
+1989
+	bracket_min	0	paid	689164000	tax_rate	16.7
+	bracket_min	2000	paid	1485218000	tax_rate	15.9
+	bracket_min	4000	paid	3983428000	tax_rate	15.0
+	bracket_min	6000	paid	9014049000	tax_rate	14.9
+	bracket_min	8000	paid	15305677000	tax_rate	14.8
+	bracket_min	10000	paid	21169307000	tax_rate	14.9
+	bracket_min	12000	paid	29979141000	tax_rate	14.9
+	bracket_min	14000	paid	37510185000	tax_rate	14.9
+	bracket_min	16000	paid	42095127000	tax_rate	14.9
+	bracket_min	18000	paid	45602105000	tax_rate	15.0
+	bracket_min	20000	paid	123752465000	tax_rate	15.1
+	bracket_min	25000	paid	130581872000	tax_rate	15.9
+	bracket_min	30000	paid	274610363000	tax_rate	16.4
+	bracket_min	40000	paid	255121323000	tax_rate	17.0
+	bracket_min	50000	paid	383088855000	tax_rate	19.5
+	bracket_min	75000	paid	159574120000	tax_rate	22.5
+	bracket_min	100000	paid	183252229000	tax_rate	26.1
+	bracket_min	200000	paid	134674808000	tax_rate	28.6
+	bracket_min	500000	paid	67559945000	tax_rate	28.4
+	bracket_min	1000000	paid	150793390000	tax_rate	28.2
+
+1990	
 	bracket_min	0	income	654765000	paid	105051000	tax_rate	16.0
 	bracket_min	2000	income	1192548000	paid	202928000	tax_rate	17.0
 	bracket_min	4000	income	3310922000	paid	514382000	tax_rate	15.5
@@ -382,8 +349,8 @@
 	bracket_min	200000	income	152657211000	paid	43483307000	tax_rate	28.5
 	bracket_min	500000	income	74316528000	paid	21031963000	tax_rate	28.3
 	bracket_min	1000000	income	134653588000	paid	37778562000	tax_rate	28.1
-										
-1991										
+	
+1991	
 	bracket_min	0	income	578072000	paid	93199000	tax_rate	16.1
 	bracket_min	2000	income	1142141000	paid	188507000	tax_rate	16.5
 	bracket_min	4000	income	2591010000	paid	397276000	tax_rate	15.3
@@ -404,8 +371,8 @@
 	bracket_min	200000	income	165216471000	paid	46470041000	tax_rate	28.1
 	bracket_min	500000	income	69658824000	paid	20578241000	tax_rate	29.5
 	bracket_min	1000000	income	112069587000	paid	33649556000	tax_rate	30.0
-										
-1992										
+	
+1992	
 	bracket_min	0	income	38694281000	paid	14479000	tax_rate	0.0
 	bracket_min	1	income	37956532000	paid	361186000	tax_rate	1.0
 	bracket_min	5000	income	112055111000	paid	2673813000	tax_rate	2.4
@@ -421,8 +388,8 @@
 	bracket_min	200000	income	218418695000	paid	52548455000	tax_rate	24.1
 	bracket_min	500000	income	95313137000	paid	25038069000	tax_rate	26.3
 	bracket_min	1000000	income	169734842000	paid	46629729000	tax_rate	27.5
-										
-1993										
+	
+1993	
 	bracket_min	0	income	468901000	paid	75996000	tax_rate	16.2
 	bracket_min	2000	income	755135000	paid	126850000	tax_rate	16.8
 	bracket_min	4000	income	1964999000	paid	307083000	tax_rate	15.6
@@ -443,8 +410,8 @@
 	bracket_min	200000	income	193398214000	paid	58234398000	tax_rate	30.1
 	bracket_min	500000	income	82915033000	paid	28425533000	tax_rate	34.3
 	bracket_min	1000000	income	150906911000	paid	53722430000	tax_rate	35.6
-										
-1994										
+	
+1994	
 	bracket_min	0	income	476065000	paid	78056000	tax_rate	16.4
 	bracket_min	2000	income	709375000	paid	118457000	tax_rate	16.7
 	bracket_min	4000	income	2149573000	paid	334445000	tax_rate	15.6
@@ -465,8 +432,8 @@
 	bracket_min	200000	income	218024338000	paid	65577434000	tax_rate	30.1
 	bracket_min	500000	income	88893179000	paid	30524036000	tax_rate	34.3
 	bracket_min	1000000	income	161523291000	paid	57243697000	tax_rate	35.4
-										
-1995										
+	
+1995	
 	bracket_min	0	income	478719000	paid	77875000	tax_rate	16.3
 	bracket_min	2000	income	914670000	paid	157016000	tax_rate	17.2
 	bracket_min	4000	income	2057829000	paid	318820000	tax_rate	15.5
@@ -487,520 +454,520 @@
 	bracket_min	200000	income	249447991000	paid	74786196000	tax_rate	30.0
 	bracket_min	500000	income	106641422000	paid	36617850000	tax_rate	34.3
 	bracket_min	1000000	income	203476979000	paid	72236788000	tax_rate	35.5
-										
-1996										
-	bracket_min	0	paid	120585000	average_paid	26821	average_income	-59985      	tax_rate	0.0
-	bracket_min	1	paid	9452000	average_paid	25	average_income	602      	tax_rate	15.8
-	bracket_min	1000	paid	72504000	average_paid	79	average_income	1486      	tax_rate	16.0
-	bracket_min	2000	paid	80125000	average_paid	117	average_income	2494      	tax_rate	17.5
-	bracket_min	3000	paid	111010000	average_paid	159	average_income	3497      	tax_rate	19.1
-	bracket_min	4000	paid	156835000	average_paid	135	average_income	4503      	tax_rate	16.1
-	bracket_min	5000	paid	187696000	average_paid	274	average_income	5484      	tax_rate	16.1
-	bracket_min	6000	paid	237869000	average_paid	276	average_income	6485      	tax_rate	15.4
-	bracket_min	7000	paid	366125000	average_paid	251	average_income	7507      	tax_rate	14.3
-	bracket_min	8000	paid	522520000	average_paid	329	average_income	8498      	tax_rate	14.7
-	bracket_min	9000	paid	756589000	average_paid	468	average_income	9502      	tax_rate	15.1
-	bracket_min	10000	paid	938320000	average_paid	602	average_income	10503      	tax_rate	15.1
-	bracket_min	11000	paid	1077786000	average_paid	701	average_income	11506      	tax_rate	15.0
-	bracket_min	12000	paid	1125390000	average_paid	774	average_income	12482      	tax_rate	15.0
-	bracket_min	13000	paid	1438488000	average_paid	844	average_income	13507      	tax_rate	15.1
-	bracket_min	14000	paid	1620256000	average_paid	921	average_income	14503      	tax_rate	15.0
-	bracket_min	15000	paid	1759325000	average_paid	1080	average_income	15516      	tax_rate	14.9
-	bracket_min	16000	paid	2043701000	average_paid	1211	average_income	16489      	tax_rate	15.0
-	bracket_min	17000	paid	2077114000	average_paid	1315	average_income	17509      	tax_rate	15.0
-	bracket_min	18000	paid	2469358000	average_paid	1403	average_income	18503      	tax_rate	14.3
-	bracket_min	19000	paid	2309044000	average_paid	1436	average_income	19488      	tax_rate	14.1
-	bracket_min	20000	paid	15063847000	average_paid	1770	average_income	22409      	tax_rate	14.2
-	bracket_min	25000	paid	18810892000	average_paid	2379	average_income	27424      	tax_rate	14.7
-	bracket_min	30000	paid	42380167000	average_paid	3400	average_income	34775      	tax_rate	15.5
-	bracket_min	40000	paid	46269147000	average_paid	4872	average_income	44740      	tax_rate	16.3
-	bracket_min	50000	paid	104909151000	average_paid	7338	average_income	60870      	tax_rate	17.2
-	bracket_min	75000	paid	73320894000	average_paid	12647	average_income	85903      	tax_rate	20.1
-	bracket_min	100000	paid	109837768000	average_paid	23827	average_income	130875      	tax_rate	23.5
-	bracket_min	200000	paid	87686891000	average_paid	73201	average_income	289824      	tax_rate	29.6
-	bracket_min	500000	paid	43529845000	average_paid	203733	average_income	677226      	tax_rate	33.8
-	bracket_min	1000000	paid	96956057000	average_paid	874968	average_income	2834698      	tax_rate	34.4
-										
-1997										
-	bracket_min	0	paid	111358000	average_paid	17190	average_income	-58242      	tax_rate	0.0
-	bracket_min	1	paid	20072000	average_paid	57	average_income	627      	tax_rate	40.5
-	bracket_min	1000	paid	74545000	average_paid	77	average_income	1506      	tax_rate	14.9
-	bracket_min	2000	paid	104484000	average_paid	141	average_income	2481      	tax_rate	16.6
-	bracket_min	3000	paid	122056000	average_paid	170	average_income	3491      	tax_rate	17.4
-	bracket_min	4000	paid	138582000	average_paid	130	average_income	4492      	tax_rate	15.6
-	bracket_min	5000	paid	231321000	average_paid	265	average_income	5496      	tax_rate	15.7
-	bracket_min	6000	paid	252322000	average_paid	330	average_income	6499      	tax_rate	15.5
-	bracket_min	7000	paid	349500000	average_paid	287	average_income	7508      	tax_rate	15.0
-	bracket_min	8000	paid	483870000	average_paid	300	average_income	8485      	tax_rate	14.1
-	bracket_min	9000	paid	747855000	average_paid	447	average_income	9498      	tax_rate	14.9
-	bracket_min	10000	paid	907436000	average_paid	594	average_income	10507      	tax_rate	15.0
-	bracket_min	11000	paid	1050192000	average_paid	683	average_income	11493      	tax_rate	15.1
-	bracket_min	12000	paid	1212221000	average_paid	772	average_income	12475      	tax_rate	14.9
-	bracket_min	13000	paid	1318128000	average_paid	823	average_income	13479      	tax_rate	15.0
-	bracket_min	14000	paid	1591478000	average_paid	923	average_income	14497      	tax_rate	14.9
-	bracket_min	15000	paid	1716061000	average_paid	1055	average_income	15505      	tax_rate	14.9
-	bracket_min	16000	paid	1765101000	average_paid	1169	average_income	16501      	tax_rate	15.0
-	bracket_min	17000	paid	1784476000	average_paid	1258	average_income	17505      	tax_rate	14.8
-	bracket_min	18000	paid	2149906000	average_paid	1379	average_income	18486      	tax_rate	14.3
-	bracket_min	19000	paid	2283904000	average_paid	1390	average_income	19480      	tax_rate	13.8
-	bracket_min	20000	paid	14973568000	average_paid	1766	average_income	22408      	tax_rate	14.1
-	bracket_min	25000	paid	18688572000	average_paid	2373	average_income	27456      	tax_rate	14.6
-	bracket_min	30000	paid	43078975000	average_paid	3344	average_income	34724      	tax_rate	15.4
-	bracket_min	40000	paid	46713703000	average_paid	4797	average_income	44712      	tax_rate	16.2
-	bracket_min	50000	paid	110278865000	average_paid	7281	average_income	60932      	tax_rate	17.1
-	bracket_min	75000	paid	80166627000	average_paid	12438	average_income	85822      	tax_rate	19.8
-	bracket_min	100000	paid	126267568000	average_paid	23495	average_income	131615      	tax_rate	23.0
-	bracket_min	200000	paid	99511646000	average_paid	71037	average_income	288438      	tax_rate	28.8
-	bracket_min	500000	paid	51290896000	average_paid	196119	average_income	675064      	tax_rate	32.5
-	bracket_min	1000000	paid	121936110000	average_paid	844813	average_income	2931678      	tax_rate	32.0
+	
+1996	
+	bracket_min	0	paid	120585000	tax_rate	0.0
+	bracket_min	1	paid	9452000	tax_rate	15.8
+	bracket_min	1000	paid	72504000	tax_rate	16.0
+	bracket_min	2000	paid	80125000	tax_rate	17.5
+	bracket_min	3000	paid	111010000	tax_rate	19.1
+	bracket_min	4000	paid	156835000	tax_rate	16.1
+	bracket_min	5000	paid	187696000	tax_rate	16.1
+	bracket_min	6000	paid	237869000	tax_rate	15.4
+	bracket_min	7000	paid	366125000	tax_rate	14.3
+	bracket_min	8000	paid	522520000	tax_rate	14.7
+	bracket_min	9000	paid	756589000	tax_rate	15.1
+	bracket_min	10000	paid	938320000	tax_rate	15.1
+	bracket_min	11000	paid	1077786000	tax_rate	15.0
+	bracket_min	12000	paid	1125390000	tax_rate	15.0
+	bracket_min	13000	paid	1438488000	tax_rate	15.1
+	bracket_min	14000	paid	1620256000	tax_rate	15.0
+	bracket_min	15000	paid	1759325000	tax_rate	14.9
+	bracket_min	16000	paid	2043701000	tax_rate	15.0
+	bracket_min	17000	paid	2077114000	tax_rate	15.0
+	bracket_min	18000	paid	2469358000	tax_rate	14.3
+	bracket_min	19000	paid	2309044000	tax_rate	14.1
+	bracket_min	20000	paid	15063847000	tax_rate	14.2
+	bracket_min	25000	paid	18810892000	tax_rate	14.7
+	bracket_min	30000	paid	42380167000	tax_rate	15.5
+	bracket_min	40000	paid	46269147000	tax_rate	16.3
+	bracket_min	50000	paid	104909151000	tax_rate	17.2
+	bracket_min	75000	paid	73320894000	tax_rate	20.1
+	bracket_min	100000	paid	109837768000	tax_rate	23.5
+	bracket_min	200000	paid	87686891000	tax_rate	29.6
+	bracket_min	500000	paid	43529845000	tax_rate	33.8
+	bracket_min	1000000	paid	96956057000	tax_rate	34.4
+	
+1997	
+	bracket_min	0	paid	111358000	tax_rate	0.0
+	bracket_min	1	paid	20072000	tax_rate	40.5
+	bracket_min	1000	paid	74545000	tax_rate	14.9
+	bracket_min	2000	paid	104484000	tax_rate	16.6
+	bracket_min	3000	paid	122056000	tax_rate	17.4
+	bracket_min	4000	paid	138582000	tax_rate	15.6
+	bracket_min	5000	paid	231321000	tax_rate	15.7
+	bracket_min	6000	paid	252322000	tax_rate	15.5
+	bracket_min	7000	paid	349500000	tax_rate	15.0
+	bracket_min	8000	paid	483870000	tax_rate	14.1
+	bracket_min	9000	paid	747855000	tax_rate	14.9
+	bracket_min	10000	paid	907436000	tax_rate	15.0
+	bracket_min	11000	paid	1050192000	tax_rate	15.1
+	bracket_min	12000	paid	1212221000	tax_rate	14.9
+	bracket_min	13000	paid	1318128000	tax_rate	15.0
+	bracket_min	14000	paid	1591478000	tax_rate	14.9
+	bracket_min	15000	paid	1716061000	tax_rate	14.9
+	bracket_min	16000	paid	1765101000	tax_rate	15.0
+	bracket_min	17000	paid	1784476000	tax_rate	14.8
+	bracket_min	18000	paid	2149906000	tax_rate	14.3
+	bracket_min	19000	paid	2283904000	tax_rate	13.8
+	bracket_min	20000	paid	14973568000	tax_rate	14.1
+	bracket_min	25000	paid	18688572000	tax_rate	14.6
+	bracket_min	30000	paid	43078975000	tax_rate	15.4
+	bracket_min	40000	paid	46713703000	tax_rate	16.2
+	bracket_min	50000	paid	110278865000	tax_rate	17.1
+	bracket_min	75000	paid	80166627000	tax_rate	19.8
+	bracket_min	100000	paid	126267568000	tax_rate	23.0
+	bracket_min	200000	paid	99511646000	tax_rate	28.8
+	bracket_min	500000	paid	51290896000	tax_rate	32.5
+	bracket_min	1000000	paid	121936110000	tax_rate	32.0
 
-1998										
-	bracket_min	0	paid	90072000	average_paid	24436	average_income	-53515      	tax_rate	0.0
-	bracket_min	1	paid	3802000	average_paid	17	average_income	607      	tax_rate	12.2
-	bracket_min	1000	paid	57204000	average_paid	93	average_income	1500      	tax_rate	13.9
-	bracket_min	2000	paid	74766000	average_paid	200	average_income	2500      	tax_rate	15.0
-	bracket_min	3000	paid	85656000	average_paid	262	average_income	3507      	tax_rate	15.0
-	bracket_min	4000	paid	124879000	average_paid	128	average_income	4488      	tax_rate	16.2
-	bracket_min	5000	paid	210476000	average_paid	242	average_income	5510      	tax_rate	15.3
-	bracket_min	6000	paid	262585000	average_paid	358	average_income	6500      	tax_rate	15.0
-	bracket_min	7000	paid	323995000	average_paid	300	average_income	7495      	tax_rate	15.3
-	bracket_min	8000	paid	430348000	average_paid	284	average_income	8482      	tax_rate	13.6
-	bracket_min	9000	paid	638057000	average_paid	411	average_income	9485      	tax_rate	14.5
-	bracket_min	10000	paid	813133000	average_paid	562	average_income	10504      	tax_rate	14.8
-	bracket_min	11000	paid	941470000	average_paid	663	average_income	11509      	tax_rate	14.6
-	bracket_min	12000	paid	1096156000	average_paid	760	average_income	12506      	tax_rate	14.7
-	bracket_min	13000	paid	1275880000	average_paid	858	average_income	13497      	tax_rate	14.6
-	bracket_min	14000	paid	1461809000	average_paid	890	average_income	14504      	tax_rate	14.6
-	bracket_min	15000	paid	1734474000	average_paid	1044	average_income	15511      	tax_rate	14.7
-	bracket_min	16000	paid	1700611000	average_paid	1136	average_income	16498      	tax_rate	14.6
-	bracket_min	17000	paid	1970242000	average_paid	1248	average_income	17493      	tax_rate	14.5
-	bracket_min	18000	paid	2160387000	average_paid	1371	average_income	18495      	tax_rate	14.4
-	bracket_min	19000	paid	2413305000	average_paid	1496	average_income	19506      	tax_rate	14.3
-	bracket_min	20000	paid	13871104000	average_paid	1755	average_income	22436      	tax_rate	13.8
-	bracket_min	25000	paid	16993257000	average_paid	2278	average_income	27420      	tax_rate	13.8
-	bracket_min	30000	paid	40347683000	average_paid	3157	average_income	34733      	tax_rate	14.4
-	bracket_min	40000	paid	44814558000	average_paid	4538	average_income	44825      	tax_rate	15.2
-	bracket_min	50000	paid	108921128000	average_paid	6876	average_income	61045      	tax_rate	16.1
-	bracket_min	75000	paid	85209357000	average_paid	11810	average_income	85644      	tax_rate	18.8
-	bracket_min	100000	paid	143720694000	average_paid	22947	average_income	131278      	tax_rate	22.6
-	bracket_min	200000	paid	111545246000	average_paid	69496	average_income	288628      	tax_rate	28.2
-	bracket_min	500000	paid	58482844000	average_paid	190608	average_income	676159      	tax_rate	31.6
-	bracket_min	1000000	paid	146766804000	average_paid	853976	average_income	3101475      	tax_rate	30.4
+1998	
+	bracket_min	0	paid	90072000	tax_rate	0.0
+	bracket_min	1	paid	3802000	tax_rate	12.2
+	bracket_min	1000	paid	57204000	tax_rate	13.9
+	bracket_min	2000	paid	74766000	tax_rate	15.0
+	bracket_min	3000	paid	85656000	tax_rate	15.0
+	bracket_min	4000	paid	124879000	tax_rate	16.2
+	bracket_min	5000	paid	210476000	tax_rate	15.3
+	bracket_min	6000	paid	262585000	tax_rate	15.0
+	bracket_min	7000	paid	323995000	tax_rate	15.3
+	bracket_min	8000	paid	430348000	tax_rate	13.6
+	bracket_min	9000	paid	638057000	tax_rate	14.5
+	bracket_min	10000	paid	813133000	tax_rate	14.8
+	bracket_min	11000	paid	941470000	tax_rate	14.6
+	bracket_min	12000	paid	1096156000	tax_rate	14.7
+	bracket_min	13000	paid	1275880000	tax_rate	14.6
+	bracket_min	14000	paid	1461809000	tax_rate	14.6
+	bracket_min	15000	paid	1734474000	tax_rate	14.7
+	bracket_min	16000	paid	1700611000	tax_rate	14.6
+	bracket_min	17000	paid	1970242000	tax_rate	14.5
+	bracket_min	18000	paid	2160387000	tax_rate	14.4
+	bracket_min	19000	paid	2413305000	tax_rate	14.3
+	bracket_min	20000	paid	13871104000	tax_rate	13.8
+	bracket_min	25000	paid	16993257000	tax_rate	13.8
+	bracket_min	30000	paid	40347683000	tax_rate	14.4
+	bracket_min	40000	paid	44814558000	tax_rate	15.2
+	bracket_min	50000	paid	108921128000	tax_rate	16.1
+	bracket_min	75000	paid	85209357000	tax_rate	18.8
+	bracket_min	100000	paid	143720694000	tax_rate	22.6
+	bracket_min	200000	paid	111545246000	tax_rate	28.2
+	bracket_min	500000	paid	58482844000	tax_rate	31.6
+	bracket_min	1000000	paid	146766804000	tax_rate	30.4
 
-1999										
-	bracket_min	0	paid	109267000	average_paid	22567	average_income	-50518      	tax_rate	0.0
-	bracket_min	1	paid	6961000	average_paid	31	average_income	609      	tax_rate	20.1
-	bracket_min	1000	paid	54658000	average_paid	92	average_income	1518      	tax_rate	13.0
-	bracket_min	2000	paid	77797000	average_paid	191	average_income	2492      	tax_rate	14.5
-	bracket_min	3000	paid	97169000	average_paid	284	average_income	3500      	tax_rate	15.9
-	bracket_min	4000	paid	116770000	average_paid	130	average_income	4498      	tax_rate	15.0
-	bracket_min	5000	paid	203251000	average_paid	246	average_income	5498      	tax_rate	15.4
-	bracket_min	6000	paid	273174000	average_paid	363	average_income	6495      	tax_rate	14.9
-	bracket_min	7000	paid	309437000	average_paid	286	average_income	7485      	tax_rate	15.1
-	bracket_min	8000	paid	440949000	average_paid	307	average_income	8503      	tax_rate	14.0
-	bracket_min	9000	paid	640037000	average_paid	431	average_income	9490      	tax_rate	14.5
-	bracket_min	10000	paid	778981000	average_paid	567	average_income	10492      	tax_rate	14.9
-	bracket_min	11000	paid	885049000	average_paid	667	average_income	11495      	tax_rate	14.6
-	bracket_min	12000	paid	1072897000	average_paid	769	average_income	12503      	tax_rate	14.5
-	bracket_min	13000	paid	1224514000	average_paid	834	average_income	13511      	tax_rate	14.5
-	bracket_min	14000	paid	1334873000	average_paid	894	average_income	14508      	tax_rate	14.4
-	bracket_min	15000	paid	1694987000	average_paid	992	average_income	15514      	tax_rate	14.4
-	bracket_min	16000	paid	1755131000	average_paid	1121	average_income	16500      	tax_rate	14.4
-	bracket_min	17000	paid	1902373000	average_paid	1243	average_income	17488      	tax_rate	14.5
-	bracket_min	18000	paid	2004051000	average_paid	1360	average_income	18499      	tax_rate	14.4
-	bracket_min	19000	paid	2088094000	average_paid	1458	average_income	19486      	tax_rate	14.2
-	bracket_min	20000	paid	13447210000	average_paid	1739	average_income	22443      	tax_rate	13.7
-	bracket_min	25000	paid	16944557000	average_paid	2277	average_income	27385      	tax_rate	13.7
-	bracket_min	30000	paid	39695871000	average_paid	3101	average_income	34755      	tax_rate	14.1
-	bracket_min	40000	paid	43463696000	average_paid	4462	average_income	44731      	tax_rate	15.0
-	bracket_min	50000	paid	113204249000	average_paid	6788	average_income	61097      	tax_rate	15.9
-	bracket_min	75000	paid	91819100000	average_paid	11767	average_income	85925      	tax_rate	18.7
-	bracket_min	100000	paid	162224990000	average_paid	22855	average_income	131570      	tax_rate	22.5
-	bracket_min	200000	paid	130273941000	average_paid	69465	average_income	289065      	tax_rate	28.1
-	bracket_min	500000	paid	66964769000	average_paid	192426	average_income	676802      	tax_rate	31.9
-	bracket_min	1000000	paid	182292689000	average_paid	889445	average_income	3184339      	tax_rate	30.9
+1999	
+	bracket_min	0	paid	109267000	tax_rate	0.0
+	bracket_min	1	paid	6961000	tax_rate	20.1
+	bracket_min	1000	paid	54658000	tax_rate	13.0
+	bracket_min	2000	paid	77797000	tax_rate	14.5
+	bracket_min	3000	paid	97169000	tax_rate	15.9
+	bracket_min	4000	paid	116770000	tax_rate	15.0
+	bracket_min	5000	paid	203251000	tax_rate	15.4
+	bracket_min	6000	paid	273174000	tax_rate	14.9
+	bracket_min	7000	paid	309437000	tax_rate	15.1
+	bracket_min	8000	paid	440949000	tax_rate	14.0
+	bracket_min	9000	paid	640037000	tax_rate	14.5
+	bracket_min	10000	paid	778981000	tax_rate	14.9
+	bracket_min	11000	paid	885049000	tax_rate	14.6
+	bracket_min	12000	paid	1072897000	tax_rate	14.5
+	bracket_min	13000	paid	1224514000	tax_rate	14.5
+	bracket_min	14000	paid	1334873000	tax_rate	14.4
+	bracket_min	15000	paid	1694987000	tax_rate	14.4
+	bracket_min	16000	paid	1755131000	tax_rate	14.4
+	bracket_min	17000	paid	1902373000	tax_rate	14.5
+	bracket_min	18000	paid	2004051000	tax_rate	14.4
+	bracket_min	19000	paid	2088094000	tax_rate	14.2
+	bracket_min	20000	paid	13447210000	tax_rate	13.7
+	bracket_min	25000	paid	16944557000	tax_rate	13.7
+	bracket_min	30000	paid	39695871000	tax_rate	14.1
+	bracket_min	40000	paid	43463696000	tax_rate	15.0
+	bracket_min	50000	paid	113204249000	tax_rate	15.9
+	bracket_min	75000	paid	91819100000	tax_rate	18.7
+	bracket_min	100000	paid	162224990000	tax_rate	22.5
+	bracket_min	200000	paid	130273941000	tax_rate	28.1
+	bracket_min	500000	paid	66964769000	tax_rate	31.9
+	bracket_min	1000000	paid	182292689000	tax_rate	30.9
 
-2000										
-	bracket_min	0	paid	123842000	average_paid	21673	average_income	-51118      	tax_rate	0.0
-	bracket_min	1	paid	3283000	average_paid	17	average_income	589      	tax_rate	11.5
-	bracket_min	1000	paid	48842000	average_paid	92	average_income	1505      	tax_rate	13.1
-	bracket_min	2000	paid	78159000	average_paid	188	average_income	2492      	tax_rate	14.8
-	bracket_min	3000	paid	95359000	average_paid	267	average_income	3493      	tax_rate	15.0
-	bracket_min	4000	paid	113486000	average_paid	141	average_income	4497      	tax_rate	15.4
-	bracket_min	5000	paid	230106000	average_paid	239	average_income	5505      	tax_rate	15.0
-	bracket_min	6000	paid	284946000	average_paid	369	average_income	6513      	tax_rate	15.0
-	bracket_min	7000	paid	355522000	average_paid	328	average_income	7493      	tax_rate	15.1
-	bracket_min	8000	paid	419075000	average_paid	335	average_income	8496      	tax_rate	14.4
-	bracket_min	9000	paid	602212000	average_paid	412	average_income	9513      	tax_rate	14.5
-	bracket_min	10000	paid	707121000	average_paid	534	average_income	10489      	tax_rate	14.6
-	bracket_min	11000	paid	890206000	average_paid	649	average_income	11498      	tax_rate	14.6
-	bracket_min	12000	paid	1011441000	average_paid	762	average_income	12512      	tax_rate	14.6
-	bracket_min	13000	paid	1160327000	average_paid	836	average_income	13509      	tax_rate	14.6
-	bracket_min	14000	paid	1403511000	average_paid	926	average_income	14499      	tax_rate	14.4
-	bracket_min	15000	paid	1505025000	average_paid	979	average_income	15500      	tax_rate	14.5
-	bracket_min	16000	paid	1685146000	average_paid	1127	average_income	16492      	tax_rate	14.5
-	bracket_min	17000	paid	1843503000	average_paid	1237	average_income	17493      	tax_rate	14.4
-	bracket_min	18000	paid	2021154000	average_paid	1320	average_income	18499      	tax_rate	14.3
-	bracket_min	19000	paid	2181055000	average_paid	1460	average_income	19481      	tax_rate	14.3
-	bracket_min	20000	paid	13131415000	average_paid	1736	average_income	22454      	tax_rate	13.7
-	bracket_min	25000	paid	16401405000	average_paid	2248	average_income	27409      	tax_rate	13.6
-	bracket_min	30000	paid	40229243000	average_paid	3094	average_income	34758      	tax_rate	14.1
-	bracket_min	40000	paid	45739387000	average_paid	4462	average_income	44718      	tax_rate	15.1
-	bracket_min	50000	paid	115745997000	average_paid	6824	average_income	61176      	tax_rate	16.0
-	bracket_min	75000	paid	99803213000	average_paid	11631	average_income	85783      	tax_rate	18.6
-	bracket_min	100000	paid	184034909000	average_paid	22783	average_income	131917      	tax_rate	22.4
-	bracket_min	200000	paid	146454328000	average_paid	68628	average_income	287371      	tax_rate	28.1
-	bracket_min	500000	paid	76021565000	average_paid	192092	average_income	679121      	tax_rate	31.8
-	bracket_min	1000000	paid	35149293000	average_paid	353561	average_income	1211981      	tax_rate	32.3
-	bracket_min	1500000	paid	22521143000	average_paid	505605	average_income	1720668      	tax_rate	32.4
-	bracket_min	2000000	paid	58226583000	average_paid	873054	average_income	2986363      	tax_rate	32.0
-	bracket_min	5000000	paid	34332526000	average_paid	1951599	average_income	6847097      	tax_rate	31.2
-	bracket_min	10000000	paid	76090875000	average_paid	6790191	average_income	26761314      	tax_rate	28.3
+2000	
+	bracket_min	0	paid	123842000	tax_rate	0.0
+	bracket_min	1	paid	3283000	tax_rate	11.5
+	bracket_min	1000	paid	48842000	tax_rate	13.1
+	bracket_min	2000	paid	78159000	tax_rate	14.8
+	bracket_min	3000	paid	95359000	tax_rate	15.0
+	bracket_min	4000	paid	113486000	tax_rate	15.4
+	bracket_min	5000	paid	230106000	tax_rate	15.0
+	bracket_min	6000	paid	284946000	tax_rate	15.0
+	bracket_min	7000	paid	355522000	tax_rate	15.1
+	bracket_min	8000	paid	419075000	tax_rate	14.4
+	bracket_min	9000	paid	602212000	tax_rate	14.5
+	bracket_min	10000	paid	707121000	tax_rate	14.6
+	bracket_min	11000	paid	890206000	tax_rate	14.6
+	bracket_min	12000	paid	1011441000	tax_rate	14.6
+	bracket_min	13000	paid	1160327000	tax_rate	14.6
+	bracket_min	14000	paid	1403511000	tax_rate	14.4
+	bracket_min	15000	paid	1505025000	tax_rate	14.5
+	bracket_min	16000	paid	1685146000	tax_rate	14.5
+	bracket_min	17000	paid	1843503000	tax_rate	14.4
+	bracket_min	18000	paid	2021154000	tax_rate	14.3
+	bracket_min	19000	paid	2181055000	tax_rate	14.3
+	bracket_min	20000	paid	13131415000	tax_rate	13.7
+	bracket_min	25000	paid	16401405000	tax_rate	13.6
+	bracket_min	30000	paid	40229243000	tax_rate	14.1
+	bracket_min	40000	paid	45739387000	tax_rate	15.1
+	bracket_min	50000	paid	115745997000	tax_rate	16.0
+	bracket_min	75000	paid	99803213000	tax_rate	18.6
+	bracket_min	100000	paid	184034909000	tax_rate	22.4
+	bracket_min	200000	paid	146454328000	tax_rate	28.1
+	bracket_min	500000	paid	76021565000	tax_rate	31.8
+	bracket_min	1000000	paid	35149293000	tax_rate	32.3
+	bracket_min	1500000	paid	22521143000	tax_rate	32.4
+	bracket_min	2000000	paid	58226583000	tax_rate	32.0
+	bracket_min	5000000	paid	34332526000	tax_rate	31.2
+	bracket_min	10000000	paid	76090875000	tax_rate	28.3
 
-2001										
-	bracket_min	0	paid	92152000	average_paid	17496	average_income	-48972      	tax_rate	0.0
-	bracket_min	1	paid	1276000	average_paid	11	average_income	574      	tax_rate	9.7
-	bracket_min	1000	paid	34403000	average_paid	86	average_income	1504      	tax_rate	14.4
-	bracket_min	2000	paid	40200000	average_paid	146	average_income	2492      	tax_rate	12.2
-	bracket_min	3000	paid	31406000	average_paid	149	average_income	3486      	tax_rate	11.9
-	bracket_min	4000	paid	51777000	average_paid	91	average_income	4492      	tax_rate	12.0
-	bracket_min	5000	paid	98418000	average_paid	120	average_income	5493      	tax_rate	10.7
-	bracket_min	6000	paid	153259000	average_paid	215	average_income	6510      	tax_rate	10.4
-	bracket_min	7000	paid	193524000	average_paid	230	average_income	7484      	tax_rate	10.7
-	bracket_min	8000	paid	251982000	average_paid	222	average_income	8504      	tax_rate	10.7
-	bracket_min	9000	paid	363092000	average_paid	265	average_income	9499      	tax_rate	10.8
-	bracket_min	10000	paid	482851000	average_paid	387	average_income	10483      	tax_rate	11.6
-	bracket_min	11000	paid	621691000	average_paid	505	average_income	11491      	tax_rate	12.2
-	bracket_min	12000	paid	778993000	average_paid	614	average_income	12510      	tax_rate	12.4
-	bracket_min	13000	paid	921930000	average_paid	708	average_income	13503      	tax_rate	12.6
-	bracket_min	14000	paid	1135196000	average_paid	800	average_income	14489      	tax_rate	12.9
-	bracket_min	15000	paid	1349487000	average_paid	898	average_income	15493      	tax_rate	13.4
-	bracket_min	16000	paid	1350329000	average_paid	962	average_income	16501      	tax_rate	13.2
-	bracket_min	17000	paid	1663752000	average_paid	1100	average_income	17501      	tax_rate	13.5
-	bracket_min	18000	paid	1767789000	average_paid	1200	average_income	18491      	tax_rate	13.6
-	bracket_min	19000	paid	1927015000	average_paid	1345	average_income	19506      	tax_rate	13.6
-	bracket_min	20000	paid	11632291000	average_paid	1660	average_income	22419      	tax_rate	13.4
-	bracket_min	25000	paid	15551507000	average_paid	2205	average_income	27462      	tax_rate	13.4
-	bracket_min	30000	paid	38460995000	average_paid	2994	average_income	34712      	tax_rate	13.7
-	bracket_min	40000	paid	44464949000	average_paid	4314	average_income	44792      	tax_rate	14.7
-	bracket_min	50000	paid	114051713000	average_paid	6558	average_income	61190      	tax_rate	15.6
-	bracket_min	75000	paid	98746758000	average_paid	11124	average_income	85818      	tax_rate	18.1
-	bracket_min	100000	paid	185263807000	average_paid	21896	average_income	131573      	tax_rate	22.0
-	bracket_min	200000	paid	134590608000	average_paid	66764	average_income	286663      	tax_rate	27.9
-	bracket_min	500000	paid	67781194000	average_paid	190893	average_income	677313      	tax_rate	32.1
-	bracket_min	1000000	paid	30259886000	average_paid	354659	average_income	1207226      	tax_rate	33.1
-	bracket_min	1500000	paid	18477684000	average_paid	507197	average_income	1716379      	tax_rate	33.2
-	bracket_min	2000000	paid	45841881000	average_paid	880863	average_income	2971181      	tax_rate	33.1
-	bracket_min	5000000	paid	24207787000	average_paid	1978569	average_income	6809025      	tax_rate	32.5
-	bracket_min	10000000	paid	45332386000	average_paid	6642108	average_income	25598155      	tax_rate	29.6
+2001	
+	bracket_min	0	paid	92152000	tax_rate	0.0
+	bracket_min	1	paid	1276000	tax_rate	9.7
+	bracket_min	1000	paid	34403000	tax_rate	14.4
+	bracket_min	2000	paid	40200000	tax_rate	12.2
+	bracket_min	3000	paid	31406000	tax_rate	11.9
+	bracket_min	4000	paid	51777000	tax_rate	12.0
+	bracket_min	5000	paid	98418000	tax_rate	10.7
+	bracket_min	6000	paid	153259000	tax_rate	10.4
+	bracket_min	7000	paid	193524000	tax_rate	10.7
+	bracket_min	8000	paid	251982000	tax_rate	10.7
+	bracket_min	9000	paid	363092000	tax_rate	10.8
+	bracket_min	10000	paid	482851000	tax_rate	11.6
+	bracket_min	11000	paid	621691000	tax_rate	12.2
+	bracket_min	12000	paid	778993000	tax_rate	12.4
+	bracket_min	13000	paid	921930000	tax_rate	12.6
+	bracket_min	14000	paid	1135196000	tax_rate	12.9
+	bracket_min	15000	paid	1349487000	tax_rate	13.4
+	bracket_min	16000	paid	1350329000	tax_rate	13.2
+	bracket_min	17000	paid	1663752000	tax_rate	13.5
+	bracket_min	18000	paid	1767789000	tax_rate	13.6
+	bracket_min	19000	paid	1927015000	tax_rate	13.6
+	bracket_min	20000	paid	11632291000	tax_rate	13.4
+	bracket_min	25000	paid	15551507000	tax_rate	13.4
+	bracket_min	30000	paid	38460995000	tax_rate	13.7
+	bracket_min	40000	paid	44464949000	tax_rate	14.7
+	bracket_min	50000	paid	114051713000	tax_rate	15.6
+	bracket_min	75000	paid	98746758000	tax_rate	18.1
+	bracket_min	100000	paid	185263807000	tax_rate	22.0
+	bracket_min	200000	paid	134590608000	tax_rate	27.9
+	bracket_min	500000	paid	67781194000	tax_rate	32.1
+	bracket_min	1000000	paid	30259886000	tax_rate	33.1
+	bracket_min	1500000	paid	18477684000	tax_rate	33.2
+	bracket_min	2000000	paid	45841881000	tax_rate	33.1
+	bracket_min	5000000	paid	24207787000	tax_rate	32.5
+	bracket_min	10000000	paid	45332386000	tax_rate	29.6
 
-2002										
-	bracket_min	0	paid	124380000	average_paid	26274	average_income	-45760      	tax_rate	0.0
-	bracket_min	1	paid	898000	average_paid	11	average_income	567      	tax_rate	9.6
-	bracket_min	1000	paid	15236000	average_paid	64	average_income	1527      	tax_rate	10.2
-	bracket_min	2000	paid	24428000	average_paid	132	average_income	2498      	tax_rate	12.1
-	bracket_min	3000	paid	20041000	average_paid	154	average_income	3494      	tax_rate	11.1
-	bracket_min	4000	paid	23441000	average_paid	60	average_income	4507      	tax_rate	11.4
-	bracket_min	5000	paid	78394000	average_paid	96	average_income	5489      	tax_rate	10.7
-	bracket_min	6000	paid	136894000	average_paid	204	average_income	6500      	tax_rate	10.7
-	bracket_min	7000	paid	154090000	average_paid	236	average_income	7492      	tax_rate	10.2
-	bracket_min	8000	paid	198530000	average_paid	215	average_income	8503      	tax_rate	10.3
-	bracket_min	9000	paid	263455000	average_paid	215	average_income	9506      	tax_rate	9.1
-	bracket_min	10000	paid	379346000	average_paid	302	average_income	10506      	tax_rate	9.7
-	bracket_min	11000	paid	506945000	average_paid	395	average_income	11512      	tax_rate	10.1
-	bracket_min	12000	paid	583985000	average_paid	490	average_income	12492      	tax_rate	10.2
-	bracket_min	13000	paid	661472000	average_paid	567	average_income	13492      	tax_rate	10.2
-	bracket_min	14000	paid	808958000	average_paid	652	average_income	14501      	tax_rate	10.5
-	bracket_min	15000	paid	947781000	average_paid	693	average_income	15495      	tax_rate	10.7
-	bracket_min	16000	paid	1137243000	average_paid	799	average_income	16492      	tax_rate	11.1
-	bracket_min	17000	paid	1248215000	average_paid	900	average_income	17493      	tax_rate	11.4
-	bracket_min	18000	paid	1385194000	average_paid	996	average_income	18487      	tax_rate	11.5
-	bracket_min	19000	paid	1519012000	average_paid	1100	average_income	19492      	tax_rate	11.6
-	bracket_min	20000	paid	9073785000	average_paid	1431	average_income	22386      	tax_rate	11.7
-	bracket_min	25000	paid	12329287000	average_paid	1886	average_income	27401      	tax_rate	11.6
-	bracket_min	30000	paid	32654710000	average_paid	2622	average_income	34742      	tax_rate	12.1
-	bracket_min	40000	paid	38114017000	average_paid	3800	average_income	44815      	tax_rate	13.1
-	bracket_min	50000	paid	101820331000	average_paid	5931	average_income	61311      	tax_rate	14.3
-	bracket_min	75000	paid	93655145000	average_paid	10169	average_income	85911      	tax_rate	16.7
-	bracket_min	100000	paid	175140747000	average_paid	20831	average_income	131751      	tax_rate	21.0
-	bracket_min	200000	paid	124764596000	average_paid	65452	average_income	287569      	tax_rate	27.3
-	bracket_min	500000	paid	63370780000	average_paid	188463	average_income	674354      	tax_rate	31.8
-	bracket_min	1000000	paid	27479397000	average_paid	352318	average_income	1204191      	tax_rate	32.9
-	bracket_min	1500000	paid	15890811000	average_paid	508213	average_income	1717401      	tax_rate	33.1
-	bracket_min	2000000	paid	38692291000	average_paid	876541	average_income	2947746      	tax_rate	33.1
-	bracket_min	5000000	paid	20044370000	average_paid	2003435	average_income	6807430      	tax_rate	32.7
-	bracket_min	10000000	paid	33738065000	average_paid	6370481	average_income	24377736      	tax_rate	29.7
+2002	
+	bracket_min	0	paid	124380000	tax_rate	0.0
+	bracket_min	1	paid	898000	tax_rate	9.6
+	bracket_min	1000	paid	15236000	tax_rate	10.2
+	bracket_min	2000	paid	24428000	tax_rate	12.1
+	bracket_min	3000	paid	20041000	tax_rate	11.1
+	bracket_min	4000	paid	23441000	tax_rate	11.4
+	bracket_min	5000	paid	78394000	tax_rate	10.7
+	bracket_min	6000	paid	136894000	tax_rate	10.7
+	bracket_min	7000	paid	154090000	tax_rate	10.2
+	bracket_min	8000	paid	198530000	tax_rate	10.3
+	bracket_min	9000	paid	263455000	tax_rate	9.1
+	bracket_min	10000	paid	379346000	tax_rate	9.7
+	bracket_min	11000	paid	506945000	tax_rate	10.1
+	bracket_min	12000	paid	583985000	tax_rate	10.2
+	bracket_min	13000	paid	661472000	tax_rate	10.2
+	bracket_min	14000	paid	808958000	tax_rate	10.5
+	bracket_min	15000	paid	947781000	tax_rate	10.7
+	bracket_min	16000	paid	1137243000	tax_rate	11.1
+	bracket_min	17000	paid	1248215000	tax_rate	11.4
+	bracket_min	18000	paid	1385194000	tax_rate	11.5
+	bracket_min	19000	paid	1519012000	tax_rate	11.6
+	bracket_min	20000	paid	9073785000	tax_rate	11.7
+	bracket_min	25000	paid	12329287000	tax_rate	11.6
+	bracket_min	30000	paid	32654710000	tax_rate	12.1
+	bracket_min	40000	paid	38114017000	tax_rate	13.1
+	bracket_min	50000	paid	101820331000	tax_rate	14.3
+	bracket_min	75000	paid	93655145000	tax_rate	16.7
+	bracket_min	100000	paid	175140747000	tax_rate	21.0
+	bracket_min	200000	paid	124764596000	tax_rate	27.3
+	bracket_min	500000	paid	63370780000	tax_rate	31.8
+	bracket_min	1000000	paid	27479397000	tax_rate	32.9
+	bracket_min	1500000	paid	15890811000	tax_rate	33.1
+	bracket_min	2000000	paid	38692291000	tax_rate	33.1
+	bracket_min	5000000	paid	20044370000	tax_rate	32.7
+	bracket_min	10000000	paid	33738065000	tax_rate	29.7
 
-2003										
-	bracket_min	0	paid	78578000    	average_paid	17377    	average_income	-44369000      	tax_rate	0.0
-	bracket_min	1	paid	72959000    	average_paid	87    	average_income	2653      	tax_rate	12.0
-	bracket_min	5000	paid	780450000    	average_paid	190    	average_income	7452      	tax_rate	9.8
-	bracket_min	10000	paid	2750658000    	average_paid	455    	average_income	12451      	tax_rate	9.7
-	bracket_min	15000	paid	5404734000    	average_paid	857    	average_income	17459      	tax_rate	10.7
-	bracket_min	20000	paid	8274086000    	average_paid	1357    	average_income	22429      	tax_rate	11.4
-	bracket_min	25000	paid	11036040000    	average_paid	1812    	average_income	27464      	tax_rate	11.3
-	bracket_min	30000	paid	29737818000    	average_paid	2508    	average_income	34733      	tax_rate	11.7
-	bracket_min	40000	paid	34635213000    	average_paid	3582    	average_income	44728      	tax_rate	12.5
-	bracket_min	50000	paid	94256193000    	average_paid	5536    	average_income	61347      	tax_rate	13.4
-	bracket_min	75000	paid	84253116000    	average_paid	8882    	average_income	86023      	tax_rate	14.6
-	bracket_min	100000	paid	163342407000    	average_paid	18432    	average_income	131797      	tax_rate	18.7
-	bracket_min	200000	paid	120711552000    	average_paid	60453    	average_income	288296      	tax_rate	25.0
-	bracket_min	500000	paid	60180643000    	average_paid	169166    	average_income	677294      	tax_rate	28.3
-	bracket_min	1000000	paid	25551466000    	average_paid	313177    	average_income	1210300      	tax_rate	28.9
-	bracket_min	1500000	paid	15316006000    	average_paid	450683    	average_income	1719667      	tax_rate	29.2
-	bracket_min	2000000	paid	36905426000    	average_paid	765117    	average_income	2945849      	tax_rate	28.8
-	bracket_min	5000000	paid	19313636000    	average_paid	1730613    	average_income	6833044      	tax_rate	28.2
-	bracket_min	10000000	paid	35416509000    	average_paid	5792690    	average_income	25975533      	tax_rate	25.3
+2003	
+	bracket_min	0	paid	78578000	tax_rate	0.0
+	bracket_min	1	paid	72959000	tax_rate	12.0
+	bracket_min	5000	paid	780450000	tax_rate	9.8
+	bracket_min	10000	paid	2750658000	tax_rate	9.7
+	bracket_min	15000	paid	5404734000	tax_rate	10.7
+	bracket_min	20000	paid	8274086000	tax_rate	11.4
+	bracket_min	25000	paid	11036040000	tax_rate	11.3
+	bracket_min	30000	paid	29737818000	tax_rate	11.7
+	bracket_min	40000	paid	34635213000	tax_rate	12.5
+	bracket_min	50000	paid	94256193000	tax_rate	13.4
+	bracket_min	75000	paid	84253116000	tax_rate	14.6
+	bracket_min	100000	paid	163342407000	tax_rate	18.7
+	bracket_min	200000	paid	120711552000	tax_rate	25.0
+	bracket_min	500000	paid	60180643000	tax_rate	28.3
+	bracket_min	1000000	paid	25551466000	tax_rate	28.9
+	bracket_min	1500000	paid	15316006000	tax_rate	29.2
+	bracket_min	2000000	paid	36905426000	tax_rate	28.8
+	bracket_min	5000000	paid	19313636000	tax_rate	28.2
+	bracket_min	10000000	paid	35416509000	tax_rate	25.3
 
-2004										
-	bracket_min	0	paid	86064000    	average_paid	18890    	average_income	-46536    	tax_rate	0.0
-	bracket_min	1	paid	55075000    	average_paid	73    	average_income	2665    	tax_rate	8.7
-	bracket_min	5000	paid	713105000    	average_paid	184    	average_income	7488    	tax_rate	9.5
-	bracket_min	10000	paid	2491501000    	average_paid	439    	average_income	12452    	tax_rate	9.6
-	bracket_min	15000	paid	5218298000    	average_paid	849    	average_income	17470    	tax_rate	10.6
-	bracket_min	20000	paid	7894860000    	average_paid	1331    	average_income	22446    	tax_rate	11.2
-	bracket_min	25000	paid	10675322000    	average_paid	1825    	average_income	27436    	tax_rate	11.4
-	bracket_min	30000	paid	28213041000    	average_paid	2500    	average_income	34692    	tax_rate	11.6
-	bracket_min	40000	paid	33915521000    	average_paid	3582    	average_income	44779    	tax_rate	12.4
-	bracket_min	50000	paid	92955349000    	average_paid	5357    	average_income	61484    	tax_rate	13.0
-	bracket_min	75000	paid	85557202000    	average_paid	8538    	average_income	86209    	tax_rate	14.1
-	bracket_min	100000	paid	175205533000    	average_paid	18028    	average_income	132331    	tax_rate	18.2
-	bracket_min	200000	paid	139227163000    	average_paid	59350    	average_income	288223    	tax_rate	24.6
-	bracket_min	500000	paid	71339306000    	average_paid	164839    	average_income	677302    	tax_rate	27.4
-	bracket_min	1000000	paid	31072424000    	average_paid	299098    	average_income	1207656    	tax_rate	27.6
-	bracket_min	1500000	paid	19435625000    	average_paid	431280    	average_income	1723899    	tax_rate	27.8
-	bracket_min	2000000	paid	47962105000    	average_paid	732235    	average_income	2966846    	tax_rate	27.2
-	bracket_min	5000000	paid	25756272000    	average_paid	1627363    	average_income	6832459    	tax_rate	26.3
-	bracket_min	10000000	paid	54202568000    	average_paid	5604070    	average_income	26550887    	tax_rate	23.8
+2004	
+	bracket_min	0	paid	86064000	tax_rate	0.0
+	bracket_min	1	paid	55075000	tax_rate	8.7
+	bracket_min	5000	paid	713105000	tax_rate	9.5
+	bracket_min	10000	paid	2491501000	tax_rate	9.6
+	bracket_min	15000	paid	5218298000	tax_rate	10.6
+	bracket_min	20000	paid	7894860000	tax_rate	11.2
+	bracket_min	25000	paid	10675322000	tax_rate	11.4
+	bracket_min	30000	paid	28213041000	tax_rate	11.6
+	bracket_min	40000	paid	33915521000	tax_rate	12.4
+	bracket_min	50000	paid	92955349000	tax_rate	13.0
+	bracket_min	75000	paid	85557202000	tax_rate	14.1
+	bracket_min	100000	paid	175205533000	tax_rate	18.2
+	bracket_min	200000	paid	139227163000	tax_rate	24.6
+	bracket_min	500000	paid	71339306000	tax_rate	27.4
+	bracket_min	1000000	paid	31072424000	tax_rate	27.6
+	bracket_min	1500000	paid	19435625000	tax_rate	27.8
+	bracket_min	2000000	paid	47962105000	tax_rate	27.2
+	bracket_min	5000000	paid	25756272000	tax_rate	26.3
+	bracket_min	10000000	paid	54202568000	tax_rate	23.8
 
-2005										
-	bracket_min	0	paid	133370000    	average_paid	27319    	average_income	-48530	tax_rate	0.0
-	bracket_min	1	paid	72794000    	average_paid	90    	average_income	2631	tax_rate	8.8
-	bracket_min	5000	paid	673689000    	average_paid	182    	average_income	7476	tax_rate	9.6
-	bracket_min	10000	paid	2418513000    	average_paid	420    	average_income	12481	tax_rate	9.6
-	bracket_min	15000	paid	4967119000    	average_paid	829    	average_income	17463	tax_rate	10.5
-	bracket_min	20000	paid	7663320000    	average_paid	1302    	average_income	22419	tax_rate	11.3
-	bracket_min	25000	paid	10707197000    	average_paid	1828    	average_income	27461	tax_rate	11.5
-	bracket_min	30000	paid	27284639000    	average_paid	2457    	average_income	34718	tax_rate	11.5
-	bracket_min	40000	paid	32877218000    	average_paid	3526    	average_income	44782	tax_rate	12.3
-	bracket_min	50000	paid	92824047000    	average_paid	5307    	average_income	61450	tax_rate	13.0
-	bracket_min	75000	paid	85986486000    	average_paid	8324    	average_income	86170	tax_rate	13.9
-	bracket_min	100000	paid	189468358000    	average_paid	17597    	average_income	132334	tax_rate	18.0
-	bracket_min	200000	paid	159395393000    	average_paid	58339    	average_income	288144	tax_rate	24.3
-	bracket_min	500000	paid	84700059000    	average_paid	161826    	average_income	677248	tax_rate	27.0
-	bracket_min	1000000	paid	38052580000    	average_paid	298155    	average_income	1210080	tax_rate	27.5
-	bracket_min	1500000	paid	23941620000    	average_paid	423783    	average_income	1722378	tax_rate	27.3
-	bracket_min	2000000	paid	60871637000    	average_paid	725829    	average_income	2980990	tax_rate	26.9
-	bracket_min	5000000	paid	34529011000    	average_paid	1615166    	average_income	6852066	tax_rate	26.0
-	bracket_min	10000000	paid	78268719000    	average_paid	5695999    	average_income	27313795	tax_rate	23.4
+2005	
+	bracket_min	0	paid	133370000	tax_rate	0.0
+	bracket_min	1	paid	72794000	tax_rate	8.8
+	bracket_min	5000	paid	673689000	tax_rate	9.6
+	bracket_min	10000	paid	2418513000	tax_rate	9.6
+	bracket_min	15000	paid	4967119000	tax_rate	10.5
+	bracket_min	20000	paid	7663320000	tax_rate	11.3
+	bracket_min	25000	paid	10707197000	tax_rate	11.5
+	bracket_min	30000	paid	27284639000	tax_rate	11.5
+	bracket_min	40000	paid	32877218000	tax_rate	12.3
+	bracket_min	50000	paid	92824047000	tax_rate	13.0
+	bracket_min	75000	paid	85986486000	tax_rate	13.9
+	bracket_min	100000	paid	189468358000	tax_rate	18.0
+	bracket_min	200000	paid	159395393000	tax_rate	24.3
+	bracket_min	500000	paid	84700059000	tax_rate	27.0
+	bracket_min	1000000	paid	38052580000	tax_rate	27.5
+	bracket_min	1500000	paid	23941620000	tax_rate	27.3
+	bracket_min	2000000	paid	60871637000	tax_rate	26.9
+	bracket_min	5000000	paid	34529011000	tax_rate	26.0
+	bracket_min	10000000	paid	78268719000	tax_rate	23.4
 
-2006										
-	bracket_min	0	paid	181211000    	average_paid	28759    	average_income	-34085	tax_rate	0.0
-	bracket_min	1	paid	88684000    	average_paid	104    	average_income	2665	tax_rate	9.2
-	bracket_min	5000	paid	654390000    	average_paid	194    	average_income	7465	tax_rate	9.9
-	bracket_min	10000	paid	2373130000    	average_paid	411    	average_income	12497	tax_rate	9.6
-	bracket_min	15000	paid	4759278000    	average_paid	832    	average_income	17466	tax_rate	10.3
-	bracket_min	20000	paid	7501691000    	average_paid	1282    	average_income	22484	tax_rate	11.1
-	bracket_min	25000	paid	10396566000    	average_paid	1800    	average_income	27458	tax_rate	11.4
-	bracket_min	30000	paid	27293090000    	average_paid	2446    	average_income	34777	tax_rate	11.5
-	bracket_min	40000	paid	32509507000    	average_paid	3485    	average_income	44801	tax_rate	12.2
-	bracket_min	50000	paid	94443396000    	average_paid	5300    	average_income	61437	tax_rate	13.0
-	bracket_min	75000	paid	90019371000    	average_paid	8198    	average_income	86248	tax_rate	13.7
-	bracket_min	100000	paid	209381101000    	average_paid	17388    	average_income	132881	tax_rate	17.7
-	bracket_min	200000	paid	177041086000    	average_paid	56831    	average_income	286771	tax_rate	24.2
-	bracket_min	500000	paid	94213951000    	average_paid	160215    	average_income	678101	tax_rate	27.1
-	bracket_min	1000000	paid	44125225000    	average_paid	293972    	average_income	1210147	tax_rate	27.3
-	bracket_min	1500000	paid	26721295000    	average_paid	418416    	average_income	1721871	tax_rate	27.3
-	bracket_min	2000000	paid	71647095000    	average_paid	727197    	average_income	2989440	tax_rate	27.1
-	bracket_min	5000000	paid	39556521000    	average_paid	1587086    	average_income	6863171	tax_rate	25.7
-	bracket_min	10000000	paid	91013554000    	average_paid	5713702    	average_income	28357677	tax_rate	22.8
+2006	
+	bracket_min	0	paid	181211000	tax_rate	0.0
+	bracket_min	1	paid	88684000	tax_rate	9.2
+	bracket_min	5000	paid	654390000	tax_rate	9.9
+	bracket_min	10000	paid	2373130000	tax_rate	9.6
+	bracket_min	15000	paid	4759278000	tax_rate	10.3
+	bracket_min	20000	paid	7501691000	tax_rate	11.1
+	bracket_min	25000	paid	10396566000	tax_rate	11.4
+	bracket_min	30000	paid	27293090000	tax_rate	11.5
+	bracket_min	40000	paid	32509507000	tax_rate	12.2
+	bracket_min	50000	paid	94443396000	tax_rate	13.0
+	bracket_min	75000	paid	90019371000	tax_rate	13.7
+	bracket_min	100000	paid	209381101000	tax_rate	17.7
+	bracket_min	200000	paid	177041086000	tax_rate	24.2
+	bracket_min	500000	paid	94213951000	tax_rate	27.1
+	bracket_min	1000000	paid	44125225000	tax_rate	27.3
+	bracket_min	1500000	paid	26721295000	tax_rate	27.3
+	bracket_min	2000000	paid	71647095000	tax_rate	27.1
+	bracket_min	5000000	paid	39556521000	tax_rate	25.7
+	bracket_min	10000000	paid	91013554000	tax_rate	22.8
 
-2007										
-	bracket_min	0	paid	99041000    	average_paid	17743    	average_income	-58067	tax_rate	0.0
-	bracket_min	1	paid	98820000    	average_paid	107    	average_income	2665	tax_rate	9.3
-	bracket_min	5000	paid	634370000    	average_paid	193    	average_income	7483	tax_rate	9.9
-	bracket_min	10000	paid	2237057000    	average_paid	388    	average_income	12498	tax_rate	9.5
-	bracket_min	15000	paid	4587626000    	average_paid	805    	average_income	17465	tax_rate	10.1
-	bracket_min	20000	paid	7354942000    	average_paid	1257    	average_income	22449	tax_rate	11.1
-	bracket_min	25000	paid	10244160000    	average_paid	1783    	average_income	27451	tax_rate	11.4
-	bracket_min	30000	paid	27853217000    	average_paid	2428    	average_income	34796	tax_rate	11.5
-	bracket_min	40000	paid	33514554000    	average_paid	3441    	average_income	44792	tax_rate	12.1
-	bracket_min	50000	paid	96882397000    	average_paid	5289    	average_income	61477	tax_rate	13.0
-	bracket_min	75000	paid	93834008000    	average_paid	8117    	average_income	86399	tax_rate	13.6
-	bracket_min	100000	paid	228754625000    	average_paid	17089    	average_income	133234	tax_rate	17.4
-	bracket_min	200000	paid	196469174000    	average_paid	56397    	average_income	287674	tax_rate	24.0
-	bracket_min	500000	paid	103163081000    	average_paid	158858    	average_income	678043	tax_rate	26.9
-	bracket_min	1000000	paid	48354319000    	average_paid	291342    	average_income	1206914	tax_rate	27.2
-	bracket_min	1500000	paid	29351266000    	average_paid	416000    	average_income	1721516	tax_rate	27.1
-	bracket_min	2000000	paid	77554612000    	average_paid	715732    	average_income	2987758	tax_rate	26.7
-	bracket_min	5000000	paid	43929717000    	average_paid	1568134    	average_income	6846837	tax_rate	25.5
-	bracket_min	10000000	paid	110843388000    	average_paid	6036564    	average_income	30532386	tax_rate	22.4
+2007	
+	bracket_min	0	paid	99041000	tax_rate	0.0
+	bracket_min	1	paid	98820000	tax_rate	9.3
+	bracket_min	5000	paid	634370000	tax_rate	9.9
+	bracket_min	10000	paid	2237057000	tax_rate	9.5
+	bracket_min	15000	paid	4587626000	tax_rate	10.1
+	bracket_min	20000	paid	7354942000	tax_rate	11.1
+	bracket_min	25000	paid	10244160000	tax_rate	11.4
+	bracket_min	30000	paid	27853217000	tax_rate	11.5
+	bracket_min	40000	paid	33514554000	tax_rate	12.1
+	bracket_min	50000	paid	96882397000	tax_rate	13.0
+	bracket_min	75000	paid	93834008000	tax_rate	13.6
+	bracket_min	100000	paid	228754625000	tax_rate	17.4
+	bracket_min	200000	paid	196469174000	tax_rate	24.0
+	bracket_min	500000	paid	103163081000	tax_rate	26.9
+	bracket_min	1000000	paid	48354319000	tax_rate	27.2
+	bracket_min	1500000	paid	29351266000	tax_rate	27.1
+	bracket_min	2000000	paid	77554612000	tax_rate	26.7
+	bracket_min	5000000	paid	43929717000	tax_rate	25.5
+	bracket_min	10000000	paid	110843388000	tax_rate	22.4
 
-2008										
-	bracket_min	0	paid	69278000    	average_paid	19822    	average_income	-65769	tax_rate	0.0
-	bracket_min	1	paid	76716000    	average_paid	153    	average_income	2626	tax_rate	11.2
-	bracket_min	5000	paid	521105000    	average_paid	200    	average_income	7484	tax_rate	10.2
-	bracket_min	10000	paid	1559617000    	average_paid	368    	average_income	12509	tax_rate	9.0
-	bracket_min	15000	paid	3518545000    	average_paid	665    	average_income	17468	tax_rate	8.4
-	bracket_min	20000	paid	6331242000    	average_paid	1166    	average_income	22464	tax_rate	10.4
-	bracket_min	25000	paid	9108355000    	average_paid	1710    	average_income	27439	tax_rate	11.1
-	bracket_min	30000	paid	25551837000    	average_paid	2376    	average_income	34774	tax_rate	11.2
-	bracket_min	40000	paid	31401659000    	average_paid	3373    	average_income	44817	tax_rate	11.9
-	bracket_min	50000	paid	92652392000    	average_paid	5246    	average_income	61470	tax_rate	12.9
-	bracket_min	75000	paid	91901542000    	average_paid	8037    	average_income	86421	tax_rate	13.5
-	bracket_min	100000	paid	232270420000    	average_paid	16903    	average_income	133208	tax_rate	17.4
-	bracket_min	200000	paid	193699168000    	average_paid	55984    	average_income	285735	tax_rate	24.6
-	bracket_min	500000	paid	93899363000    	average_paid	163513    	average_income	679576	tax_rate	28.3
-	bracket_min	1000000	paid	41880236000    	average_paid	299480    	average_income	1207751	tax_rate	28.6
-	bracket_min	1500000	paid	25385118000    	average_paid	429877    	average_income	1722125	tax_rate	28.6
-	bracket_min	2000000	paid	63390518000    	average_paid	739377    	average_income	2982594	tax_rate	28.2
-	bracket_min	5000000	paid	34805598000    	average_paid	1638990    	average_income	6841677	tax_rate	27.1
-	bracket_min	10000000	paid	83558216000    	average_paid	6247810    	average_income	29671274	tax_rate	24.1
+2008	
+	bracket_min	0	paid	69278000	tax_rate	0.0
+	bracket_min	1	paid	76716000	tax_rate	11.2
+	bracket_min	5000	paid	521105000	tax_rate	10.2
+	bracket_min	10000	paid	1559617000	tax_rate	9.0
+	bracket_min	15000	paid	3518545000	tax_rate	8.4
+	bracket_min	20000	paid	6331242000	tax_rate	10.4
+	bracket_min	25000	paid	9108355000	tax_rate	11.1
+	bracket_min	30000	paid	25551837000	tax_rate	11.2
+	bracket_min	40000	paid	31401659000	tax_rate	11.9
+	bracket_min	50000	paid	92652392000	tax_rate	12.9
+	bracket_min	75000	paid	91901542000	tax_rate	13.5
+	bracket_min	100000	paid	232270420000	tax_rate	17.4
+	bracket_min	200000	paid	193699168000	tax_rate	24.6
+	bracket_min	500000	paid	93899363000	tax_rate	28.3
+	bracket_min	1000000	paid	41880236000	tax_rate	28.6
+	bracket_min	1500000	paid	25385118000	tax_rate	28.6
+	bracket_min	2000000	paid	63390518000	tax_rate	28.2
+	bracket_min	5000000	paid	34805598000	tax_rate	27.1
+	bracket_min	10000000	paid	83558216000	tax_rate	24.1
 
-2009										
-	bracket_min	0	paid	85376000    	average_paid	22350    	average_income	-79206	tax_rate	0.0
-	bracket_min	1	paid	40278000    	average_paid	131    	average_income	2605	tax_rate	11.9
-	bracket_min	5000	paid	379851000    	average_paid	200    	average_income	7562	tax_rate	10.2
-	bracket_min	10000	paid	848075000    	average_paid	294    	average_income	12493	tax_rate	6.8
-	bracket_min	15000	paid	2516274000    	average_paid	517    	average_income	17457	tax_rate	6.6
-	bracket_min	20000	paid	4669410000    	average_paid	1007    	average_income	22441	tax_rate	8.7
-	bracket_min	25000	paid	6827564000    	average_paid	1483    	average_income	27474	tax_rate	9.7
-	bracket_min	30000	paid	20151883000    	average_paid	2101    	average_income	34782	tax_rate	10.0
-	bracket_min	40000	paid	25404305000    	average_paid	3031    	average_income	44745	tax_rate	10.6
-	bracket_min	50000	paid	77962073000    	average_paid	4740    	average_income	61464	tax_rate	11.6
-	bracket_min	75000	paid	80492622000    	average_paid	7326    	average_income	86389	tax_rate	12.3
-	bracket_min	100000	paid	212290589000    	average_paid	15873    	average_income	133223	tax_rate	16.3
-	bracket_min	200000	paid	176322148000    	average_paid	55475    	average_income	283360	tax_rate	24.6
-	bracket_min	500000	paid	80458186000    	average_paid	164233    	average_income	674095	tax_rate	28.8
-	bracket_min	1000000	paid	32755871000    	average_paid	304944    	average_income	1204015	tax_rate	29.4
-	bracket_min	1500000	paid	19393235000    	average_paid	440605    	average_income	1719969	tax_rate	29.6
-	bracket_min	2000000	paid	46943630000    	average_paid	762877    	average_income	2955302	tax_rate	29.7
-	bracket_min	5000000	paid	24617005000    	average_paid	1729208    	average_income	6807231	tax_rate	29.1
-	bracket_min	10000000	paid	53790324000    	average_paid	6551008    	average_income	29022708	tax_rate	26.3
+2009	
+	bracket_min	0	paid	85376000	tax_rate	0.0
+	bracket_min	1	paid	40278000	tax_rate	11.9
+	bracket_min	5000	paid	379851000	tax_rate	10.2
+	bracket_min	10000	paid	848075000	tax_rate	6.8
+	bracket_min	15000	paid	2516274000	tax_rate	6.6
+	bracket_min	20000	paid	4669410000	tax_rate	8.7
+	bracket_min	25000	paid	6827564000	tax_rate	9.7
+	bracket_min	30000	paid	20151883000	tax_rate	10.0
+	bracket_min	40000	paid	25404305000	tax_rate	10.6
+	bracket_min	50000	paid	77962073000	tax_rate	11.6
+	bracket_min	75000	paid	80492622000	tax_rate	12.3
+	bracket_min	100000	paid	212290589000	tax_rate	16.3
+	bracket_min	200000	paid	176322148000	tax_rate	24.6
+	bracket_min	500000	paid	80458186000	tax_rate	28.8
+	bracket_min	1000000	paid	32755871000	tax_rate	29.4
+	bracket_min	1500000	paid	19393235000	tax_rate	29.6
+	bracket_min	2000000	paid	46943630000	tax_rate	29.7
+	bracket_min	5000000	paid	24617005000	tax_rate	29.1
+	bracket_min	10000000	paid	53790324000	tax_rate	26.3
 
-2010										
-	bracket_min	0	paid	250488000    	average_paid	41651    	average_income	-73920	tax_rate	0.0
-	bracket_min	1	paid	42331000    	average_paid	148    	average_income	2598	tax_rate	13.9
-	bracket_min	5000	paid	395584000    	average_paid	201    	average_income	7593	tax_rate	10.2
-	bracket_min	10000	paid	928662000    	average_paid	307    	average_income	12503	tax_rate	6.9
-	bracket_min	15000	paid	2503969000    	average_paid	511    	average_income	17450	tax_rate	6.5
-	bracket_min	20000	paid	4756061000    	average_paid	1008    	average_income	22439	tax_rate	8.6
-	bracket_min	25000	paid	7023780000    	average_paid	1497    	average_income	27409	tax_rate	9.6
-	bracket_min	30000	paid	21115460000    	average_paid	2139    	average_income	34764	tax_rate	9.9
-	bracket_min	40000	paid	26638195000    	average_paid	3055    	average_income	44768	tax_rate	10.6
-	bracket_min	50000	paid	80932131000    	average_paid	4828    	average_income	61469	tax_rate	11.7
-	bracket_min	75000	paid	86093509000    	average_paid	7561    	average_income	86417	tax_rate	12.5
-	bracket_min	100000	paid	224422716000    	average_paid	16180    	average_income	133568	tax_rate	16.4
-	bracket_min	200000	paid	192825788000    	average_paid	55781    	average_income	283845	tax_rate	24.7
-	bracket_min	500000	paid	88589912000    	average_paid	163605    	average_income	676842	tax_rate	28.8
-	bracket_min	1000000	paid	38100342000    	average_paid	301560    	average_income	1207562	tax_rate	29.2
-	bracket_min	1500000	paid	22259918000    	average_paid	434069    	average_income	1717897	tax_rate	29.3
-	bracket_min	2000000	paid	54236702000    	average_paid	746281    	average_income	2979330	tax_rate	28.9
-	bracket_min	5000000	paid	29124480000    	average_paid	1669312    	average_income	6855996	tax_rate	27.9
-	bracket_min	10000000	paid	71433950000    	average_paid	6373479    	average_income	30692093	tax_rate	23.9
+2010	
+	bracket_min	0	paid	250488000	tax_rate	0.0
+	bracket_min	1	paid	42331000	tax_rate	13.9
+	bracket_min	5000	paid	395584000	tax_rate	10.2
+	bracket_min	10000	paid	928662000	tax_rate	6.9
+	bracket_min	15000	paid	2503969000	tax_rate	6.5
+	bracket_min	20000	paid	4756061000	tax_rate	8.6
+	bracket_min	25000	paid	7023780000	tax_rate	9.6
+	bracket_min	30000	paid	21115460000	tax_rate	9.9
+	bracket_min	40000	paid	26638195000	tax_rate	10.6
+	bracket_min	50000	paid	80932131000	tax_rate	11.7
+	bracket_min	75000	paid	86093509000	tax_rate	12.5
+	bracket_min	100000	paid	224422716000	tax_rate	16.4
+	bracket_min	200000	paid	192825788000	tax_rate	24.7
+	bracket_min	500000	paid	88589912000	tax_rate	28.8
+	bracket_min	1000000	paid	38100342000	tax_rate	29.2
+	bracket_min	1500000	paid	22259918000	tax_rate	29.3
+	bracket_min	2000000	paid	54236702000	tax_rate	28.9
+	bracket_min	5000000	paid	29124480000	tax_rate	27.9
+	bracket_min	10000000	paid	71433950000	tax_rate	23.9
 
-2011										
-	bracket_min	0	paid	123228000    	average_paid	21510    	average_income	-79847	tax_rate	0.0
-	bracket_min	1	paid	45686000    	average_paid	146    	average_income	2574	tax_rate	12.7
-	bracket_min	5000	paid	425620000    	average_paid	196    	average_income	7611	tax_rate	10.4
-	bracket_min	10000	paid	1709805000    	average_paid	339    	average_income	12490	tax_rate	9.3
-	bracket_min	15000	paid	3878287000    	average_paid	734    	average_income	17422	tax_rate	9.8
-	bracket_min	20000	paid	6317626000    	average_paid	1185    	average_income	22445	tax_rate	10.9
-	bracket_min	25000	paid	8916974000    	average_paid	1681    	average_income	27423	tax_rate	11.2
-	bracket_min	30000	paid	24731347000    	average_paid	2381    	average_income	34784	tax_rate	11.3
-	bracket_min	40000	paid	30555752000    	average_paid	3329    	average_income	44767	tax_rate	11.7
-	bracket_min	50000	paid	93323001000    	average_paid	5281    	average_income	61523	tax_rate	12.9
-	bracket_min	75000	paid	96018996000    	average_paid	8219    	average_income	86498	tax_rate	13.6
-	bracket_min	100000	paid	248967619000    	average_paid	17005    	average_income	134009	tax_rate	17.1
-	bracket_min	200000	paid	212403257000    	average_paid	56092    	average_income	284333	tax_rate	24.6
-	bracket_min	500000	paid	97610768000    	average_paid	164175    	average_income	675429	tax_rate	28.9
-	bracket_min	1000000	paid	40458911000    	average_paid	301552    	average_income	1208949	tax_rate	29.1
-	bracket_min	1500000	paid	24104736000    	average_paid	432923    	average_income	1719779	tax_rate	29.2
-	bracket_min	2000000	paid	58775117000    	average_paid	744620    	average_income	2974631	tax_rate	28.9
-	bracket_min	5000000	paid	31500062000    	average_paid	1649391    	average_income	6814506	tax_rate	27.8
-	bracket_min	10000000	paid	65644002000    	average_paid	5763301    	average_income	28102760	tax_rate	23.9
+2011	
+	bracket_min	0	paid	123228000	tax_rate	0.0
+	bracket_min	1	paid	45686000	tax_rate	12.7
+	bracket_min	5000	paid	425620000	tax_rate	10.4
+	bracket_min	10000	paid	1709805000	tax_rate	9.3
+	bracket_min	15000	paid	3878287000	tax_rate	9.8
+	bracket_min	20000	paid	6317626000	tax_rate	10.9
+	bracket_min	25000	paid	8916974000	tax_rate	11.2
+	bracket_min	30000	paid	24731347000	tax_rate	11.3
+	bracket_min	40000	paid	30555752000	tax_rate	11.7
+	bracket_min	50000	paid	93323001000	tax_rate	12.9
+	bracket_min	75000	paid	96018996000	tax_rate	13.6
+	bracket_min	100000	paid	248967619000	tax_rate	17.1
+	bracket_min	200000	paid	212403257000	tax_rate	24.6
+	bracket_min	500000	paid	97610768000	tax_rate	28.9
+	bracket_min	1000000	paid	40458911000	tax_rate	29.1
+	bracket_min	1500000	paid	24104736000	tax_rate	29.2
+	bracket_min	2000000	paid	58775117000	tax_rate	28.9
+	bracket_min	5000000	paid	31500062000	tax_rate	27.8
+	bracket_min	10000000	paid	65644002000	tax_rate	23.9
 
-2012										
-	bracket_min	0	paid	174375000    	average_paid	25995    	average_income	-90922	tax_rate	0.0
-	bracket_min	1	paid	32869000    	average_paid	126    	average_income	2616	tax_rate	10.1
-	bracket_min	5000	paid	398043000    	average_paid	196    	average_income	7603	tax_rate	10.5
-	bracket_min	10000	paid	1684658000    	average_paid	335    	average_income	12505	tax_rate	9.4
-	bracket_min	15000	paid	3819964000    	average_paid	721    	average_income	17434	tax_rate	9.8
-	bracket_min	20000	paid	6267171000    	average_paid	1163    	average_income	22416	tax_rate	10.9
-	bracket_min	25000	paid	8700052000    	average_paid	1680    	average_income	27437	tax_rate	11.4
-	bracket_min	30000	paid	24316689000    	average_paid	2364    	average_income	34783	tax_rate	11.4
-	bracket_min	40000	paid	30422297000    	average_paid	3321    	average_income	44765	tax_rate	11.7
-	bracket_min	50000	paid	94110714000    	average_paid	5288    	average_income	61553	tax_rate	12.9
-	bracket_min	75000	paid	97980576000    	average_paid	8244    	average_income	86452	tax_rate	13.6
-	bracket_min	100000	paid	265391097000    	average_paid	17064    	average_income	134214	tax_rate	17.0
-	bracket_min	200000	paid	231596046000    	average_paid	55963    	average_income	285681	tax_rate	24.2
-	bracket_min	500000	paid	114171965000    	average_paid	162602    	average_income	677280	tax_rate	28.1
-	bracket_min	1000000	paid	50204874000    	average_paid	297653    	average_income	1208953	tax_rate	28.2
-	bracket_min	1500000	paid	30315072000    	average_paid	423803    	average_income	1720703	tax_rate	28.2
-	bracket_min	2000000	paid	77042208000    	average_paid	724864    	average_income	2978821	tax_rate	27.7
-	bracket_min	5000000	paid	43261092000    	average_paid	1598887    	average_income	6839676	tax_rate	26.4
-	bracket_min	10000000	paid	108137460000    	average_paid	6138942    	average_income	30911333	tax_rate	22.8
+2012	
+	bracket_min	0	paid	174375000	tax_rate	0.0
+	bracket_min	1	paid	32869000	tax_rate	10.1
+	bracket_min	5000	paid	398043000	tax_rate	10.5
+	bracket_min	10000	paid	1684658000	tax_rate	9.4
+	bracket_min	15000	paid	3819964000	tax_rate	9.8
+	bracket_min	20000	paid	6267171000	tax_rate	10.9
+	bracket_min	25000	paid	8700052000	tax_rate	11.4
+	bracket_min	30000	paid	24316689000	tax_rate	11.4
+	bracket_min	40000	paid	30422297000	tax_rate	11.7
+	bracket_min	50000	paid	94110714000	tax_rate	12.9
+	bracket_min	75000	paid	97980576000	tax_rate	13.6
+	bracket_min	100000	paid	265391097000	tax_rate	17.0
+	bracket_min	200000	paid	231596046000	tax_rate	24.2
+	bracket_min	500000	paid	114171965000	tax_rate	28.1
+	bracket_min	1000000	paid	50204874000	tax_rate	28.2
+	bracket_min	1500000	paid	30315072000	tax_rate	28.2
+	bracket_min	2000000	paid	77042208000	tax_rate	27.7
+	bracket_min	5000000	paid	43261092000	tax_rate	26.4
+	bracket_min	10000000	paid	108137460000	tax_rate	22.8
 
-2013										
-	bracket_min	0	paid	177444000    	average_paid	28478    	average_income	-94004	tax_rate	0.0
-	bracket_min	1	paid	37423000    	average_paid	144    	average_income	2599	tax_rate	9.9
-	bracket_min	5000	paid	363828000    	average_paid	199    	average_income	7611	tax_rate	10.4
-	bracket_min	10000	paid	1513976000    	average_paid	323    	average_income	12494	tax_rate	9.4
-	bracket_min	15000	paid	3703936000    	average_paid	699    	average_income	17440	tax_rate	9.7
-	bracket_min	20000	paid	6259605000    	average_paid	1147    	average_income	22444	tax_rate	10.7
-	bracket_min	25000	paid	8650789000    	average_paid	1678    	average_income	27461	tax_rate	11.4
-	bracket_min	30000	paid	24184518000    	average_paid	2360    	average_income	34796	tax_rate	11.4
-	bracket_min	40000	paid	31195016000    	average_paid	3316    	average_income	44771	tax_rate	11.7
-	bracket_min	50000	paid	95577441000    	average_paid	5309    	average_income	61568	tax_rate	12.9
-	bracket_min	75000	paid	102655287000    	average_paid	8331    	average_income	86610	tax_rate	13.6
-	bracket_min	100000	paid	278503806000    	average_paid	17067    	average_income	134512	tax_rate	16.8
-	bracket_min	200000	paid	250646209000    	average_paid	55978    	average_income	284639	tax_rate	24.0
-	bracket_min	500000	paid	125785974000    	average_paid	174001    	average_income	672001	tax_rate	29.5
-	bracket_min	1000000	paid	53108843000    	average_paid	340540    	average_income	1203542	tax_rate	32.2
-	bracket_min	1500000	paid	32173741000    	average_paid	501907    	average_income	1719072	tax_rate	33.0
-	bracket_min	2000000	paid	79629744000    	average_paid	875427    	average_income	2964871	tax_rate	33.5
-	bracket_min	5000000	paid	42687638000    	average_paid	1996802    	average_income	6804621	tax_rate	33.3
-	bracket_min	10000000	paid	98185129000    	average_paid	7653970    	average_income	29246466	tax_rate	30.9
+2013	
+	bracket_min	0	paid	177444000	tax_rate	0.0
+	bracket_min	1	paid	37423000	tax_rate	9.9
+	bracket_min	5000	paid	363828000	tax_rate	10.4
+	bracket_min	10000	paid	1513976000	tax_rate	9.4
+	bracket_min	15000	paid	3703936000	tax_rate	9.7
+	bracket_min	20000	paid	6259605000	tax_rate	10.7
+	bracket_min	25000	paid	8650789000	tax_rate	11.4
+	bracket_min	30000	paid	24184518000	tax_rate	11.4
+	bracket_min	40000	paid	31195016000	tax_rate	11.7
+	bracket_min	50000	paid	95577441000	tax_rate	12.9
+	bracket_min	75000	paid	102655287000	tax_rate	13.6
+	bracket_min	100000	paid	278503806000	tax_rate	16.8
+	bracket_min	200000	paid	250646209000	tax_rate	24.0
+	bracket_min	500000	paid	125785974000	tax_rate	29.5
+	bracket_min	1000000	paid	53108843000	tax_rate	32.2
+	bracket_min	1500000	paid	32173741000	tax_rate	33.0
+	bracket_min	2000000	paid	79629744000	tax_rate	33.5
+	bracket_min	5000000	paid	42687638000	tax_rate	33.3
+	bracket_min	10000000	paid	98185129000	tax_rate	30.9
 
-2014										
-	bracket_min	0	paid	177444000    	average_paid	28478    	average_income	-94004	tax_rate	0.0
-	bracket_min	1	paid	37423000    	average_paid	144    	average_income	2599	tax_rate	9.9
-	bracket_min	5000	paid	363828000    	average_paid	199    	average_income	7611	tax_rate	10.4
-	bracket_min	10000	paid	1513976000    	average_paid	323    	average_income	12494	tax_rate	9.4
-	bracket_min	15000	paid	3703936000    	average_paid	699    	average_income	17440	tax_rate	9.7
-	bracket_min	20000	paid	6259605000    	average_paid	1147    	average_income	22444	tax_rate	10.7
-	bracket_min	25000	paid	8650789000    	average_paid	1678    	average_income	27461	tax_rate	11.4
-	bracket_min	30000	paid	24184518000    	average_paid	2360    	average_income	34796	tax_rate	11.4
-	bracket_min	40000	paid	31195016000    	average_paid	3316    	average_income	44771	tax_rate	11.7
-	bracket_min	50000	paid	95577441000    	average_paid	5309    	average_income	61568	tax_rate	12.9
-	bracket_min	75000	paid	102655287000    	average_paid	8331    	average_income	86610	tax_rate	13.6
-	bracket_min	100000	paid	278503806000    	average_paid	17067    	average_income	134512	tax_rate	16.8
-	bracket_min	200000	paid	250646209000    	average_paid	55978    	average_income	284639	tax_rate	24.0
-	bracket_min	500000	paid	125785974000    	average_paid	174001    	average_income	672001	tax_rate	29.5
-	bracket_min	1000000	paid	53108843000    	average_paid	340540    	average_income	1203542	tax_rate	32.2
-	bracket_min	1500000	paid	32173741000    	average_paid	501907    	average_income	1719072	tax_rate	33.0
-	bracket_min	2000000	paid	79629744000    	average_paid	875427    	average_income	2964871	tax_rate	33.5
-	bracket_min	5000000	paid	42687638000    	average_paid	1996802    	average_income	6804621	tax_rate	33.3
-	bracket_min	10000000	paid	98185129000    	average_paid	7653970    	average_income	29246466	tax_rate	30.9
+2014	
+	bracket_min	0	paid	177444000	tax_rate	0.0
+	bracket_min	1	paid	37423000	tax_rate	9.9
+	bracket_min	5000	paid	363828000	tax_rate	10.4
+	bracket_min	10000	paid	1513976000	tax_rate	9.4
+	bracket_min	15000	paid	3703936000	tax_rate	9.7
+	bracket_min	20000	paid	6259605000	tax_rate	10.7
+	bracket_min	25000	paid	8650789000	tax_rate	11.4
+	bracket_min	30000	paid	24184518000	tax_rate	11.4
+	bracket_min	40000	paid	31195016000	tax_rate	11.7
+	bracket_min	50000	paid	95577441000	tax_rate	12.9
+	bracket_min	75000	paid	102655287000	tax_rate	13.6
+	bracket_min	100000	paid	278503806000	tax_rate	16.8
+	bracket_min	200000	paid	250646209000	tax_rate	24.0
+	bracket_min	500000	paid	125785974000	tax_rate	29.5
+	bracket_min	1000000	paid	53108843000	tax_rate	32.2
+	bracket_min	1500000	paid	32173741000	tax_rate	33.0
+	bracket_min	2000000	paid	79629744000	tax_rate	33.5
+	bracket_min	5000000	paid	42687638000	tax_rate	33.3
+	bracket_min	10000000	paid	98185129000	tax_rate	30.9
 
-2015										
-	bracket_min	0	paid	177444000    	average_paid	28478    	average_income	-94004	tax_rate	0.0
-	bracket_min	1	paid	37423000    	average_paid	144    	average_income	2599	tax_rate	9.9
-	bracket_min	5000	paid	363828000    	average_paid	199    	average_income	7611	tax_rate	10.4
-	bracket_min	10000	paid	1513976000    	average_paid	323    	average_income	12494	tax_rate	9.4
-	bracket_min	15000	paid	3703936000    	average_paid	699    	average_income	17440	tax_rate	9.7
-	bracket_min	20000	paid	6259605000    	average_paid	1147    	average_income	22444	tax_rate	10.7
-	bracket_min	25000	paid	8650789000    	average_paid	1678    	average_income	27461	tax_rate	11.4
-	bracket_min	30000	paid	24184518000    	average_paid	2360    	average_income	34796	tax_rate	11.4
-	bracket_min	40000	paid	31195016000    	average_paid	3316    	average_income	44771	tax_rate	11.7
-	bracket_min	50000	paid	95577441000    	average_paid	5309    	average_income	61568	tax_rate	12.9
-	bracket_min	75000	paid	102655287000    	average_paid	8331    	average_income	86610	tax_rate	13.6
-	bracket_min	100000	paid	278503806000    	average_paid	17067    	average_income	134512	tax_rate	16.8
-	bracket_min	200000	paid	250646209000    	average_paid	55978    	average_income	284639	tax_rate	24.0
-	bracket_min	500000	paid	125785974000    	average_paid	174001    	average_income	672001	tax_rate	29.5
-	bracket_min	1000000	paid	53108843000    	average_paid	340540    	average_income	1203542	tax_rate	32.2
-	bracket_min	1500000	paid	32173741000    	average_paid	501907    	average_income	1719072	tax_rate	33.0
-	bracket_min	2000000	paid	79629744000    	average_paid	875427    	average_income	2964871	tax_rate	33.5
-	bracket_min	5000000	paid	42687638000    	average_paid	1996802    	average_income	6804621	tax_rate	33.3
-	bracket_min	10000000	paid	98185129000    	average_paid	7653970    	average_income	29246466	tax_rate	30.9
+2015	
+	bracket_min	0	paid	177444000	tax_rate	0.0
+	bracket_min	1	paid	37423000	tax_rate	9.9
+	bracket_min	5000	paid	363828000	tax_rate	10.4
+	bracket_min	10000	paid	1513976000	tax_rate	9.4
+	bracket_min	15000	paid	3703936000	tax_rate	9.7
+	bracket_min	20000	paid	6259605000	tax_rate	10.7
+	bracket_min	25000	paid	8650789000	tax_rate	11.4
+	bracket_min	30000	paid	24184518000	tax_rate	11.4
+	bracket_min	40000	paid	31195016000	tax_rate	11.7
+	bracket_min	50000	paid	95577441000	tax_rate	12.9
+	bracket_min	75000	paid	102655287000	tax_rate	13.6
+	bracket_min	100000	paid	278503806000	tax_rate	16.8
+	bracket_min	200000	paid	250646209000	tax_rate	24.0
+	bracket_min	500000	paid	125785974000	tax_rate	29.5
+	bracket_min	1000000	paid	53108843000	tax_rate	32.2
+	bracket_min	1500000	paid	32173741000	tax_rate	33.0
+	bracket_min	2000000	paid	79629744000	tax_rate	33.5
+	bracket_min	5000000	paid	42687638000	tax_rate	33.3
+	bracket_min	10000000	paid	98185129000	tax_rate	30.9
 
