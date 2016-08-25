@@ -15,6 +15,7 @@
     /* debt breakdown */
 
     #debt_breakdown {
+      position: relative;
       text-align: center;
       background: #004258; /* fallback for old browsers */
       background: -webkit-linear-gradient(to left, #4B79A1 , #004258); /* Chrome 10-25, Safari 5.1-6 */
@@ -99,6 +100,39 @@
       border-bottom: 9px solid #888;
       color: #888;
       text-align: right;
+    }
+
+    #circle_breakdown {
+      position: absolute;
+      bottom: 37%;
+      right: 5%;
+    }
+
+    #circle_breakdown h1 {
+      font-size: 3em;
+      margin-top: 60px;
+    }
+
+    #circle_owe {
+      position: absolute;
+      bottom: 15%;
+      right: 5%;
+    }
+
+    #circle_owe h1 {
+      font-size: 2.0em;
+      margin-top: 70px;
+    }
+
+    #circle_share {
+      position: absolute;
+      bottom: 26%;
+      right: 5%;
+    }
+
+    #circle_share h1 {
+      font-size: 2.0em;
+      margin-top: 50px;
     }
 
     /* control */
@@ -950,6 +984,18 @@
   </div>
 
   <h2>So lets figure out how much of the unpaid individual tax is yours...</h2>
+
+  <div class="circle" id="circle_breakdown">
+    <h1>This analysis focuses on individual debt.</h2>
+  </div>
+
+  <div class="circle" id="circle_share">
+    <h1>For each year that you paid, taxes there was a different deficit, so you owe differently.</h1>
+  </div>
+
+  <div class="circle" id="circle_owe">
+    <h1>Income tax is a tax on income, so how much you owe depends on how much you made each year.</h2>
+  </div>
 
 </section>
 
