@@ -504,6 +504,7 @@
       } 
     }
 
+    /*
     function person_graph() {
       if (isNaN(person_income) || isNaN(person_year)) { return; }
 
@@ -514,7 +515,7 @@
       while (year <= 2015) {
         if (year >= person_year) {
           incomes[year] = {income:income};
-          income = Math.floor(income * 1.03); /* grow salary at inflationary rate */
+          income = Math.floor(income * 1.03); // grow salary at inflationary rate
           $('div.year_' + year + ' input').val(income); 
         } 
         else {
@@ -525,6 +526,7 @@
       debts = estimate_debt(incomes);
       draw_graph(debts);
     }
+    */
 
     function control_graph() {
       var incomes = {}
@@ -646,7 +648,7 @@
           control_graph();
         }
       });
-      person_graph();  
+      //person_graph();  
     });
   </script>
 
@@ -1467,10 +1469,12 @@
 
   <h2>All US annual income and expenditure numbers 1979 - 2016.</h2>
   <h3><a href="https://www.whitehouse.gov/">whitehouse.gov</a></h3>
-
+  <h3><a href="debt_budgets.js">Deficit Data</a></h3>
+  <h3><a href="debt_sources.js">Tax Data</a></h3>
 
   <h2>All US annual tax bracket numbers 1979 - 2016.</h2>
   <h3><a href="https://www.irs.gov/">irs.gov</a></h3>
+  <h3><a href="debt_taxes.js">Bracket Data</a></h3>
 
   <h2>Each year's IRS tax bracket tables 1979 - 2016.</h2>
   <h3>
@@ -1511,8 +1515,11 @@
       <a href="https://www.irs.gov/pub/irs-soi/81inintr.pdf">1981</a>
       <a href="https://www.irs.gov/pub/irs-soi/80inintravmatr.pdf">1980</a>
       <a href="https://www.cbo.gov/sites/default/files/110th-congress-2007-2008/reports/12-23-effectivetaxrates_letter.pdf">1979</a>
-
     </h3>
+
+  <h2>Git Hub Repository</h2>
+  <h3><a href="https://github.com/JSVillage/debt-clock">All source code and calculations are available for public review on GitHub.  If you find an error, correct it or let us know.</a>
+
 </footer>
 
 <section class="debt_faq">
@@ -1549,7 +1556,13 @@
   <br/>
 
   <h3>So rich people get more handouts than welfare recipients?</h3>
-  <h4>Yes they do.</h4>
+  <h4>That's what the real math tell us.  The goal is not to punish rich people, its to stop disparaging poor people.</h4>
+  <br/>
+  <br/>
+  <br/>
+
+  <h3>This data is incorrect!</h3>
+  <h4>This document is being reviewed by the public as well as economists, as those reviews come in we'll make updates and ensure the data is correct. You can also check an/or correct the code on <a href="https://github.com/JSVillage/debt-clock">GitHub</a>.</h4>
   <br/>
   <br/>
   <br/>
